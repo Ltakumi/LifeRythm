@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3746881C2AFCC4E000E06029 /* LifeRhythmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */; };
+		3746881E2AFCC4E000E06029 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746881D2AFCC4E000E06029 /* ContentView.swift */; };
+		374688202AFCC4E200E06029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3746881F2AFCC4E200E06029 /* Assets.xcassets */; };
+		374688232AFCC4E200E06029 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374688222AFCC4E200E06029 /* Preview Assets.xcassets */; };
+		374688252AFCC4E200E06029 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374688242AFCC4E200E06029 /* Persistence.swift */; };
+		374688282AFCC4E200E06029 /* LifeRhythm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 374688262AFCC4E200E06029 /* LifeRhythm.xcdatamodeld */; };
+		374688342AFCC4E300E06029 /* LifeRhythmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374688332AFCC4E300E06029 /* LifeRhythmTests.swift */; };
+		3746883E2AFCC4E300E06029 /* LifeRhythmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746883D2AFCC4E300E06029 /* LifeRhythmUITests.swift */; };
+		374688402AFCC4E300E06029 /* LifeRhythmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746883F2AFCC4E300E06029 /* LifeRhythmUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		374688302AFCC4E300E06029 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 374688102AFCC4E000E06029 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 374688172AFCC4E000E06029;
+			remoteInfo = LifeRhythm;
+		};
+		3746883A2AFCC4E300E06029 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 374688102AFCC4E000E06029 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 374688172AFCC4E000E06029;
+			remoteInfo = LifeRhythm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		374688182AFCC4E000E06029 /* LifeRhythm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeRhythm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeRhythmApp.swift; sourceTree = "<group>"; };
+		3746881D2AFCC4E000E06029 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3746881F2AFCC4E200E06029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		374688222AFCC4E200E06029 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		374688242AFCC4E200E06029 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		374688272AFCC4E200E06029 /* LifeRhythm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeRhythm.xcdatamodel; sourceTree = "<group>"; };
+		374688292AFCC4E200E06029 /* LifeRhythm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LifeRhythm.entitlements; sourceTree = "<group>"; };
+		3746882A2AFCC4E200E06029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3746882F2AFCC4E300E06029 /* LifeRhythmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeRhythmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		374688332AFCC4E300E06029 /* LifeRhythmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeRhythmTests.swift; sourceTree = "<group>"; };
+		374688392AFCC4E300E06029 /* LifeRhythmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeRhythmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3746883D2AFCC4E300E06029 /* LifeRhythmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeRhythmUITests.swift; sourceTree = "<group>"; };
+		3746883F2AFCC4E300E06029 /* LifeRhythmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeRhythmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		374688152AFCC4E000E06029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3746882C2AFCC4E300E06029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		374688362AFCC4E300E06029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3746880F2AFCC4E000E06029 = {
+			isa = PBXGroup;
+			children = (
+				3746881A2AFCC4E000E06029 /* LifeRhythm */,
+				374688322AFCC4E300E06029 /* LifeRhythmTests */,
+				3746883C2AFCC4E300E06029 /* LifeRhythmUITests */,
+				374688192AFCC4E000E06029 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		374688192AFCC4E000E06029 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				374688182AFCC4E000E06029 /* LifeRhythm.app */,
+				3746882F2AFCC4E300E06029 /* LifeRhythmTests.xctest */,
+				374688392AFCC4E300E06029 /* LifeRhythmUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3746881A2AFCC4E000E06029 /* LifeRhythm */ = {
+			isa = PBXGroup;
+			children = (
+				3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */,
+				3746881D2AFCC4E000E06029 /* ContentView.swift */,
+				3746881F2AFCC4E200E06029 /* Assets.xcassets */,
+				374688242AFCC4E200E06029 /* Persistence.swift */,
+				374688292AFCC4E200E06029 /* LifeRhythm.entitlements */,
+				3746882A2AFCC4E200E06029 /* Info.plist */,
+				374688262AFCC4E200E06029 /* LifeRhythm.xcdatamodeld */,
+				374688212AFCC4E200E06029 /* Preview Content */,
+			);
+			path = LifeRhythm;
+			sourceTree = "<group>";
+		};
+		374688212AFCC4E200E06029 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				374688222AFCC4E200E06029 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		374688322AFCC4E300E06029 /* LifeRhythmTests */ = {
+			isa = PBXGroup;
+			children = (
+				374688332AFCC4E300E06029 /* LifeRhythmTests.swift */,
+			);
+			path = LifeRhythmTests;
+			sourceTree = "<group>";
+		};
+		3746883C2AFCC4E300E06029 /* LifeRhythmUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3746883D2AFCC4E300E06029 /* LifeRhythmUITests.swift */,
+				3746883F2AFCC4E300E06029 /* LifeRhythmUITestsLaunchTests.swift */,
+			);
+			path = LifeRhythmUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		374688172AFCC4E000E06029 /* LifeRhythm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 374688432AFCC4E300E06029 /* Build configuration list for PBXNativeTarget "LifeRhythm" */;
+			buildPhases = (
+				374688142AFCC4E000E06029 /* Sources */,
+				374688152AFCC4E000E06029 /* Frameworks */,
+				374688162AFCC4E000E06029 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifeRhythm;
+			productName = LifeRhythm;
+			productReference = 374688182AFCC4E000E06029 /* LifeRhythm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3746882E2AFCC4E300E06029 /* LifeRhythmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 374688462AFCC4E300E06029 /* Build configuration list for PBXNativeTarget "LifeRhythmTests" */;
+			buildPhases = (
+				3746882B2AFCC4E300E06029 /* Sources */,
+				3746882C2AFCC4E300E06029 /* Frameworks */,
+				3746882D2AFCC4E300E06029 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				374688312AFCC4E300E06029 /* PBXTargetDependency */,
+			);
+			name = LifeRhythmTests;
+			productName = LifeRhythmTests;
+			productReference = 3746882F2AFCC4E300E06029 /* LifeRhythmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		374688382AFCC4E300E06029 /* LifeRhythmUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 374688492AFCC4E300E06029 /* Build configuration list for PBXNativeTarget "LifeRhythmUITests" */;
+			buildPhases = (
+				374688352AFCC4E300E06029 /* Sources */,
+				374688362AFCC4E300E06029 /* Frameworks */,
+				374688372AFCC4E300E06029 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3746883B2AFCC4E300E06029 /* PBXTargetDependency */,
+			);
+			name = LifeRhythmUITests;
+			productName = LifeRhythmUITests;
+			productReference = 374688392AFCC4E300E06029 /* LifeRhythmUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		374688102AFCC4E000E06029 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					374688172AFCC4E000E06029 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					3746882E2AFCC4E300E06029 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 374688172AFCC4E000E06029;
+					};
+					374688382AFCC4E300E06029 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 374688172AFCC4E000E06029;
+					};
+				};
+			};
+			buildConfigurationList = 374688132AFCC4E000E06029 /* Build configuration list for PBXProject "LifeRhythm" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3746880F2AFCC4E000E06029;
+			productRefGroup = 374688192AFCC4E000E06029 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				374688172AFCC4E000E06029 /* LifeRhythm */,
+				3746882E2AFCC4E300E06029 /* LifeRhythmTests */,
+				374688382AFCC4E300E06029 /* LifeRhythmUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		374688162AFCC4E000E06029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				374688232AFCC4E200E06029 /* Preview Assets.xcassets in Resources */,
+				374688202AFCC4E200E06029 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3746882D2AFCC4E300E06029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		374688372AFCC4E300E06029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		374688142AFCC4E000E06029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				374688252AFCC4E200E06029 /* Persistence.swift in Sources */,
+				3746881E2AFCC4E000E06029 /* ContentView.swift in Sources */,
+				3746881C2AFCC4E000E06029 /* LifeRhythmApp.swift in Sources */,
+				374688282AFCC4E200E06029 /* LifeRhythm.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3746882B2AFCC4E300E06029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				374688342AFCC4E300E06029 /* LifeRhythmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		374688352AFCC4E300E06029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				374688402AFCC4E300E06029 /* LifeRhythmUITestsLaunchTests.swift in Sources */,
+				3746883E2AFCC4E300E06029 /* LifeRhythmUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		374688312AFCC4E300E06029 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 374688172AFCC4E000E06029 /* LifeRhythm */;
+			targetProxy = 374688302AFCC4E300E06029 /* PBXContainerItemProxy */;
+		};
+		3746883B2AFCC4E300E06029 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 374688172AFCC4E000E06029 /* LifeRhythm */;
+			targetProxy = 3746883A2AFCC4E300E06029 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		374688412AFCC4E300E06029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		374688422AFCC4E300E06029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		374688442AFCC4E300E06029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LifeRhythm/LifeRhythm.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LifeRhythm/Preview Content\"";
+				DEVELOPMENT_TEAM = BY5222LM27;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LifeRhythm/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "louis-takumi.LifeRhythm";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		374688452AFCC4E300E06029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LifeRhythm/LifeRhythm.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LifeRhythm/Preview Content\"";
+				DEVELOPMENT_TEAM = BY5222LM27;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LifeRhythm/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "louis-takumi.LifeRhythm";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		374688472AFCC4E300E06029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BY5222LM27;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "louis-takumi.LifeRhythmTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LifeRhythm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LifeRhythm";
+			};
+			name = Debug;
+		};
+		374688482AFCC4E300E06029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BY5222LM27;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "louis-takumi.LifeRhythmTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LifeRhythm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LifeRhythm";
+			};
+			name = Release;
+		};
+		3746884A2AFCC4E300E06029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BY5222LM27;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "louis-takumi.LifeRhythmUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LifeRhythm;
+			};
+			name = Debug;
+		};
+		3746884B2AFCC4E300E06029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BY5222LM27;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "louis-takumi.LifeRhythmUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LifeRhythm;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		374688132AFCC4E000E06029 /* Build configuration list for PBXProject "LifeRhythm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				374688412AFCC4E300E06029 /* Debug */,
+				374688422AFCC4E300E06029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		374688432AFCC4E300E06029 /* Build configuration list for PBXNativeTarget "LifeRhythm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				374688442AFCC4E300E06029 /* Debug */,
+				374688452AFCC4E300E06029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		374688462AFCC4E300E06029 /* Build configuration list for PBXNativeTarget "LifeRhythmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				374688472AFCC4E300E06029 /* Debug */,
+				374688482AFCC4E300E06029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		374688492AFCC4E300E06029 /* Build configuration list for PBXNativeTarget "LifeRhythmUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3746884A2AFCC4E300E06029 /* Debug */,
+				3746884B2AFCC4E300E06029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		374688262AFCC4E200E06029 /* LifeRhythm.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				374688272AFCC4E200E06029 /* LifeRhythm.xcdatamodel */,
+			);
+			currentVersion = 374688272AFCC4E200E06029 /* LifeRhythm.xcdatamodel */;
+			path = LifeRhythm.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 374688102AFCC4E000E06029 /* Project object */;
+}
