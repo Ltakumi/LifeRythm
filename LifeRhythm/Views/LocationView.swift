@@ -10,17 +10,52 @@ import SwiftUI
 struct LocationView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    
+    @State private var searchText = ""
+    func buildPredicate() -> NSPredicate {
+        // If empty, return all
+        if searchText.isEmpty {
+            return NSPredicate(value: true)
+        } else {
+            return NSPredicate(format: "name CONTAINS[cd] %@", searchText)
+        }
+    }
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Location.name, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Location>
+    private var locations: FetchedResults<Location>
     
+    @State private var showingAddLocationView = false
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(locations, id: \.self) { location in
+                NavigationLink(destination: SetView()) {
+                    Text(location.name ?? "Unknown")
+                }
+            }
+            .navigationTitle("Locations")
+            .navigationBarItems(trailing: Button(action: {
+                showingAddLocationView = true
+            }) {
+                Image(systemName: "plus")
+            })
+            .sheet(isPresented: $showingAddLocationView) {
+                AddLocationView().environment(\.managedObjectContext, self.viewContext)
+            }
+            .searchable(text: $searchText)
+            .onChange(of: searchText) { newValue in
+                            locations.nsPredicate = buildPredicate()
+                        }
+        }
     }
 }
 
-#Preview {
-    LocationView()
+struct LocationView_Previews: PreviewProvider {
+    static var previews: some View {
+        let context = PersistenceController.preview.container.viewContext
+        return LocationView().environment(\.managedObjectContext, context)
+    }
 }
+

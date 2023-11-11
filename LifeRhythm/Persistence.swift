@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  LifeRhythm
-//
-//  Created by Louis Takumi on 2023/11/09.
-//
-
 import CoreData
 
 struct PersistenceController {
@@ -13,15 +6,40 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-//        for _ in 0..<10 {
-//            let newItem = Item(context: viewContext)
-//            newItem.timestamp = Date()
-//        }
+        
+        // Generate Locations
+        for i in 1...3 {
+            let location = Location(context: viewContext)
+            location.id = UUID()
+            location.name = "Location \(i)"
+            location.city = "City \(i)"
+            location.type = "Type \(i)"
+            
+            // Generate Sets for each Location
+            for j in 1...2 {
+                let set = Set(context: viewContext)
+                set.id = UUID()
+                set.period_start = Date()
+                set.period_end = Calendar.current.date(byAdding: .month, value: 1, to: set.period_start!)
+                set.additional = "Additional Info \(j) for Location \(i)"
+                location.addToContainsSet(set)
+                
+                // Generate Climbs for each Set
+                for k in 1...5 {
+                    let climb = Climb(context: viewContext)
+                    climb.id = UUID().uuidString
+                    climb.grade = "Grade \(k)"
+                    climb.tags = "Tags \(k)"
+                    climb.type = "Boulder"
+                    set.addToContainsClimb(climb)
+                }
+            }
+        }
+        
+        // Save context
         do {
             try viewContext.save()
         } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
@@ -37,17 +55,6 @@ struct PersistenceController {
         }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
