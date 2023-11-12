@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddClimbSessionView: View {
+struct AddSessionView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
 
@@ -73,6 +73,9 @@ struct AddClimbSessionView: View {
 }
 
 
-#Preview {
-    AddClimbSessionView()
+struct AddSessionView_Previews: PreviewProvider {
+    static var previews: some View {
+        let context = PersistenceController.preview.container.viewContext
+        return AddSessionView().environment(\.managedObjectContext, context)
+    }
 }

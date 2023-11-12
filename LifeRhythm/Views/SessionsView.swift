@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ClimbSessionsView: View {
+struct SessionsView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -31,16 +31,16 @@ struct ClimbSessionsView: View {
                 Image(systemName: "plus")
             })
             .sheet(isPresented: $showingAddSessionView) {
-                AddClimbSessionView().environment(\.managedObjectContext, self.viewContext)
+                AddSessionView().environment(\.managedObjectContext, self.viewContext)
             }
         }
     }
 }
 
-struct ClimbSessionsView_Previews: PreviewProvider {
+struct SessionsView_Previews: PreviewProvider {
     static var previews: some View {
         let context = PersistenceController.preview.container.viewContext
-        return ClimbSessionsView().environment(\.managedObjectContext, context)
+        return SessionsView().environment(\.managedObjectContext, context)
     }
 }
 

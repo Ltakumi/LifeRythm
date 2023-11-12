@@ -19,14 +19,24 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            LocationsView()
+            ExercisesView()
                 .tabItem {
-                    Label("Setup", systemImage: "list.dash")
+                    Label("Exercices", systemImage: "dumbbell.fill")
                 }
             
-            ClimbSessionsView()
+            SessionsView()
                 .tabItem {
-                    Label("Session", systemImage: "calendar")
+                    Label("Sessions", systemImage: "timer")
+                }
+            
+            NutritionView()
+                .tabItem {
+                    Label("Nutrition", systemImage: "leaf")
+                }
+            
+            DailiesView()
+                .tabItem {
+                    Label("Dailies", systemImage: "calendar")
                 }
         }
     }

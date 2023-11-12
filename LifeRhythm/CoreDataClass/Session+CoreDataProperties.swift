@@ -19,7 +19,6 @@ extension Session {
     @NSManaged public var additional: String?
     @NSManaged public var end: Date?
     @NSManaged public var id: UUID?
-    @NSManaged public var over: Bool
     @NSManaged public var start: Date?
     @NSManaged public var containsAttempt: NSSet?
     @NSManaged public var inSet: Set?

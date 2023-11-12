@@ -41,7 +41,6 @@ struct PersistenceController {
                     session.start = Date()
                     session.end = Calendar.current.date(byAdding: .hour, value: 3, to: session.start!)
                     session.additional = "Additional Info \(l) for Set \(j)"
-                    session.over = Bool.random()
                     set.addToContainsSession(session)
 
                     // Generate Attempts for each Session
