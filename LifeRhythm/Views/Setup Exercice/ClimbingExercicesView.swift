@@ -13,24 +13,22 @@ struct ClimbingExercisesView: View {
     @State private var showingAddExerciseView = false
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(climbingExercises, id: \.self) { exercise in
-                    NavigationLink(destination: ExerciseView(exercise: exercise)) {
-                        Text(exercise.name ?? "Unknown Exercise")
-                    }
+        List {
+            ForEach(climbingExercises, id: \.self) { exercise in
+                NavigationLink(destination: ExerciseView(exercise: exercise)) {
+                    Text(exercise.name ?? "Unknown Exercise")
                 }
             }
-            .navigationTitle("Climbing Exercises")
-            .navigationBarItems(trailing: Button(action: {
-                showingAddExerciseView = true
-            }) {
-                Image(systemName: "plus")
-            })
-            .sheet(isPresented: $showingAddExerciseView) {
-                AddExerciseView(type: "climbing")
-                    .environment(\.managedObjectContext, self.viewContext)
-            }
+        }
+        .navigationTitle("Climbing Exercises")
+        .navigationBarItems(trailing: Button(action: {
+            showingAddExerciseView = true
+        }) {
+            Image(systemName: "plus")
+        })
+        .sheet(isPresented: $showingAddExerciseView) {
+            AddExerciseView(type: "climbing")
+                .environment(\.managedObjectContext, self.viewContext)
         }
     }
 }
