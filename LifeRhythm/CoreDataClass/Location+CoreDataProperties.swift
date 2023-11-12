@@ -2,7 +2,7 @@
 //  Location+CoreDataProperties.swift
 //  LifeRhythm
 //
-//  Created by Louis Takumi on 2023/11/10.
+//  Created by Louis Takumi on 2023/11/12.
 //
 //
 
@@ -19,7 +19,9 @@ extension Location {
     @NSManaged public var city: String?
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
-    @NSManaged public var type: String?
+    @NSManaged public var locationType: String?
+    @NSManaged public var additional: String?
+    @NSManaged public var climbType: String?
     @NSManaged public var containsSet: NSSet?
 
 }

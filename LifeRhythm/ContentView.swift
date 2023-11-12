@@ -18,7 +18,7 @@ struct ContentView: View {
     private var items: FetchedResults<Location>
     
     var body: some View {
-        LocationView()
+        LocationsView()
     }
 }
 

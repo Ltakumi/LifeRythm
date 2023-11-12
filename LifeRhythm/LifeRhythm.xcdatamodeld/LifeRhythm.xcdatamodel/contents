@@ -16,10 +16,12 @@
         <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="containsClimb" inverseEntity="Set"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="additional" optional="YES" attributeType="String"/>
         <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="climbType" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="locationType" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="containsSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Set" inverseName="inLocation" inverseEntity="Set"/>
     </entity>
     <entity name="Session" representedClassName="Session" syncable="YES">

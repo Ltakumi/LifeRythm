@@ -13,7 +13,7 @@ struct PersistenceController {
             location.id = UUID()
             location.name = "Location \(i)"
             location.city = "City \(i)"
-            location.type = "Type \(i)"
+            location.locationType = "Type \(i)"
             
             // Generate Sets for each Location
             for j in 1...2 {
