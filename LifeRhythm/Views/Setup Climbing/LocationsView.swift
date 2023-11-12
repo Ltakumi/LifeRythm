@@ -3,16 +3,16 @@ import SwiftUI
 struct LocationsView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    
-    @State private var searchText = ""
-    func buildPredicate() -> NSPredicate {
-        // If empty, return all
-        if searchText.isEmpty {
-            return NSPredicate(value: true)
-        } else {
-            return NSPredicate(format: "name CONTAINS[cd] %@", searchText)
-        }
-    }
+        
+//    @State private var searchText = ""
+//    func buildPredicate() -> NSPredicate {
+//        // If empty, return all
+//        if searchText.isEmpty {
+//            return NSPredicate(value: true)
+//        } else {
+//            return NSPredicate(format: "name CONTAINS[cd] %@", searchText)
+//        }
+//    }
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Location.name, ascending: true)],
@@ -22,26 +22,24 @@ struct LocationsView: View {
     @State private var showingAddLocationView = false
 
     var body: some View {
-        NavigationView {
-            List(locations, id: \.self) { location in
-                NavigationLink(destination: LocationView(location:location)) {
-                    Text(location.name ?? "Unknown")
-                }
+        List(locations, id: \.self) { location in
+            NavigationLink(destination: LocationView(location: location)) {
+                Text(location.name ?? "Unknown")
             }
-            .navigationTitle("Locations")
-            .navigationBarItems(trailing: Button(action: {
-                showingAddLocationView = true
-            }) {
-                Image(systemName: "plus")
-            })
-            .sheet(isPresented: $showingAddLocationView) {
-                AddLocationView().environment(\.managedObjectContext, self.viewContext)
-            }
-            .searchable(text: $searchText)
-            .onChange(of: searchText) { newValue in
-                            locations.nsPredicate = buildPredicate()
-                        }
         }
+        .navigationTitle("Locations")
+        .navigationBarItems(trailing: Button(action: {
+            showingAddLocationView = true
+        }) {
+            Image(systemName: "plus")
+        })
+        .sheet(isPresented: $showingAddLocationView) {
+            AddLocationView().environment(\.managedObjectContext, self.viewContext)
+        }
+//        .searchable(text: $searchText) 
+//        .onChange(of: searchText) { newValue in
+//            locations.nsPredicate = buildPredicate()
+//        }
     }
 }
 

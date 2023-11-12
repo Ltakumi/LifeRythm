@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExercisesView: View {
+        
     var body: some View {
         NavigationView {
             List {
