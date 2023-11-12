@@ -15,13 +15,13 @@
         <relationship name="attempts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attempt" inverseName="idClimb" inverseEntity="Attempt"/>
         <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="containsClimb" inverseEntity="Set"/>
     </entity>
-    <entity name="Exercice" representedClassName="Exercice" syncable="YES" codeGenerationType="class">
-        <attribute name="explanation" optional="YES" attributeType="String"/>
+    <entity name="Exercice" representedClassName="Exercice" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="instances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciceLog" inverseName="exercice" inverseEntity="ExerciceLog"/>
     </entity>
-    <entity name="ExerciceLog" representedClassName="ExerciceLog" syncable="YES" codeGenerationType="class">
+    <entity name="ExerciceLog" representedClassName="ExerciceLog" syncable="YES">
         <attribute name="additional" optional="YES" attributeType="String"/>
         <attribute name="effort" optional="YES" attributeType="Transformable"/>
         <attribute name="rep" optional="YES" attributeType="Transformable"/>

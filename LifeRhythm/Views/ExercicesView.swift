@@ -12,15 +12,17 @@ struct ExercisesView: View {
         NavigationView {
             List {
                 NavigationLink("Climbing", destination: LocationsView())
-                NavigationLink("Climbing Training", destination: ClimbingExercicesView())
-                NavigationLink("Lifting", destination: LiftingExercicesView())
-                NavigationLink("Cardio", destination: CardioExercicesView())
+                NavigationLink("Climbing Training", destination: ClimbingExercisesView())
+                NavigationLink("Lifting", destination: LiftingExercisesView())
+                NavigationLink("Cardio", destination: CardioExercisesView())
             }
             .navigationBarTitle("Exercises")
         }
     }
 }
 
-#Preview {
-    ExercisesView()
+struct ExercisesView_Previews: PreviewProvider {
+    static var previews: some View {
+        ExercisesView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
 }
