@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		373AB0FF2B009AE50006114B /* AddBoulderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB0FE2B009AE50006114B /* AddBoulderView.swift */; };
+		373AB1012B009B0A0006114B /* ClimbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1002B009B0A0006114B /* ClimbView.swift */; };
 		3746881C2AFCC4E000E06029 /* LifeRhythmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */; };
 		3746881E2AFCC4E000E06029 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746881D2AFCC4E000E06029 /* ContentView.swift */; };
 		374688202AFCC4E200E06029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3746881F2AFCC4E200E06029 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		373AB0FE2B009AE50006114B /* AddBoulderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBoulderView.swift; sourceTree = "<group>"; };
+		373AB1002B009B0A0006114B /* ClimbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbView.swift; sourceTree = "<group>"; };
 		374688182AFCC4E000E06029 /* LifeRhythm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeRhythm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeRhythmApp.swift; sourceTree = "<group>"; };
 		3746881D2AFCC4E000E06029 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 				37F919EB2AFF15F50031505E /* AddLocationView.swift */,
 				37F919F32B0087230031505E /* SetView.swift */,
 				37F919F52B00894F0031505E /* AddSetView.swift */,
+				373AB0FE2B009AE50006114B /* AddBoulderView.swift */,
+				373AB1002B009B0A0006114B /* ClimbView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -336,10 +342,12 @@
 				3746881C2AFCC4E000E06029 /* LifeRhythmApp.swift in Sources */,
 				37F919F92B008FD40031505E /* Location+CoreDataClass.swift in Sources */,
 				37F9A2E12AFE7AE8002775CE /* Climb+CoreDataProperties.swift in Sources */,
+				373AB0FF2B009AE50006114B /* AddBoulderView.swift in Sources */,
 				37F9A2E42AFE8723002775CE /* LocationsView.swift in Sources */,
 				37F9A2DA2AFE7AE8002775CE /* Set+CoreDataClass.swift in Sources */,
 				37F9A2DF2AFE7AE8002775CE /* Attempt+CoreDataProperties.swift in Sources */,
 				37F919FA2B008FD40031505E /* Location+CoreDataProperties.swift in Sources */,
+				373AB1012B009B0A0006114B /* ClimbView.swift in Sources */,
 				37F9A2DE2AFE7AE8002775CE /* Attempt+CoreDataClass.swift in Sources */,
 				37F9A2D82AFE7AE8002775CE /* Session+CoreDataClass.swift in Sources */,
 				37F919EC2AFF15F50031505E /* AddLocationView.swift in Sources */,

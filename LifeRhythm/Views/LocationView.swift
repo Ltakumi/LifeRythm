@@ -50,10 +50,10 @@ struct LocationView: View {
                     ForEach(sets, id: \.self) { set in
                         NavigationLink(destination: SetView(set: set)) {
                             HStack() {
-                                Text(formatDate(set.period_start))
+                                Text(DateUtils.formatSetDate(set.period_start))
                                     .font(.subheadline)
                                     .foregroundColor(.gray)
-                                Text(formatDate(set.period_end))
+                                Text(DateUtils.formatSetDate(set.period_end))
                                     .font(.subheadline)
                                     .foregroundColor(.gray)
                             }
@@ -72,15 +72,6 @@ struct LocationView: View {
                                 .environment(\.managedObjectContext, self.viewContext)
             }
     }
-    
-    private func formatDate(_ date: Date?) -> String {
-            guard let validDate = date else {
-                return ""
-            }
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/yy"
-            return formatter.string(from: validDate)
-        }
 }
 
 struct LocationView_Previews: PreviewProvider {
