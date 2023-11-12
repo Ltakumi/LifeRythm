@@ -60,17 +60,6 @@ struct SetView: View {
     }
 }
 
-struct DateUtils {
-    static func formatSetDate(_ date: Date?) -> String {
-        guard let validDate = date else {
-            return ""  // Or return a placeholder string if you prefer
-        }
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        return formatter.string(from: validDate)
-    }
-}
-
 struct SetView_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock managed object context

@@ -27,11 +27,35 @@ struct PersistenceController {
                 // Generate Climbs for each Set
                 for k in 1...5 {
                     let climb = Climb(context: viewContext)
-                    climb.id = UUID().uuidString
+                    climb.id = "Climb \(k)"
                     climb.grade = "Grade \(k)"
                     climb.tags = "Tags \(k)"
                     climb.type = "Boulder"
                     set.addToContainsClimb(climb)
+                }
+
+                // Generate Sessions for each Set
+                for l in 1...2 {
+                    let session = Session(context: viewContext)
+                    session.id = UUID()
+                    session.start = Date()
+                    session.end = Calendar.current.date(byAdding: .hour, value: 3, to: session.start!)
+                    session.additional = "Additional Info \(l) for Set \(j)"
+                    session.over = Bool.random()
+                    set.addToContainsSession(session)
+
+                    // Generate Attempts for each Session
+                    for m in 1...5 {
+                        let attempt = Attempt(context: viewContext)
+                        attempt.id = UUID()
+                        attempt.outcome = Bool.random() ? "Success" : "Fail"
+                        attempt.timestamp = Calendar.current.date(byAdding: .minute, value: m * 5, to: session.start!)!
+                        // Randomly associate an attempt with a climb from the set
+                        if let climbs = set.containsClimb?.allObjects as? [Climb], !climbs.isEmpty {
+                            attempt.idClimb = climbs.randomElement()!
+                        }
+                        session.addToContainsAttempt(attempt)
+                    }
                 }
             }
         }

@@ -26,7 +26,6 @@
     </entity>
     <entity name="Session" representedClassName="Session" syncable="YES">
         <attribute name="additional" optional="YES" attributeType="String"/>
-        <attribute name="comment" optional="YES" attributeType="String"/>
         <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="over" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>

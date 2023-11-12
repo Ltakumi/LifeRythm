@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		373AB0FF2B009AE50006114B /* AddBoulderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB0FE2B009AE50006114B /* AddBoulderView.swift */; };
 		373AB1012B009B0A0006114B /* ClimbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1002B009B0A0006114B /* ClimbView.swift */; };
+		373AB1032B00A5600006114B /* ClimbSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1022B00A5600006114B /* ClimbSessionsView.swift */; };
+		373AB1062B00C1560006114B /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1042B00C1560006114B /* Session+CoreDataClass.swift */; };
+		373AB1072B00C1560006114B /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1052B00C1560006114B /* Session+CoreDataProperties.swift */; };
+		373AB1092B00C5370006114B /* AddClimbSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1082B00C5370006114B /* AddClimbSessionView.swift */; };
+		373AB10B2B00C7F40006114B /* ClimbSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB10A2B00C7F40006114B /* ClimbSessionView.swift */; };
+		373AB10D2B00D6EB0006114B /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB10C2B00D6EB0006114B /* utils.swift */; };
 		3746881C2AFCC4E000E06029 /* LifeRhythmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */; };
 		3746881E2AFCC4E000E06029 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746881D2AFCC4E000E06029 /* ContentView.swift */; };
 		374688202AFCC4E200E06029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3746881F2AFCC4E200E06029 /* Assets.xcassets */; };
@@ -23,8 +29,6 @@
 		37F919F62B00894F0031505E /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F919F52B00894F0031505E /* AddSetView.swift */; };
 		37F919F92B008FD40031505E /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F919F72B008FD40031505E /* Location+CoreDataClass.swift */; };
 		37F919FA2B008FD40031505E /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F919F82B008FD40031505E /* Location+CoreDataProperties.swift */; };
-		37F9A2D82AFE7AE8002775CE /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A2CE2AFE7AE8002775CE /* Session+CoreDataClass.swift */; };
-		37F9A2D92AFE7AE8002775CE /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A2CF2AFE7AE8002775CE /* Session+CoreDataProperties.swift */; };
 		37F9A2DA2AFE7AE8002775CE /* Set+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A2D02AFE7AE8002775CE /* Set+CoreDataClass.swift */; };
 		37F9A2DB2AFE7AE8002775CE /* Set+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A2D12AFE7AE8002775CE /* Set+CoreDataProperties.swift */; };
 		37F9A2DE2AFE7AE8002775CE /* Attempt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A2D42AFE7AE8002775CE /* Attempt+CoreDataClass.swift */; };
@@ -55,6 +59,12 @@
 /* Begin PBXFileReference section */
 		373AB0FE2B009AE50006114B /* AddBoulderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBoulderView.swift; sourceTree = "<group>"; };
 		373AB1002B009B0A0006114B /* ClimbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbView.swift; sourceTree = "<group>"; };
+		373AB1022B00A5600006114B /* ClimbSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbSessionsView.swift; sourceTree = "<group>"; };
+		373AB1042B00C1560006114B /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataClass.swift"; sourceTree = "<group>"; };
+		373AB1052B00C1560006114B /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		373AB1082B00C5370006114B /* AddClimbSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClimbSessionView.swift; sourceTree = "<group>"; };
+		373AB10A2B00C7F40006114B /* ClimbSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbSessionView.swift; sourceTree = "<group>"; };
+		373AB10C2B00D6EB0006114B /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		374688182AFCC4E000E06029 /* LifeRhythm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeRhythm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeRhythmApp.swift; sourceTree = "<group>"; };
 		3746881D2AFCC4E000E06029 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,8 +84,6 @@
 		37F919F52B00894F0031505E /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
 		37F919F72B008FD40031505E /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		37F919F82B008FD40031505E /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		37F9A2CE2AFE7AE8002775CE /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataClass.swift"; sourceTree = "<group>"; };
-		37F9A2CF2AFE7AE8002775CE /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		37F9A2D02AFE7AE8002775CE /* Set+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+CoreDataClass.swift"; sourceTree = "<group>"; };
 		37F9A2D12AFE7AE8002775CE /* Set+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		37F9A2D42AFE7AE8002775CE /* Attempt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attempt+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 				3746882A2AFCC4E200E06029 /* Info.plist */,
 				374688262AFCC4E200E06029 /* LifeRhythm.xcdatamodeld */,
 				374688212AFCC4E200E06029 /* Preview Content */,
+				373AB10C2B00D6EB0006114B /* utils.swift */,
 			);
 			path = LifeRhythm;
 			sourceTree = "<group>";
@@ -176,10 +185,10 @@
 		37F9A2CD2AFE7A23002775CE /* CoreDataClass */ = {
 			isa = PBXGroup;
 			children = (
+				373AB1042B00C1560006114B /* Session+CoreDataClass.swift */,
+				373AB1052B00C1560006114B /* Session+CoreDataProperties.swift */,
 				37F919F72B008FD40031505E /* Location+CoreDataClass.swift */,
 				37F919F82B008FD40031505E /* Location+CoreDataProperties.swift */,
-				37F9A2CE2AFE7AE8002775CE /* Session+CoreDataClass.swift */,
-				37F9A2CF2AFE7AE8002775CE /* Session+CoreDataProperties.swift */,
 				37F9A2D02AFE7AE8002775CE /* Set+CoreDataClass.swift */,
 				37F9A2D12AFE7AE8002775CE /* Set+CoreDataProperties.swift */,
 				37F9A2D42AFE7AE8002775CE /* Attempt+CoreDataClass.swift */,
@@ -200,6 +209,9 @@
 				37F919F52B00894F0031505E /* AddSetView.swift */,
 				373AB0FE2B009AE50006114B /* AddBoulderView.swift */,
 				373AB1002B009B0A0006114B /* ClimbView.swift */,
+				373AB1022B00A5600006114B /* ClimbSessionsView.swift */,
+				373AB1082B00C5370006114B /* AddClimbSessionView.swift */,
+				373AB10A2B00C7F40006114B /* ClimbSessionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,27 +346,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37F9A2D92AFE7AE8002775CE /* Session+CoreDataProperties.swift in Sources */,
 				37F919F62B00894F0031505E /* AddSetView.swift in Sources */,
 				37F9A2E02AFE7AE8002775CE /* Climb+CoreDataClass.swift in Sources */,
 				374688252AFCC4E200E06029 /* Persistence.swift in Sources */,
 				3746881E2AFCC4E000E06029 /* ContentView.swift in Sources */,
 				3746881C2AFCC4E000E06029 /* LifeRhythmApp.swift in Sources */,
+				373AB1062B00C1560006114B /* Session+CoreDataClass.swift in Sources */,
+				373AB1092B00C5370006114B /* AddClimbSessionView.swift in Sources */,
 				37F919F92B008FD40031505E /* Location+CoreDataClass.swift in Sources */,
 				37F9A2E12AFE7AE8002775CE /* Climb+CoreDataProperties.swift in Sources */,
 				373AB0FF2B009AE50006114B /* AddBoulderView.swift in Sources */,
+				373AB10D2B00D6EB0006114B /* utils.swift in Sources */,
 				37F9A2E42AFE8723002775CE /* LocationsView.swift in Sources */,
+				373AB1072B00C1560006114B /* Session+CoreDataProperties.swift in Sources */,
 				37F9A2DA2AFE7AE8002775CE /* Set+CoreDataClass.swift in Sources */,
 				37F9A2DF2AFE7AE8002775CE /* Attempt+CoreDataProperties.swift in Sources */,
 				37F919FA2B008FD40031505E /* Location+CoreDataProperties.swift in Sources */,
+				373AB10B2B00C7F40006114B /* ClimbSessionView.swift in Sources */,
 				373AB1012B009B0A0006114B /* ClimbView.swift in Sources */,
 				37F9A2DE2AFE7AE8002775CE /* Attempt+CoreDataClass.swift in Sources */,
-				37F9A2D82AFE7AE8002775CE /* Session+CoreDataClass.swift in Sources */,
 				37F919EC2AFF15F50031505E /* AddLocationView.swift in Sources */,
 				37F919F42B0087230031505E /* SetView.swift in Sources */,
 				37F9A2DB2AFE7AE8002775CE /* Set+CoreDataProperties.swift in Sources */,
 				374688282AFCC4E200E06029 /* LifeRhythm.xcdatamodeld in Sources */,
 				37FCB56A2AFF112500A286CC /* LocationView.swift in Sources */,
+				373AB1032B00A5600006114B /* ClimbSessionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

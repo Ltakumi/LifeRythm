@@ -2,7 +2,7 @@
 //  Session+CoreDataClass.swift
 //  LifeRhythm
 //
-//  Created by Louis Takumi on 2023/11/10.
+//  Created by Louis Takumi on 2023/11/12.
 //
 //
 

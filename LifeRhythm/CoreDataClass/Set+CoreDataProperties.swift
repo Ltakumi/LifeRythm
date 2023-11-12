@@ -23,6 +23,10 @@ extension Set {
     @NSManaged public var inLocation: Location?
     @NSManaged public var containsClimb: NSSet?
     @NSManaged public var containsSession: NSSet?
+    
+    func displayName() -> String {
+        return "Set \(self.id?.uuidString ?? "")"
+    }
 
 }
 

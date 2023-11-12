@@ -1,10 +1,3 @@
-//
-//  LocationView.swift
-//  LifeRhythm
-//
-//  Created by Louis Takumi on 2023/11/11.
-//
-
 import SwiftUI
 
 struct LocationsView: View {
@@ -58,4 +51,3 @@ struct LocationsView_Previews: PreviewProvider {
         return LocationsView().environment(\.managedObjectContext, context)
     }
 }
-

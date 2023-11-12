@@ -18,7 +18,17 @@ struct ContentView: View {
     private var items: FetchedResults<Location>
     
     var body: some View {
-        LocationsView()
+        TabView {
+            LocationsView()
+                .tabItem {
+                    Label("Setup", systemImage: "list.dash")
+                }
+            
+            ClimbSessionsView()
+                .tabItem {
+                    Label("Session", systemImage: "calendar")
+                }
+        }
     }
 }
 

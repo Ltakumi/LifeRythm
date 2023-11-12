@@ -2,7 +2,7 @@
 //  Session+CoreDataProperties.swift
 //  LifeRhythm
 //
-//  Created by Louis Takumi on 2023/11/10.
+//  Created by Louis Takumi on 2023/11/12.
 //
 //
 
@@ -17,12 +17,12 @@ extension Session {
     }
 
     @NSManaged public var additional: String?
-    @NSManaged public var comment: String?
     @NSManaged public var end: Date?
     @NSManaged public var id: UUID?
+    @NSManaged public var over: Bool
     @NSManaged public var start: Date?
-    @NSManaged public var inSet: Set?
     @NSManaged public var containsAttempt: NSSet?
+    @NSManaged public var inSet: Set?
 
 }
 
@@ -40,6 +40,12 @@ extension Session {
 
     @objc(removeContainsAttempt:)
     @NSManaged public func removeFromContainsAttempt(_ values: NSSet)
+    
+    func sessionInfo() -> String {
+        let gymName = self.inSet?.inLocation?.name ?? "Unknown Gym"
+        let formattedDate = DateUtils.formatSetDate(self.start)
+        return "\(gymName) - \(formattedDate)"
+    }
 
 }
 
