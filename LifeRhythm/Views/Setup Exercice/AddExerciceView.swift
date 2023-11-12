@@ -41,7 +41,7 @@ struct AddExerciseView: View {
             return
         }
 
-        let newExercise = Exercice(context: viewContext)
+        let newExercise = Exercise(context: viewContext)
         newExercise.name = name
         newExercise.type = type
         newExercise.detail = detail

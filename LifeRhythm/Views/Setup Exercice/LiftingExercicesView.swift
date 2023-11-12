@@ -5,10 +5,10 @@ struct LiftingExercisesView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        entity: Exercice.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Exercice.name, ascending: true)],
+        entity: Exercise.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Exercise.name, ascending: true)],
         predicate: NSPredicate(format: "type == %@", "lifting")
-    ) var liftingExercises: FetchedResults<Exercice>
+    ) var liftingExercises: FetchedResults<Exercise>
 
     @State private var showingAddExerciseView = false
 
@@ -16,7 +16,9 @@ struct LiftingExercisesView: View {
         NavigationView {
             List {
                 ForEach(liftingExercises, id: \.self) { exercise in
-                    Text(exercise.name ?? "Unknown Exercise")
+                    NavigationLink(destination: ExerciseView(exercise: exercise)) {
+                        Text(exercise.name ?? "Unknown Exercise")
+                    }
                 }
             }
             .navigationTitle("Lifting Exercises")

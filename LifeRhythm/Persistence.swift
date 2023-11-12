@@ -63,7 +63,7 @@ struct PersistenceController {
         let exerciseTypes = ["cardio", "climbing", "lifting"]
         for type in exerciseTypes {
             for i in 1...2 {
-                let exercise = Exercice(context: viewContext)
+                let exercise = Exercise(context: viewContext)
                 exercise.name = "\(type.capitalized) Exercise \(i)"
                 exercise.type = type
                 exercise.detail = "Details for \(type.capitalized) Exercise \(i)"

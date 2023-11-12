@@ -1,5 +1,5 @@
 //
-//  Exercice+CoreDataProperties.swift
+//  Exercise+CoreDataProperties.swift
 //  LifeRhythm
 //
 //  Created by Louis Takumi on 2023/11/13.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Exercice {
+extension Exercise {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Exercice> {
-        return NSFetchRequest<Exercice>(entityName: "Exercice")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Exercise> {
+        return NSFetchRequest<Exercise>(entityName: "Exercise")
     }
 
     @NSManaged public var name: String?
@@ -24,13 +24,13 @@ extension Exercice {
 }
 
 // MARK: Generated accessors for instances
-extension Exercice {
+extension Exercise {
 
     @objc(addInstancesObject:)
-    @NSManaged public func addToInstances(_ value: ExerciceLog)
+    @NSManaged public func addToInstances(_ value: ExerciseLog)
 
     @objc(removeInstancesObject:)
-    @NSManaged public func removeFromInstances(_ value: ExerciceLog)
+    @NSManaged public func removeFromInstances(_ value: ExerciseLog)
 
     @objc(addInstances:)
     @NSManaged public func addToInstances(_ values: NSSet)
@@ -40,6 +40,6 @@ extension Exercice {
 
 }
 
-extension Exercice : Identifiable {
+extension Exercise : Identifiable {
 
 }

@@ -1,5 +1,5 @@
 //
-//  ExerciceLog+CoreDataProperties.swift
+//  ExerciseLog+CoreDataProperties.swift
 //  LifeRhythm
 //
 //  Created by Louis Takumi on 2023/11/13.
@@ -10,21 +10,21 @@ import Foundation
 import CoreData
 
 
-extension ExerciceLog {
+extension ExerciseLog {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ExerciceLog> {
-        return NSFetchRequest<ExerciceLog>(entityName: "ExerciceLog")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<ExerciseLog> {
+        return NSFetchRequest<ExerciseLog>(entityName: "ExerciseLog")
     }
 
     @NSManaged public var rep: NSObject?
     @NSManaged public var rest: NSObject?
     @NSManaged public var effort: NSObject?
     @NSManaged public var additional: String?
-    @NSManaged public var exercice: Exercice?
+    @NSManaged public var exercise: Exercise?
     @NSManaged public var inSession: Session?
 
 }
 
-extension ExerciceLog : Identifiable {
+extension ExerciseLog : Identifiable {
 
 }

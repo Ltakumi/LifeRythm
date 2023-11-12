@@ -15,18 +15,18 @@
         <relationship name="attempts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attempt" inverseName="idClimb" inverseEntity="Attempt"/>
         <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="containsClimb" inverseEntity="Set"/>
     </entity>
-    <entity name="Exercice" representedClassName="Exercice" syncable="YES">
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES">
         <attribute name="detail" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
-        <relationship name="instances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciceLog" inverseName="exercice" inverseEntity="ExerciceLog"/>
+        <relationship name="instances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseLog" inverseName="exercise" inverseEntity="ExerciseLog"/>
     </entity>
-    <entity name="ExerciceLog" representedClassName="ExerciceLog" syncable="YES">
+    <entity name="ExerciseLog" representedClassName="ExerciseLog" syncable="YES">
         <attribute name="additional" optional="YES" attributeType="String"/>
         <attribute name="effort" optional="YES" attributeType="Transformable"/>
         <attribute name="rep" optional="YES" attributeType="Transformable"/>
         <attribute name="rest" optional="YES" attributeType="Transformable"/>
-        <relationship name="exercice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" inverseName="instances" inverseEntity="Exercice"/>
+        <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="instances" inverseEntity="Exercise"/>
         <relationship name="inSession" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="containsExerciceLog" inverseEntity="Session"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
@@ -45,7 +45,7 @@
         <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="containsAttempt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attempt" inverseName="inSession" inverseEntity="Attempt"/>
-        <relationship name="containsExerciceLog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciceLog" inverseName="inSession" inverseEntity="ExerciceLog"/>
+        <relationship name="containsExerciceLog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseLog" inverseName="inSession" inverseEntity="ExerciseLog"/>
         <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="containsSession" inverseEntity="Set"/>
     </entity>
     <entity name="Set" representedClassName="Set" syncable="YES">
