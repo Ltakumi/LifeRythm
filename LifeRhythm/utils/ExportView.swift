@@ -1,44 +1,40 @@
 import SwiftUI
 import MobileCoreServices
+import CoreData
 
 struct ExportView: View {
+    @Environment(\.managedObjectContext) var viewContext
     @State private var showingAlert = false
     @State private var alertMessage = ""
     @State private var documentPickerPresented = false
+    @State private var currentFilename: String = ""
 
     var body: some View {
-        Button("Export to JSON") {
-            exportToJSON()
+        VStack {
+            Button("Export to JSON") {
+                let mockJsonData = JsonUtils.mockJsonData()
+                currentFilename = "mockdata.json"
+                exportJsonData(jsonData: mockJsonData, filename: currentFilename)
+            }
+
+            Button("Export locations") {
+                let locationData = exportLocationsToJsonData()
+                currentFilename = "locations.json"
+                exportJsonData(jsonData: locationData, filename: currentFilename)
+            }
         }
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Export Status"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
         .sheet(isPresented: $documentPickerPresented) {
-            DocumentPicker(document: .constant(Data()), onPick: handlePickedDocument)
+            DocumentPicker(document: .constant(Data()), filename: $currentFilename, onPick: handlePickedDocument)
         }
     }
 
-    private func exportToJSON() {
-        let jsonString = """
-        {
-            "locations": [
-                {
-                    "city": "Tokyo",
-                    "neighborhood": "NeighborhoodName",
-                    "phoneNumber": "1234567890"
-                }
-            ]
-        }
-        """
-
-        guard let jsonData = jsonString.data(using: .utf8) else {
-            self.alertMessage = "Error converting JSON to Data."
-            self.showingAlert = true
-            return
-        }
-
+    private func exportJsonData(jsonData: Data, filename: String) {
+        
         // Create a file URL for `locations.json` in the temporary directory
-        let tempFileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("locations.json")
+        let tempFileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(filename)
 
         do {
             // Write the JSON data to the file
@@ -50,6 +46,23 @@ struct ExportView: View {
             self.showingAlert = true
         }
     }
+    
+    private func fetchLocations() -> [Location] {
+        let fetchRequest: NSFetchRequest<Location> = Location.fetchRequest()
+        do {
+            let locations = try viewContext.fetch(fetchRequest)
+            return locations
+        } catch {
+            print("Error fetching locations: \(error)")
+            return []
+        }
+    }
+    
+    func exportLocationsToJsonData() -> Data {
+        let locations = fetchLocations()
+        let exportableLocations = convertToExportable(locations: locations)
+        return encodeToJson(locations: exportableLocations) ?? Data()
+    }
 
     private func handlePickedDocument(url: URL) {
         // Perform any action after the document is picked, if necessary
@@ -59,8 +72,8 @@ struct ExportView: View {
 }
 
 struct DocumentPicker: UIViewControllerRepresentable {
-    
     @Binding var document: Data
+    @Binding var filename: String
     var onPick: (URL) -> Void
 
     func makeCoordinator() -> Coordinator {
@@ -68,7 +81,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
     }
 
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
-        let tempFileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("locations.json")
+        let tempFileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(filename)
         let picker = UIDocumentPickerViewController(forExporting: [tempFileURL], asCopy: true) // asCopy should be true if you want the user to export a copy
         picker.delegate = context.coordinator
         return picker

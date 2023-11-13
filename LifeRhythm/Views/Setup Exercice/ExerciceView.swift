@@ -7,7 +7,7 @@ struct ExerciseView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Name: \(exercise.id ?? "Unknown")")
+            Text("Name: \(exercise.name ?? "Unknown")")
             Text("Type: \(exercise.type ?? "Unknown")")
             Text("Detail: \(exercise.detail ?? "No details")")
         }

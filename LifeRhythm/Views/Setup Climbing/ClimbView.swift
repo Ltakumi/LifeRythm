@@ -42,7 +42,7 @@ struct ClimbView_Previews: PreviewProvider {
         
         let location = Location(context: context)
         location.name = "Noborock"
-        location.city = "Shibuya"
+        location.address = "Shibuya"
         location.locationType = "Gym"
         location.additional = "Additional description"
         

@@ -71,7 +71,7 @@ struct AddSetView_Previews: PreviewProvider {
         // Create a mock Location entity
         let mockLocation = Location(context: context)
         mockLocation.name = "Mock Location"
-        mockLocation.city = "Mock City"
+        mockLocation.address = "Mock City"
         mockLocation.locationType = "Gym"
 
         // Return the AddSetView instance
