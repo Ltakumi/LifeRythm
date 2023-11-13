@@ -11,6 +11,8 @@ struct WorkoutSessionView: View {
     @State private var end_time: Date?
     @State private var showAlert = false
     @State private var alertMessage = ""
+    @State private var showInputFormatAlert = false
+    @State private var inputFormatAlertMessage = ""
     
     @State private var selectedExerciseID: String = ""
     @State private var exercises: [Exercise] = []
@@ -73,6 +75,9 @@ struct WorkoutSessionView: View {
                 Button("Add Exercise Log") {
                     addExerciseLog()
                 }
+                .alert(isPresented: $showInputFormatAlert) {
+                    Alert(title: Text("Input Format Error"), message: Text(inputFormatAlertMessage), dismissButton: .default(Text("OK")))
+                }
             }
             
             // bottom Section
@@ -89,6 +94,19 @@ struct WorkoutSessionView: View {
     }
     
     private func addExerciseLog() {
+        
+        let effortList = effort.split(separator: ",").map { String($0).trimmingCharacters(in: .whitespacesAndNewlines) }
+        let repetitionsList = repetitions.split(separator: ",").map { String($0).trimmingCharacters(in: .whitespacesAndNewlines) }
+        let restList = rest.split(separator: ",").map { String($0).trimmingCharacters(in: .whitespacesAndNewlines) }
+
+        // Check that none of the inputs are empty and that all lists have the same length
+        if effortList.isEmpty || repetitionsList.isEmpty || restList.isEmpty ||
+           effortList.count != repetitionsList.count || repetitionsList.count != restList.count {
+            inputFormatAlertMessage = "Effort, repetitions, and rest should be non-empty lists of the same length."
+            showInputFormatAlert = true
+            return
+        }
+
         let newLog = ExerciseLog(context: viewContext)
         newLog.id = UUID()
         newLog.timestamp = Date()
