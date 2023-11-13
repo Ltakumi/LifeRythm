@@ -50,10 +50,10 @@ struct LocationView: View {
                     ForEach(sets, id: \.self) { set in
                         NavigationLink(destination: SetView(set: set)) {
                             HStack() {
-                                Text(DateUtils.formatSetDate(set.period_start))
+                                Text(DateUtils.formatDate(set.period_start))
                                     .font(.subheadline)
                                     .foregroundColor(.gray)
-                                Text(DateUtils.formatSetDate(set.period_end))
+                                Text(DateUtils.formatDate(set.period_end))
                                     .font(.subheadline)
                                     .foregroundColor(.gray)
                             }

@@ -18,6 +18,7 @@ extension Set {
 
     @NSManaged public var additional: String?
     @NSManaged public var id: UUID?
+    @NSManaged public var name: String?
     @NSManaged public var period_end: Date?
     @NSManaged public var period_start: Date?
     @NSManaged public var inLocation: Location?
@@ -25,7 +26,7 @@ extension Set {
     @NSManaged public var containsSession: NSSet?
     
     func displayName() -> String {
-        return "Set \(self.id?.uuidString ?? "")"
+        return self.name ?? "Unnamed set"
     }
 
 }

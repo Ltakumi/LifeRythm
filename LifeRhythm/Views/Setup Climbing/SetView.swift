@@ -30,8 +30,8 @@ struct SetView: View {
             Section{
                 // Display Set information
                 if set.inLocation?.locationType == "Gym" {
-                    Text(DateUtils.formatSetDate(set.period_start))
-                    Text(DateUtils.formatSetDate(set.period_end))
+                    Text(DateUtils.formatDate(set.period_start))
+                    Text(DateUtils.formatDate(set.period_end))
                 }
                 
                 Text(set.additional ?? "No additional info")

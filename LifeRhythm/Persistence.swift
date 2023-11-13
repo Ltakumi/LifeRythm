@@ -8,7 +8,7 @@ struct PersistenceController {
         let viewContext = result.container.viewContext
         
         // Generate Locations
-        for i in 1...3 {
+        for i in 1...2 {
             let location = Location(context: viewContext)
             location.id = UUID()
             location.name = "Location \(i)"
@@ -19,6 +19,7 @@ struct PersistenceController {
             for j in 1...2 {
                 let set = Set(context: viewContext)
                 set.id = UUID()
+                set.name = "Set name \(j) for Location \(i)"
                 set.period_start = Date()
                 set.period_end = Calendar.current.date(byAdding: .month, value: 1, to: set.period_start!)
                 set.additional = "Additional Info \(j) for Location \(i)"
@@ -38,9 +39,10 @@ struct PersistenceController {
                 for l in 1...2 {
                     let session = Session(context: viewContext)
                     session.id = UUID()
-                    session.start = Date()
+                    session.start = Calendar.current.date(byAdding: .day, value: -i - j - l, to: Date())
                     session.end = Calendar.current.date(byAdding: .hour, value: 3, to: session.start!)
                     session.additional = "Additional Info \(l) for Set \(j)"
+                    session.type = "climbing"
                     set.addToContainsSession(session)
 
                     // Generate Attempts for each Session
@@ -67,6 +69,34 @@ struct PersistenceController {
                 exercise.name = "\(type.capitalized) Exercise \(i)"
                 exercise.type = type
                 exercise.detail = "Details for \(type.capitalized) Exercise \(i)"
+            }
+        }
+        
+        // Generate Workout Sessions
+        for i in 1...2 {
+            let session = Session(context: viewContext)
+            session.id = UUID()
+            session.start = Calendar.current.date(byAdding: .day, value: -i, to: Date())
+            session.end = Calendar.current.date(byAdding: .hour, value: 2, to: session.start!)
+            session.additional = "Workout Session Additional Info \(i)"
+            session.type = "workout"
+
+            // Generate ExerciseLogs for each Workout Session
+            for j in 1...3 {
+                let exerciseLog = ExerciseLog(context: viewContext)
+                exerciseLog.timestamp = Calendar.current.date(byAdding: .minute, value: j * 10, to: session.start!)
+
+                // Randomly associate an exerciseLog with an exercise
+                let exerciseRequest: NSFetchRequest<Exercise> = Exercise.fetchRequest()
+                if let exercises = try? viewContext.fetch(exerciseRequest), !exercises.isEmpty {
+                    exerciseLog.exercise = exercises.randomElement()
+                }
+
+                exerciseLog.effort = "Effort \(j)"
+                exerciseLog.rep = "Rep \(j)"
+                exerciseLog.rest = "Rest \(j)"
+                exerciseLog.additional = "Additional Info for ExerciseLog \(j)"
+                exerciseLog.inSession = session
             }
         }
         

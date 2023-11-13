@@ -1,15 +1,11 @@
-//
-//  AddClimbSessionView.swift
-//  LifeRhythm
-//
-//  Created by Louis Takumi on 2023/11/12.
-//
-
 import SwiftUI
 
 struct AddSessionView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
+    
+    @State private var selectedSessionType: String = "climbing"
 
     @FetchRequest(
         entity: Location.entity(),
@@ -28,15 +24,23 @@ struct AddSessionView: View {
         NavigationView {
             Form {
                 Section {
-                    Picker("Location", selection: $selectedLocationIndex) {
-                        ForEach(0 ..< locations.count, id: \.self) {
-                            Text(self.locations[$0].name ?? "Unknown Location")
-                        }
+                    Picker("Session Type", selection: $selectedSessionType) {
+                        Text("Climbing").tag("climbing")
+                        Text("Workout").tag("workout")
                     }
+                    .pickerStyle(SegmentedPickerStyle())
 
-                    Picker("Set", selection: $selectedSetIndex) {
-                        ForEach(0 ..< sets.count, id: \.self) {
-                            Text(self.sets[$0].displayName())
+                    if selectedSessionType == "climbing" {
+                        Picker("Location", selection: $selectedLocationIndex) {
+                            ForEach(0 ..< locations.count, id: \.self) {
+                                Text(self.locations[$0].name ?? "Unknown Location")
+                            }
+                        }
+
+                        Picker("Set", selection: $selectedSetIndex) {
+                            ForEach(0 ..< sets.count, id: \.self) {
+                                Text(self.sets[$0].displayName())
+                            }
                         }
                     }
                 }
@@ -60,9 +64,11 @@ struct AddSessionView: View {
     private func addSession() {
         let newSession = Session(context: viewContext)
         newSession.id = UUID()
-        newSession.start = Date() // Set the start date as current date, or use a DatePicker to let user choose
-        newSession.end = Calendar.current.date(byAdding: .hour, value: 1, to: newSession.start!) // Example end date
-        newSession.inSet = sets[selectedSetIndex]
+        newSession.type = selectedSessionType
+        newSession.start = Date()
+        if selectedSessionType == "climbing" {
+                newSession.inSet = sets[selectedSetIndex]
+            }
 
         do {
             try viewContext.save()

@@ -15,19 +15,19 @@ struct ExerciseView: View {
     }
 }
 
-struct ExerciseView_Previews: PreviewProvider {
-    static var previews: some View {
-        // Create a mock managed object context
-        let context = PersistenceController.preview.container.viewContext
-        
-        // Create a mock Exercise entity
-        let exercise = Exercise(context: context)
-        exercise.name = "Mock Name"
-        exercise.type = "Cardio"
-        exercise.detail = "This is for additional stuff"
-
-        // Return the ExerciseView with the mock exercise
-        return ExerciseView(exercise: exercise)
-            .environment(\.managedObjectContext, context)
-    }
-}
+//struct ExerciseView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        // Create a mock managed object context
+//        let context = PersistenceController.preview.container.viewContext
+//        
+//        // Create a mock Exercise entity
+//        let exercise = Exercise(context: context)
+//        exercise.name = "Mock Name"
+//        exercise.type = "Cardio"
+//        exercise.detail = "This is for additional stuff"
+//
+//        // Return the ExerciseView with the mock exercise
+//        return ExerciseView(exercise: exercise)
+//            .environment(\.managedObjectContext, context)
+//    }
+//}

@@ -22,6 +22,13 @@ extension Session {
     @NSManaged public var start: Date?
     @NSManaged public var containsAttempt: NSSet?
     @NSManaged public var inSet: Set?
+    @NSManaged public var type: String?
+    
+    func sessionInfo() -> String {
+        let gymName = self.inSet?.inLocation?.name ?? "Workout"
+        let formattedDate = DateUtils.formatDate(self.start)
+        return "\(formattedDate) - \(gymName)"
+    }
 
 }
 
@@ -39,12 +46,6 @@ extension Session {
 
     @objc(removeContainsAttempt:)
     @NSManaged public func removeFromContainsAttempt(_ values: NSSet)
-    
-    func sessionInfo() -> String {
-        let gymName = self.inSet?.inLocation?.name ?? "Unknown Gym"
-        let formattedDate = DateUtils.formatSetDate(self.start)
-        return "\(gymName) - \(formattedDate)"
-    }
 
 }
 

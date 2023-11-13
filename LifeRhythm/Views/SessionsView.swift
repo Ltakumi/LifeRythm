@@ -11,7 +11,7 @@ struct SessionsView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Session.start, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Session.start, ascending: false)],
         animation: .default)
     private var sessions: FetchedResults<Session>
 
@@ -20,8 +20,8 @@ struct SessionsView: View {
     var body: some View {
         NavigationView {
             List(sessions, id: \.self) { session in
-                NavigationLink(destination: ClimbSessionView(session: session)) {
-                    Text(session.sessionInfo()) // Display formatted session info
+                NavigationLink(destination: SessionView(session: session)) {
+                    Text(session.sessionInfo())
                 }
             }
             .navigationTitle("Sessions")
