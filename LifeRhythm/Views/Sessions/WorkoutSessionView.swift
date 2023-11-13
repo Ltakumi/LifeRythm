@@ -81,9 +81,12 @@ struct WorkoutSessionView: View {
             }
             
             // bottom Section
-            Section(header: Text("Previous Exercices")) {
-                List(exerciselogs, id: \.self) { exerciselog in
-                    Text(exerciselog.formatExercise())
+            Section(header: Text("Previous Exercises")) {
+                List {
+                    ForEach(exerciselogs, id: \.self) { exerciselog in
+                        Text(exerciselog.formatExercise())
+                    }
+                    .onDelete(perform: deleteExerciceLog)
                 }
             }
         }
@@ -120,6 +123,19 @@ struct WorkoutSessionView: View {
             try viewContext.save()
         } catch {
             print("Error saving exercise log: \(error)")
+        }
+    }
+    
+    private func deleteExerciceLog(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let exerciceLog = exerciselogs[index]
+            viewContext.delete(exerciceLog)
+        }
+
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error deleting exercise log: \(error)")
         }
     }
     

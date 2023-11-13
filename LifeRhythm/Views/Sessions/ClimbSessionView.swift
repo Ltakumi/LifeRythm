@@ -102,10 +102,13 @@ struct ClimbSessionView: View {
 
             // Bottom Section
             Section(header: Text("Previous Attempts")) {
-                List(attempts, id: \.self) { attempt in
-                    Text(attempt.formatAttempt())
-                        .foregroundColor(attempt.outcomeColor)
-                }
+                List {
+                        ForEach(attempts, id: \.self) { attempt in
+                            Text(attempt.formatAttempt())
+                                .foregroundColor(attempt.outcomeColor)
+                        }
+                        .onDelete(perform: deleteAttempt)
+                    }
             }
         }
         .onAppear {
@@ -127,6 +130,19 @@ struct ClimbSessionView: View {
             try viewContext.save()
         } catch {
             print("Error saving attempt: \(error)")
+        }
+    }
+    
+    private func deleteAttempt(at offsets: IndexSet) {
+        for index in offsets {
+            let attempt = attempts[index]
+            viewContext.delete(attempt)
+        }
+
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error deleting attempt: \(error)")
         }
     }
     
