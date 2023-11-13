@@ -66,7 +66,7 @@ struct PersistenceController {
         for type in exerciseTypes {
             for i in 1...2 {
                 let exercise = Exercise(context: viewContext)
-                exercise.name = "\(type.capitalized) Exercise \(i)"
+                exercise.id = "\(type.capitalized) Exercise \(i)"
                 exercise.type = type
                 exercise.detail = "Details for \(type.capitalized) Exercise \(i)"
             }
@@ -89,7 +89,7 @@ struct PersistenceController {
                 // Randomly associate an exerciseLog with an exercise
                 let exerciseRequest: NSFetchRequest<Exercise> = Exercise.fetchRequest()
                 if let exercises = try? viewContext.fetch(exerciseRequest), !exercises.isEmpty {
-                    exerciseLog.exercise = exercises.randomElement()
+                    exerciseLog.idExercise = exercises.randomElement()
                 }
 
                 exerciseLog.effort = "Effort \(j)"

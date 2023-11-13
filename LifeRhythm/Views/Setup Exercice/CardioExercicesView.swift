@@ -6,7 +6,7 @@ struct CardioExercisesView: View {
 
     @FetchRequest(
         entity: Exercise.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Exercise.name, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Exercise.id, ascending: true)],
         predicate: NSPredicate(format: "type == %@", "cardio")
     ) var cardioExercises: FetchedResults<Exercise>
 
@@ -16,7 +16,7 @@ struct CardioExercisesView: View {
         List {
             ForEach(cardioExercises, id: \.self) { exercise in
                 NavigationLink(destination: ExerciseView(exercise: exercise)) {
-                    Text(exercise.name ?? "Unknown Exercise")
+                    Text(exercise.id ?? "Unknown Exercise")
                 }
             }
         }

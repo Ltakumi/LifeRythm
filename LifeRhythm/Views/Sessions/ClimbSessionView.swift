@@ -2,16 +2,18 @@ import SwiftUI
 import CoreData
 
 struct ClimbSessionView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var session: Session
 
     @State private var additional: String = ""
-    @State private var selectedClimbID: String = ""
-    @State private var climbs: [Climb] = []
     @State private var start_time: Date?
     @State private var end_time: Date?
     @State private var showAlert = false
     @State private var alertMessage = ""
+    
+    @State private var selectedClimbID: String = ""
+    @State private var climbs: [Climb] = []
     
     // Add FetchRequest for Attempts
     @FetchRequest var attempts: FetchedResults<Attempt>

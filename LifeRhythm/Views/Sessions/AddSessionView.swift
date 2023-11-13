@@ -5,7 +5,7 @@ struct AddSessionView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var selectedSessionType: String = "climbing"
+    @State private var selectedSessionType: String = "workout"
 
     @FetchRequest(
         entity: Location.entity(),

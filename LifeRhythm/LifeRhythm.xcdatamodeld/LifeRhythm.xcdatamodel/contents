@@ -17,9 +17,9 @@
     </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES">
         <attribute name="detail" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
-        <relationship name="instances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseLog" inverseName="exercise" inverseEntity="ExerciseLog"/>
+        <relationship name="instances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseLog" inverseName="idExercise" inverseEntity="ExerciseLog"/>
     </entity>
     <entity name="ExerciseLog" representedClassName="ExerciseLog" syncable="YES">
         <attribute name="additional" optional="YES" attributeType="String"/>
@@ -28,7 +28,7 @@
         <attribute name="rep" optional="YES" attributeType="String"/>
         <attribute name="rest" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="instances" inverseEntity="Exercise"/>
+        <relationship name="idExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="instances" inverseEntity="Exercise"/>
         <relationship name="inSession" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="containsExerciceLog" inverseEntity="Session"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
@@ -47,7 +47,7 @@
         <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="containsAttempt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attempt" inverseName="inSession" inverseEntity="Attempt"/>
-        <relationship name="containsExerciceLog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseLog" inverseName="inSession" inverseEntity="ExerciseLog"/>
+        <relationship name="containsExerciceLog" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseLog" inverseName="inSession" inverseEntity="ExerciseLog"/>
         <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="containsSession" inverseEntity="Set"/>
     </entity>
     <entity name="Set" representedClassName="Set" syncable="YES">
