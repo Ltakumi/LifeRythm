@@ -12,7 +12,7 @@ struct PersistenceController {
             let location = Location(context: viewContext)
             location.id = UUID()
             location.name = "Location \(i)"
-            location.city = "City \(i)"
+            location.address = "City \(i)"
             location.locationType = "Type \(i)"
             
             // Generate Sets for each Location
@@ -28,10 +28,11 @@ struct PersistenceController {
                 // Generate Climbs for each Set
                 for k in 1...5 {
                     let climb = Climb(context: viewContext)
-                    climb.id = "Climb \(k)"
+                    climb.name = "Climb \(k)"
                     climb.grade = "Grade \(k)"
                     climb.tags = "Tags \(k)"
                     climb.type = "Boulder"
+                    climb.id = UUID()
                     set.addToContainsClimb(climb)
                 }
 
@@ -66,7 +67,8 @@ struct PersistenceController {
         for type in exerciseTypes {
             for i in 1...2 {
                 let exercise = Exercise(context: viewContext)
-                exercise.id = "\(type.capitalized) Exercise \(i)"
+                exercise.id = UUID()
+                exercise.name = "\(type.capitalized) Exercise \(i)"
                 exercise.type = type
                 exercise.detail = "Details for \(type.capitalized) Exercise \(i)"
             }

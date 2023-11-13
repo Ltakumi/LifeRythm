@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct NutritionView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+
     var body: some View {
-        Text("To build : Nutrition View")
+        ExportView()
     }
 }
 

@@ -37,7 +37,7 @@ struct LocationView: View {
                     }
 
                     HStack {
-                        Text(location.city ?? "Missing city")
+                        Text(location.address ?? "Missing city")
                     }
 
                     HStack {
@@ -82,7 +82,7 @@ struct LocationView_Previews: PreviewProvider {
         // Initialize the Location entity using the mock context
         let location = Location(context: context)
         location.name = "Noborock"
-        location.city = "Shibuya"
+        location.address = "Shibuya"
         location.locationType = "Gym"
         location.additional = "Additional description"
         

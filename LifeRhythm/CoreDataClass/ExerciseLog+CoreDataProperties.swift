@@ -27,7 +27,7 @@ extension ExerciseLog {
     
     func formatExercise() -> String {
         let formattedTime = DateUtils.formatTime(timestamp)
-        let exerciseName = idExercise?.id ?? "Unknown Exercise"
+        let exerciseName = idExercise?.name ?? "Unknown Exercise"
         return "\(formattedTime) - \(exerciseName)"
     }
 

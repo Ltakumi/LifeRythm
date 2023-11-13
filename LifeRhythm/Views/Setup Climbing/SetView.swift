@@ -40,7 +40,7 @@ struct SetView: View {
             Section(header: Text("Climbs")) {
                 ForEach(climbs, id: \.self) { climb in
                     NavigationLink(destination: ClimbView(climb: climb)) {
-                        Text(climb.id ?? "Unknown Climb")
+                        Text(climb.name ?? "Unknown Climb")
                     }
                 }
             }
@@ -78,7 +78,7 @@ struct SetView_Previews: PreviewProvider {
         location.addToContainsSet(set)
         
         let climb = Climb(context: context)
-        climb.id = "yellow lion"
+        climb.name = "yellow lion"
         climb.grade = "1 kyu"
         climb.inSet = set
         

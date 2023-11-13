@@ -66,7 +66,7 @@ struct WorkoutSessionView: View {
             Section(header: Text("Record Exercise")) {
                 Picker("Select Exercise", selection: $selectedExerciseID) {
                     ForEach(exercises, id: \.id) { exercise in
-                        Text(exercise.id ?? "Unknown").tag(exercise.id ?? "")
+                        Text(exercise.name ?? "Unknown").tag(exercise.name ?? "")
                     }
                 }
                 TextField("Effort", text: $effort)
@@ -117,7 +117,7 @@ struct WorkoutSessionView: View {
         newLog.rep = repetitions
         newLog.rest = rest
         newLog.inSession = session
-        newLog.idExercise = exercises.first {$0.id == selectedExerciseID}
+        newLog.idExercise = exercises.first {$0.name == selectedExerciseID}
         
         do {
             try viewContext.save()

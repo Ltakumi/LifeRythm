@@ -7,7 +7,7 @@ struct AddClimbView: View {
     let set: Set
 
     @State private var grade: String = ""
-    @State private var id: String = ""
+    @State private var name: String = ""
     @State private var tags: String = ""
     @State private var showAlert = false
     @State private var alertMessage = ""
@@ -28,7 +28,7 @@ struct AddClimbView: View {
                         }
                     }
 
-                    TextField("ID", text: $id)
+                    TextField("ID", text: $name)
                     TextField("Tags (separated by commas)", text: $tags)
                 }
 
@@ -52,11 +52,11 @@ struct AddClimbView: View {
     }
 
     private func validateFields() -> Bool {
-        if grade.isEmpty || id.isEmpty || tags.isEmpty {
+        if grade.isEmpty || name.isEmpty || tags.isEmpty {
             alertMessage = "All fields must be filled in."
             return false
         }
-        if climbWithIDExists(id) {
+        if climbWithIDExists(name) {
             alertMessage = "A boulder with this ID already exists."
             return false
         }
@@ -65,7 +65,7 @@ struct AddClimbView: View {
 
     private func climbWithIDExists(_ id: String) -> Bool {
         let request = Climb.fetchRequest()
-        request.predicate = NSPredicate(format: "id == %@", id)
+        request.predicate = NSPredicate(format: "name == %@", id)
         let results = (try? viewContext.fetch(request)) ?? []
         return !results.isEmpty
     }
@@ -73,7 +73,7 @@ struct AddClimbView: View {
     private func addClimb() {
         let newClimb = Climb(context: viewContext)
         newClimb.grade = grade
-        newClimb.id = id
+        newClimb.name = name
         newClimb.tags = tags
         newClimb.inSet = set
 

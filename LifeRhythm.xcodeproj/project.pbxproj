@@ -14,7 +14,7 @@
 		373AB1072B00C1560006114B /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1052B00C1560006114B /* Session+CoreDataProperties.swift */; };
 		373AB1092B00C5370006114B /* AddSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1082B00C5370006114B /* AddSessionView.swift */; };
 		373AB10B2B00C7F40006114B /* ClimbSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB10A2B00C7F40006114B /* ClimbSessionView.swift */; };
-		373AB10D2B00D6EB0006114B /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB10C2B00D6EB0006114B /* utils.swift */; };
+		373AB10D2B00D6EB0006114B /* Dateutils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB10C2B00D6EB0006114B /* Dateutils.swift */; };
 		373AB1102B0121B80006114B /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB10F2B0121B80006114B /* NutritionView.swift */; };
 		373AB1122B0121E20006114B /* DailiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1112B0121E20006114B /* DailiesView.swift */; };
 		373AB1142B0122220006114B /* ExercicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1132B0122220006114B /* ExercicesView.swift */; };
@@ -38,6 +38,8 @@
 		374688342AFCC4E300E06029 /* LifeRhythmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374688332AFCC4E300E06029 /* LifeRhythmTests.swift */; };
 		3746883E2AFCC4E300E06029 /* LifeRhythmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746883D2AFCC4E300E06029 /* LifeRhythmUITests.swift */; };
 		374688402AFCC4E300E06029 /* LifeRhythmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746883F2AFCC4E300E06029 /* LifeRhythmUITestsLaunchTests.swift */; };
+		37E043F82B02783B003D59C6 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E043F72B02783B003D59C6 /* ExportView.swift */; };
+		37E043FA2B027BA3003D59C6 /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E043F92B027BA3003D59C6 /* JsonUtils.swift */; };
 		37F919EC2AFF15F50031505E /* AddLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F919EB2AFF15F50031505E /* AddLocationView.swift */; };
 		37F919F42B0087230031505E /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F919F32B0087230031505E /* SetView.swift */; };
 		37F919F62B00894F0031505E /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F919F52B00894F0031505E /* AddSetView.swift */; };
@@ -78,7 +80,7 @@
 		373AB1052B00C1560006114B /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		373AB1082B00C5370006114B /* AddSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSessionView.swift; sourceTree = "<group>"; };
 		373AB10A2B00C7F40006114B /* ClimbSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbSessionView.swift; sourceTree = "<group>"; };
-		373AB10C2B00D6EB0006114B /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		373AB10C2B00D6EB0006114B /* Dateutils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dateutils.swift; sourceTree = "<group>"; };
 		373AB10F2B0121B80006114B /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
 		373AB1112B0121E20006114B /* DailiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailiesView.swift; sourceTree = "<group>"; };
 		373AB1132B0122220006114B /* ExercicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercicesView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,9 @@
 		374688392AFCC4E300E06029 /* LifeRhythmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeRhythmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3746883D2AFCC4E300E06029 /* LifeRhythmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeRhythmUITests.swift; sourceTree = "<group>"; };
 		3746883F2AFCC4E300E06029 /* LifeRhythmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeRhythmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		37E043F72B02783B003D59C6 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
+		37E043F92B027BA3003D59C6 /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
+		37E043FB2B028506003D59C6 /* LifeRhythm2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeRhythm2.xcdatamodel; sourceTree = "<group>"; };
 		37F919EB2AFF15F50031505E /* AddLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationView.swift; sourceTree = "<group>"; };
 		37F919F32B0087230031505E /* SetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView.swift; sourceTree = "<group>"; };
 		37F919F52B00894F0031505E /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
@@ -207,6 +212,7 @@
 		3746881A2AFCC4E000E06029 /* LifeRhythm */ = {
 			isa = PBXGroup;
 			children = (
+				37E043F42B02129D003D59C6 /* utils */,
 				37F9A2E22AFE86E1002775CE /* Views */,
 				37F9A2CD2AFE7A23002775CE /* CoreDataClass */,
 				3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */,
@@ -217,7 +223,6 @@
 				3746882A2AFCC4E200E06029 /* Info.plist */,
 				374688262AFCC4E200E06029 /* LifeRhythm.xcdatamodeld */,
 				374688212AFCC4E200E06029 /* Preview Content */,
-				373AB10C2B00D6EB0006114B /* utils.swift */,
 			);
 			path = LifeRhythm;
 			sourceTree = "<group>";
@@ -245,6 +250,16 @@
 				3746883F2AFCC4E300E06029 /* LifeRhythmUITestsLaunchTests.swift */,
 			);
 			path = LifeRhythmUITests;
+			sourceTree = "<group>";
+		};
+		37E043F42B02129D003D59C6 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				373AB10C2B00D6EB0006114B /* Dateutils.swift */,
+				37E043F72B02783B003D59C6 /* ExportView.swift */,
+				37E043F92B027BA3003D59C6 /* JsonUtils.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		37F9A2CD2AFE7A23002775CE /* CoreDataClass */ = {
@@ -424,11 +439,12 @@
 				37F919F92B008FD40031505E /* Location+CoreDataClass.swift in Sources */,
 				37F9A2E12AFE7AE8002775CE /* Climb+CoreDataProperties.swift in Sources */,
 				373AB0FF2B009AE50006114B /* AddBoulderView.swift in Sources */,
-				373AB10D2B00D6EB0006114B /* utils.swift in Sources */,
+				373AB10D2B00D6EB0006114B /* Dateutils.swift in Sources */,
 				373AB1142B0122220006114B /* ExercicesView.swift in Sources */,
 				37F9A2E42AFE8723002775CE /* LocationsView.swift in Sources */,
 				373AB1072B00C1560006114B /* Session+CoreDataProperties.swift in Sources */,
 				373AB12C2B0131770006114B /* ExerciseLog+CoreDataClass.swift in Sources */,
+				37E043F82B02783B003D59C6 /* ExportView.swift in Sources */,
 				37F9A2DA2AFE7AE8002775CE /* Set+CoreDataClass.swift in Sources */,
 				373AB12D2B0131770006114B /* ExerciseLog+CoreDataProperties.swift in Sources */,
 				37F9A2DF2AFE7AE8002775CE /* Attempt+CoreDataProperties.swift in Sources */,
@@ -443,6 +459,7 @@
 				373AB1182B0126160006114B /* LiftingExercicesView.swift in Sources */,
 				374688282AFCC4E200E06029 /* LifeRhythm.xcdatamodeld in Sources */,
 				37FCB56A2AFF112500A286CC /* LocationView.swift in Sources */,
+				37E043FA2B027BA3003D59C6 /* JsonUtils.swift in Sources */,
 				373AB12F2B0131770006114B /* Exercise+CoreDataProperties.swift in Sources */,
 				373AB11C2B0127E40006114B /* AddExerciceView.swift in Sources */,
 				373AB1342B013C4A0006114B /* WorkoutSessionView.swift in Sources */,
@@ -791,6 +808,7 @@
 		374688262AFCC4E200E06029 /* LifeRhythm.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				37E043FB2B028506003D59C6 /* LifeRhythm2.xcdatamodel */,
 				374688272AFCC4E200E06029 /* LifeRhythm.xcdatamodel */,
 			);
 			currentVersion = 374688272AFCC4E200E06029 /* LifeRhythm.xcdatamodel */;

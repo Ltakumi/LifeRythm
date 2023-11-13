@@ -6,7 +6,7 @@ struct AddLocationView: View {
     
     @State private var climbType: String = "Boulder"
     @State private var locationType: String = "Gym"
-    @State private var cityName: String = ""
+    @State private var address: String = ""
     @State private var locationName: String = ""
     @State private var additional: String = ""
     @State private var showingAlert = false
@@ -27,13 +27,13 @@ struct AddLocationView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
 
-                    TextField("City", text: $cityName)
+                    TextField("address", text: $address)
                     TextField("Name", text: $locationName)
                     TextField("Additional", text:$additional)
                 }
 
                 Button("Add") {
-                    if cityName.isEmpty || locationName.isEmpty {
+                    if address.isEmpty || locationName.isEmpty {
                         showingAlert = true
                     } else {
                         addLocation()
@@ -56,7 +56,7 @@ struct AddLocationView: View {
         newLocation.id = UUID()
         newLocation.locationType = locationType
         newLocation.climbType = climbType
-        newLocation.city = cityName
+        newLocation.address = address
         newLocation.name = locationName
         newLocation.additional = additional
 

@@ -61,7 +61,7 @@ struct ClimbSessionView: View {
                 Picker("Select Climb", selection: $selectedClimbID) {
                     Text("None").tag(UUID?.none)
                     ForEach(climbs, id: \.id) { climb in
-                        Text(climb.id ?? "Unknown ID").tag(climb.id ?? "")
+                        Text(climb.name ?? "Unknown ID").tag(climb.name ?? "")
                     }
                 }
                 
@@ -124,7 +124,7 @@ struct ClimbSessionView: View {
         newAttempt.timestamp = Date()
         newAttempt.outcome = outcome
         newAttempt.inSession = session
-        newAttempt.idClimb = climbs.first {$0.id == selectedClimbID}
+        newAttempt.idClimb = climbs.first {$0.name == selectedClimbID}
 
         do {
             try viewContext.save()

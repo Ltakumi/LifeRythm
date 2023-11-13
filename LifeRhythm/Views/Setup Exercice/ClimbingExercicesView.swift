@@ -16,7 +16,7 @@ struct ClimbingExercisesView: View {
         List {
             ForEach(climbingExercises, id: \.self) { exercise in
                 NavigationLink(destination: ExerciseView(exercise: exercise)) {
-                    Text(exercise.id ?? "Unknown Exercise")
+                    Text(exercise.name ?? "Unknown Exercise")
                 }
             }
         }

@@ -21,7 +21,7 @@ struct ClimbView: View {
                 HStack {
                     Text("ID:")
                     Spacer()
-                    Text(climb.id ?? "Unknown")
+                    Text(climb.name ?? "Unknown")
                 }
                 HStack {
                     Text("Tags:")
@@ -53,7 +53,7 @@ struct ClimbView_Previews: PreviewProvider {
         location.addToContainsSet(set)
         
         let climb = Climb(context: context)
-        climb.id = "yellow lion"
+        climb.name = "yellow lion"
         climb.grade = "1 kyu"
         climb.inSet = set
         
