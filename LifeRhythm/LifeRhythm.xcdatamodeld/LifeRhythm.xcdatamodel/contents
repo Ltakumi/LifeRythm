@@ -17,6 +17,16 @@
         <relationship name="attempts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attempt" inverseName="idClimb" inverseEntity="Attempt"/>
         <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="containsClimb" inverseEntity="Set"/>
     </entity>
+    <entity name="DailyIntake" representedClassName="DailyIntake" syncable="YES">
+        <attribute name="additional" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="exerciseLevel" optional="YES" attributeType="String"/>
+        <attribute name="targetCalories" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="targetCarbs" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="targetFats" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="targetProteins" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="containsMeal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meal" inverseName="inDay" inverseEntity="Meal"/>
+    </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES">
         <attribute name="detail" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -34,6 +44,16 @@
         <relationship name="idExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="instances" inverseEntity="Exercise"/>
         <relationship name="inSession" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="containsExerciceLog" inverseEntity="Session"/>
     </entity>
+    <entity name="Ingredients" representedClassName="Ingredients" syncable="YES">
+        <attribute name="additional" optional="YES" attributeType="String"/>
+        <attribute name="calories" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="carbs" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="fats" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="proteins" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String"/>
+        <relationship name="inMeal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meal" inverseName="containsIngredients" inverseEntity="Meal"/>
+    </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="additional" optional="YES" attributeType="String"/>
         <attribute name="address" optional="YES" attributeType="String"/>
@@ -42,6 +62,20 @@
         <attribute name="locationType" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="containsSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Set" inverseName="inLocation" inverseEntity="Set"/>
+    </entity>
+    <entity name="Meal" representedClassName="Meal" syncable="YES">
+        <attribute name="additional" optional="YES" attributeType="String"/>
+        <attribute name="calories" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="carbs" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="cheatMeal" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="cookingType" optional="YES" attributeType="String"/>
+        <attribute name="fats" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="ingredientunits" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="proteins" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="containsIngredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredients" inverseName="inMeal" inverseEntity="Ingredients"/>
+        <relationship name="inDay" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DailyIntake" inverseName="containsMeal" inverseEntity="DailyIntake"/>
     </entity>
     <entity name="Session" representedClassName="Session" syncable="YES">
         <attribute name="additional" optional="YES" attributeType="String"/>

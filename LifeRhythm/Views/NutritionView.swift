@@ -1,20 +1,27 @@
-//
-//  NutritionView.swift
-//  LifeRhythm
-//
-//  Created by Louis Takumi on 2023/11/13.
-//
-
 import SwiftUI
 
 struct NutritionView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
-        Text("Nutrition")
+        NavigationView {
+            List {
+                NavigationLink(destination: IngredientSetupView()) {
+                    Text("Ingredient Setup")
+                }
+
+                NavigationLink(destination: IntakeLoggingView()) {
+                    Text("Intake Logging")
+                }
+            }
+            .navigationTitle("Nutrition")
+        }
     }
 }
 
-#Preview {
-    NutritionView()
+// Preview
+struct NutritionView_Previews: PreviewProvider {
+    static var previews: some View {
+        NutritionView()
+    }
 }
