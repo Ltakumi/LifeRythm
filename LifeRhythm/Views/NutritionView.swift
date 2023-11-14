@@ -11,7 +11,7 @@ struct NutritionView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
-        ExportView()
+        Text("Nutrition")
     }
 }
 

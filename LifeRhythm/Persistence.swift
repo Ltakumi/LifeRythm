@@ -13,7 +13,8 @@ struct PersistenceController {
             location.id = UUID()
             location.name = "Location \(i)"
             location.address = "City \(i)"
-            location.locationType = "Type \(i)"
+            location.locationType = "Gym"
+            location.climbType = "Boulder"
             
             // Generate Sets for each Location
             for j in 1...2 {
@@ -52,6 +53,7 @@ struct PersistenceController {
                         attempt.id = UUID()
                         attempt.outcome = Bool.random() ? "Success" : "Fail"
                         attempt.timestamp = Calendar.current.date(byAdding: .minute, value: m * 5, to: session.start!)!
+                        
                         // Randomly associate an attempt with a climb from the set
                         if let climbs = set.containsClimb?.allObjects as? [Climb], !climbs.isEmpty {
                             attempt.idClimb = climbs.randomElement()!

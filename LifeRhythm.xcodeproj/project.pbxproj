@@ -258,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				373AB10C2B00D6EB0006114B /* Dateutils.swift */,
-				37E043F72B02783B003D59C6 /* ExportView.swift */,
 				37E043F92B027BA3003D59C6 /* JsonUtils.swift */,
 				37E043FC2B028B6E003D59C6 /* exporter.swift */,
 			);
@@ -294,6 +293,7 @@
 				373AB10E2B0120F50006114B /* Setup Climbing */,
 				373AB1022B00A5600006114B /* SessionsView.swift */,
 				373AB10F2B0121B80006114B /* NutritionView.swift */,
+				37E043F72B02783B003D59C6 /* ExportView.swift */,
 				373AB1112B0121E20006114B /* DailiesView.swift */,
 				373AB1132B0122220006114B /* ExercicesView.swift */,
 			);

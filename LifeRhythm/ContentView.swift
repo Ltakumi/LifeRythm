@@ -38,6 +38,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("Dailies", systemImage: "calendar")
                 }
+            
+            ExportView()
+                .tabItem {
+                    Label("Data", systemImage:"chart.bar")
+                }
         }
     }
 }
