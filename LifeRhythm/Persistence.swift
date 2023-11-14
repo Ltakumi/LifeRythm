@@ -104,6 +104,56 @@ struct PersistenceController {
             }
         }
         
+        // Generate Ingredients
+        let ingredientNames = ["Apple", "Banana", "Chicken Breast"]
+        for (index, name) in ingredientNames.enumerated() {
+            let ingredient = Ingredients(context: viewContext)
+            ingredient.name = name
+            ingredient.calories = Double(index * 10) // Mock value
+            ingredient.carbs = Double(index * 2) // Mock value
+            ingredient.fats = Double(index * 3) // Mock value
+            ingredient.proteins = Double(index * 4) // Mock value
+            ingredient.unit = "pieces" // Mock value
+            ingredient.additional = "Additional Info for \(name)"
+        }
+
+        // Generate DailyIntake
+        for i in 1...3 {
+            let dailyIntake = DailyIntake(context: viewContext)
+            dailyIntake.date = Calendar.current.date(byAdding: .day, value: -i, to: Date())
+            dailyIntake.exerciseLevel = "Moderate"
+            dailyIntake.targetCalories = Double(i * 2000) // Mock value
+            dailyIntake.targetCarbs = Double(i * 250) // Mock value
+            dailyIntake.targetFats = Double(i * 70) // Mock value
+            dailyIntake.targetProteins = Double(i * 150) // Mock value
+            dailyIntake.additional = "Additional Info for Day \(i)"
+        }
+
+        // Generate Meals
+        let mealNames = ["Breakfast", "Lunch", "Dinner"]
+        for (index, name) in mealNames.enumerated() {
+            let meal = Meal(context: viewContext)
+            meal.name = name
+            meal.calories = Double(index * 500) // Mock value
+            meal.carbs = Double(index * 50) // Mock value
+            meal.fats = Double(index * 20) // Mock value
+            meal.proteins = Double(index * 30) // Mock value
+            meal.timestamp = Calendar.current.date(byAdding: .hour, value: index * 5, to: Date())
+            meal.cheatMeal = index % 2 == 0 // Mock value
+            meal.cookingType = "Grilled" // Mock value
+            meal.additional = "Additional Info for \(name)"
+            // Assuming containsIngredients is a to-many relationship
+            let request: NSFetchRequest<Ingredients> = Ingredients.fetchRequest()
+            if let ingredients = try? viewContext.fetch(request) {
+                meal.containsIngredients = NSSet(array: ingredients)
+            }
+            // Randomly associate a meal with a daily intake
+            let intakeRequest: NSFetchRequest<DailyIntake> = DailyIntake.fetchRequest()
+            if let dailyIntakes = try? viewContext.fetch(intakeRequest), !dailyIntakes.isEmpty {
+                meal.inDay = dailyIntakes.randomElement()
+            }
+        }
+        
         // Save context
         do {
             try viewContext.save()

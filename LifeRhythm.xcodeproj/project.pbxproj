@@ -19,6 +19,8 @@
 		3714964B2B0340B600D845A8 /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714964A2B0340B600D845A8 /* IngredientView.swift */; };
 		3714964D2B03436A00D845A8 /* AddDailyIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714964C2B03436A00D845A8 /* AddDailyIntakeView.swift */; };
 		3714964F2B0343B100D845A8 /* DailyIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714964E2B0343B100D845A8 /* DailyIntakeView.swift */; };
+		371496512B034DF500D845A8 /* AddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371496502B034DF500D845A8 /* AddMealView.swift */; };
+		37175CF22B03EC1900067261 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175CF12B03EC1900067261 /* MealView.swift */; };
 		373AB0FF2B009AE50006114B /* AddBoulderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB0FE2B009AE50006114B /* AddBoulderView.swift */; };
 		373AB1012B009B0A0006114B /* ClimbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1002B009B0A0006114B /* ClimbView.swift */; };
 		373AB1032B00A5600006114B /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1022B00A5600006114B /* SessionsView.swift */; };
@@ -98,6 +100,8 @@
 		3714964A2B0340B600D845A8 /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
 		3714964C2B03436A00D845A8 /* AddDailyIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDailyIntakeView.swift; sourceTree = "<group>"; };
 		3714964E2B0343B100D845A8 /* DailyIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntakeView.swift; sourceTree = "<group>"; };
+		371496502B034DF500D845A8 /* AddMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealView.swift; sourceTree = "<group>"; };
+		37175CF12B03EC1900067261 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		373AB0FE2B009AE50006114B /* AddBoulderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBoulderView.swift; sourceTree = "<group>"; };
 		373AB1002B009B0A0006114B /* ClimbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbView.swift; sourceTree = "<group>"; };
 		373AB1022B00A5600006114B /* SessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsView.swift; sourceTree = "<group>"; };
@@ -182,11 +186,13 @@
 			isa = PBXGroup;
 			children = (
 				371496382B033C2A00D845A8 /* IngredientSetupView.swift */,
-				3714963A2B033C4600D845A8 /* IntakeLoggingView.swift */,
-				3714964E2B0343B100D845A8 /* DailyIntakeView.swift */,
-				3714964C2B03436A00D845A8 /* AddDailyIntakeView.swift */,
 				371496482B033DF300D845A8 /* AddIngredientView.swift */,
 				3714964A2B0340B600D845A8 /* IngredientView.swift */,
+				3714963A2B033C4600D845A8 /* IntakeLoggingView.swift */,
+				3714964C2B03436A00D845A8 /* AddDailyIntakeView.swift */,
+				3714964E2B0343B100D845A8 /* DailyIntakeView.swift */,
+				371496502B034DF500D845A8 /* AddMealView.swift */,
+				37175CF12B03EC1900067261 /* MealView.swift */,
 			);
 			path = Nutrition;
 			sourceTree = "<group>";
@@ -477,7 +483,9 @@
 				37E043FD2B028B6E003D59C6 /* exporter.swift in Sources */,
 				37F919F62B00894F0031505E /* AddSetView.swift in Sources */,
 				37F9A2E02AFE7AE8002775CE /* Climb+CoreDataClass.swift in Sources */,
+				37175CF22B03EC1900067261 /* MealView.swift in Sources */,
 				374688252AFCC4E200E06029 /* Persistence.swift in Sources */,
+				371496512B034DF500D845A8 /* AddMealView.swift in Sources */,
 				3746881E2AFCC4E000E06029 /* ContentView.swift in Sources */,
 				371496492B033DF300D845A8 /* AddIngredientView.swift in Sources */,
 				3746881C2AFCC4E000E06029 /* LifeRhythmApp.swift in Sources */,

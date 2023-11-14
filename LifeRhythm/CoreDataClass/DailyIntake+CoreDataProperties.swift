@@ -32,6 +32,21 @@ extension DailyIntake {
 
 }
 
+extension DailyIntake {
+    static func mock(with context: NSManagedObjectContext) -> DailyIntake {
+        let dailyIntake = DailyIntake(context: context)
+        dailyIntake.date = Date()
+        dailyIntake.exerciseLevel = "Moderate"
+        dailyIntake.targetCalories = 2000
+        dailyIntake.targetCarbs = 250
+        dailyIntake.targetFats = 70
+        dailyIntake.targetProteins = 150
+        dailyIntake.additional = "Sample additional information"
+        // Add more properties if needed
+        return dailyIntake
+    }
+}
+
 extension DailyIntake : Identifiable {
 
 }

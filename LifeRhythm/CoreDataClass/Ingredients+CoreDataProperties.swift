@@ -15,7 +15,8 @@ extension Ingredients {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Ingredients> {
         return NSFetchRequest<Ingredients>(entityName: "Ingredients")
     }
-
+    
+    @NSManaged public var id: UUID?
     @NSManaged public var additional: String?
     @NSManaged public var calories: Double
     @NSManaged public var carbs: Double
@@ -24,7 +25,12 @@ extension Ingredients {
     @NSManaged public var proteins: Double
     @NSManaged public var unit: String?
     @NSManaged public var inMeal: Meal?
-
+    
+    func formatDetails() -> String {
+        let formattedDetails = "Cal: \(calories)g P: \(proteins)g C: \(carbs)g F: \(fats)g Unit: \(unit ?? "N/A")"
+        return formattedDetails
+    }
+    
 }
 
 extension Ingredients : Identifiable {
