@@ -164,6 +164,14 @@ struct PersistenceController {
             task.start_date = Calendar.current.date(byAdding: .day, value: i, to: Date())
         }
         
+        // Generate TaskLogDay objects
+        for i in 1...3 {
+            let taskLogDay = TaskLogDay(context: viewContext)
+            taskLogDay.date = Calendar.current.date(byAdding: .day, value: -i, to: Date())
+            taskLogDay.additional = "Additional Info for Day \(i)"
+            taskLogDay.taskAdditional = "Task Additional Info for Day \(i)"
+        }
+        
         // Save context
         do {
             try viewContext.save()

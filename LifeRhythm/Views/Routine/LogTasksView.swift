@@ -3,33 +3,40 @@ import CoreData
 
 struct LogTasksView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: TaskLogDay.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \TaskLogDay.date, ascending: true)]) private var taskLogDays: FetchedResults<TaskLogDay>
+    
+    @FetchRequest(
+        entity: TaskLogDay.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \TaskLogDay.date, ascending: true)])
+    private var taskLogDays: FetchedResults<TaskLogDay>
+    
+    @State private var showingAddDay = false
 
     var body: some View {
-        NavigationView {
-            List(taskLogDays, id: \.self) { taskLogDay in
-                NavigationLink(destination: TaskLogDayView(taskLogDay: taskLogDay)) {
-                    Text("\(taskLogDay.date ?? Date(), formatter: dateFormatter)")
-                }
-            }
-            .navigationBarTitle("Task Log Days")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: AddTaskLogDayView()) {
-                        Text("Add")
-                    }
-                }
+        List(taskLogDays, id: \.self) { taskLogDay in
+            NavigationLink(destination: TaskLogDayView(taskLogDay: taskLogDay)) {
+                Text("\(DateUtils.formatDate(taskLogDay.date))")
             }
         }
+        .navigationBarTitle("Task Log Days")
+        .navigationBarItems(trailing:
+            Button(action: {
+                showingAddDay = true
+            }) {
+                Image(systemName: "plus")
+            }
+        )
+        .sheet(isPresented: $showingAddDay) {
+            AddTaskView()
+                .environment(\.managedObjectContext, viewContext)
+        }
     }
-    
-    private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        return formatter
-    }()
 }
 
-#Preview {
-    LogTasksView()
+struct LogTasksView_Previews: PreviewProvider {
+    static var previews: some View {
+        let context = PersistenceController.preview.container.viewContext
+        return LogTasksView()
+            .environment(\.managedObjectContext, context)
+    }
 }
+
