@@ -167,7 +167,6 @@ struct AddMealView: View {
     }
 
     private func saveMeal() {
-        print("SAVE MEAL")
         // Validation for meal details
         guard !name.isEmpty,
               let mealCalories = Double(mealCalories),
@@ -195,7 +194,19 @@ struct AddMealView: View {
         for ingredient in selectedIngredients {
             newMeal.addToContainsIngredients(ingredient)
         }
-        newMeal.ingredientunits = ingredientQuantities.joined(separator: ", ")
+        
+        // create a dictionary to store quantities
+
+        var ingredientDictionary: [String: String] = [:]
+        for (ingredient, quantity) in zip(selectedIngredients, ingredientQuantities) {
+            if let ingredientName = ingredient.name {
+                ingredientDictionary[ingredientName] = quantity
+            }
+        }
+        // Convert the dictionary to a string
+        let dictionaryString = ingredientDictionary.description
+        
+        newMeal.ingredientunits = dictionaryString
         do {
             try viewContext.save()
             presentationMode.wrappedValue.dismiss()
