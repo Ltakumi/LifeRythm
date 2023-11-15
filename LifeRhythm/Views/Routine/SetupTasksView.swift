@@ -1,40 +1,34 @@
-//
-//  SetupTasksView.swift
-//  LifeRhythm
-//
-//  Created by Louis Takumi on 2023/11/16.
-//
-
 import SwiftUI
+import CoreData
 
 struct SetupTasksView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Task.start_date, ascending: true)]) private var tasks: FetchedResults<Task>
+    @FetchRequest(
+        entity: Task.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Task.start_date, ascending: true)]) var tasks: FetchedResults<Task>
 
-    @State private var isAddingTask = false
+    @State private var showingAddTask = false
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(tasks, id: \.id) { task in
-                    NavigationLink(destination: TaskView(task: task)) {
-                        Text(task.name ?? "Unnamed Task")
-                    }
+        List {
+            ForEach(tasks, id: \.id) { task in
+                NavigationLink(destination: TaskView(task: task)) {
+                    Text(task.name ?? "Unnamed Task")
                 }
             }
-            .navigationBarTitle("Tasks")
-            .navigationBarItems(trailing:
-                Button(action: {
-                    isAddingTask = true
-                }) {
-                    Image(systemName: "plus")
-                }
-            )
-            .sheet(isPresented: $isAddingTask) {
-                AddTaskView()
-                    .environment(\.managedObjectContext, viewContext)
+        }
+        .navigationBarTitle("Tasks")
+        .navigationBarItems(trailing:
+            Button(action: {
+                showingAddTask = true
+            }) {
+                Image(systemName: "plus")
             }
+        )
+        .sheet(isPresented: $showingAddTask) {
+            AddTaskView()
+                .environment(\.managedObjectContext, viewContext)
         }
     }
 }

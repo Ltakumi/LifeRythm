@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreData
 
 struct AddTaskView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -8,53 +9,60 @@ struct AddTaskView: View {
     @State private var taskType = "Daily" // Default to "Daily"
     @State private var taskInstructions = ""
     @State private var taskStartDate = Date()
-    
+    @State private var showAlert = false
+
     var body: some View {
-        Form {
-            Section(header: Text("Task Details")) {
-                
-                TextField("Task Name", text: $taskName)
-                
-                Picker("Task Type", selection: $taskType) {
-                    Text("Daily").tag("Daily")
-                    Text("Weekly").tag("Weekly")
-                    Text("Monthly").tag("Monthly")
+        NavigationView{
+            Form {
+                Section(header: Text("Task Details")) {
+                    
+                    TextField("Task Name", text: $taskName)
+                    
+                    Picker("Task Type", selection: $taskType) {
+                        Text("Daily").tag("Daily")
+                        Text("Weekly").tag("Weekly")
+                        Text("Monthly").tag("Monthly")
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    //
+                    TextField("Instructions", text: $taskInstructions)
+                    
+                    DatePicker("Start Date", selection: $taskStartDate)
                 }
-                .pickerStyle(SegmentedPickerStyle())
-//                
-                TextField("Instructions", text: $taskInstructions)
                 
-                DatePicker("Start Date", selection: $taskStartDate)
-            }
-            
-            Button(action: {
-                saveTask()
-            }) {
-                Text("Save Task")
-            }
-        }
-        .navigationTitle("Add Task")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: { presentationMode.wrappedValue.dismiss()}) {
-                    Text("Cancel")
+                Button(action: {
+                    saveTask()
+                }) {
+                    Text("Save Task")
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Missing Information"),
+                        message: Text("Please fill in all necessary fields."),
+                        dismissButton: .default(Text("OK"))
+                    )
                 }
             }
+            .navigationBarTitle("Add Ingredient", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Cancel") {
+                presentationMode.wrappedValue.dismiss()
+            })
         }
     }
     
     private func isInputValid() -> Bool {
-        return !taskName.isEmpty && !taskInstructions.isEmpty && taskStartDate >= Date()
+        return !taskName.isEmpty && !taskInstructions.isEmpty
     }
     
     private func saveTask() {
         guard isInputValid() else {
-            // Show an error or alert here for invalid input
+            showAlert = true
             return
         }
-        
+                
         withAnimation {
             let newTask = Task(context: viewContext)
+            newTask.id = UUID()
             newTask.name = taskName
             newTask.type = taskType
             newTask.instructions = taskInstructions

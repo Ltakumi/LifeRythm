@@ -1,11 +1,5 @@
-//
-//  LogTasksView.swift
-//  LifeRhythm
-//
-//  Created by Louis Takumi on 2023/11/16.
-//
-
 import SwiftUI
+import CoreData
 
 struct LogTasksView: View {
     @Environment(\.managedObjectContext) private var viewContext

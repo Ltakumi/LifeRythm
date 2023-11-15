@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AddTaskLogDayView: View {
     @Environment(\.managedObjectContext) private var viewContext

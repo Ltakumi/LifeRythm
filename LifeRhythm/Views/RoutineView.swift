@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct RoutineView: View {
     var body: some View {
