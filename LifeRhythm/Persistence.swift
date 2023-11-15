@@ -154,6 +154,15 @@ struct PersistenceController {
             }
         }
         
+        // Generate Tasks
+        for i in 1...5 {
+            let task = Task(context: viewContext)
+            task.name = "Task \(i)"
+            task.type = "Daily" // Set the type (you can change this as needed)
+            task.instructions = "Instructions for Task \(i)" // Add instructions
+            task.start_date = Calendar.current.date(byAdding: .day, value: i, to: Date())
+        }
+        
         // Save context
         do {
             try viewContext.save()

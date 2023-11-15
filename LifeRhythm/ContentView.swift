@@ -29,9 +29,9 @@ struct ContentView: View {
                     Label("Nutrition", systemImage: "leaf")
                 }
             
-            DailiesView()
+            RoutineView()
                 .tabItem {
-                    Label("Dailies", systemImage: "calendar")
+                    Label("Routine", systemImage: "calendar")
                 }
             
             ExportView()
