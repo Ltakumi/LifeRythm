@@ -43,7 +43,7 @@ struct AddTaskView: View {
                     )
                 }
             }
-            .navigationBarTitle("Add Ingredient", displayMode: .inline)
+            .navigationBarTitle("Add Task", displayMode: .inline)
             .navigationBarItems(trailing: Button("Cancel") {
                 presentationMode.wrappedValue.dismiss()
             })

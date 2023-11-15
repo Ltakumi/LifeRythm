@@ -213,8 +213,8 @@
 				370D26D42B051CFD00F1F74A /* AddTaskView.swift */,
 				370D26DA2B05223E00F1F74A /* TaskView.swift */,
 				370D26D22B051C2800F1F74A /* LogTasksView.swift */,
-				370D26DE2B05229900F1F74A /* TaskLogDayView.swift */,
 				370D26DC2B05224700F1F74A /* AddTaskLogDayView.swift */,
+				370D26DE2B05229900F1F74A /* TaskLogDayView.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";

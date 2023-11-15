@@ -26,7 +26,7 @@ struct LogTasksView: View {
             }
         )
         .sheet(isPresented: $showingAddDay) {
-            AddTaskView()
+            AddTaskLogDayView()
                 .environment(\.managedObjectContext, viewContext)
         }
     }
