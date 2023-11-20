@@ -99,17 +99,20 @@
         <relationship name="inLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="containsSet" inverseEntity="Location"/>
     </entity>
     <entity name="Task" representedClassName="Task" syncable="YES">
+        <attribute name="frequency" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="instructions" optional="YES" attributeType="String"/>
+        <attribute name="keywords" optional="YES" attributeType="String"/>
+        <attribute name="levels" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="next_deadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="start_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="type" optional="YES" attributeType="String"/>
-        <relationship name="didOnDay" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskLogDay" inverseName="didTasks" inverseEntity="TaskLogDay"/>
+        <relationship name="didOnDay" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskDay" inverseName="didTasks" inverseEntity="TaskDay"/>
     </entity>
-    <entity name="TaskLogDay" representedClassName="TaskLogDay" syncable="YES">
+    <entity name="TaskDay" representedClassName="TaskDay" syncable="YES">
         <attribute name="additional" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="taskAdditional" optional="YES" attributeType="String"/>
+        <attribute name="tasksAdditional" optional="YES" attributeType="String"/>
+        <attribute name="tasksLevels" optional="YES" attributeType="String"/>
         <relationship name="didTasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="didOnDay" inverseEntity="Task"/>
     </entity>
 </model>

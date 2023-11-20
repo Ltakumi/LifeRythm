@@ -72,6 +72,7 @@ struct AddClimbView: View {
 
     private func addClimb() {
         let newClimb = Climb(context: viewContext)
+        newClimb.id = UUID()
         newClimb.grade = grade
         newClimb.name = name
         newClimb.tags = tags

@@ -7,15 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		370D26CB2B0519EB00F1F74A /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26C72B0519EB00F1F74A /* Task+CoreDataClass.swift */; };
-		370D26CC2B0519EB00F1F74A /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26C82B0519EB00F1F74A /* Task+CoreDataProperties.swift */; };
-		370D26CD2B0519EB00F1F74A /* DailyTasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26C92B0519EB00F1F74A /* DailyTasks+CoreDataClass.swift */; };
-		370D26CE2B0519EB00F1F74A /* DailyTasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26CA2B0519EB00F1F74A /* DailyTasks+CoreDataProperties.swift */; };
 		370D26D12B051C0B00F1F74A /* SetupTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26D02B051C0B00F1F74A /* SetupTasksView.swift */; };
 		370D26D32B051C2800F1F74A /* LogTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26D22B051C2800F1F74A /* LogTasksView.swift */; };
 		370D26D52B051CFD00F1F74A /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26D42B051CFD00F1F74A /* AddTaskView.swift */; };
-		370D26D82B05215600F1F74A /* TaskLogDay+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26D62B05215600F1F74A /* TaskLogDay+CoreDataClass.swift */; };
-		370D26D92B05215600F1F74A /* TaskLogDay+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26D72B05215600F1F74A /* TaskLogDay+CoreDataProperties.swift */; };
 		370D26DB2B05223E00F1F74A /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26DA2B05223E00F1F74A /* TaskView.swift */; };
 		370D26DD2B05224700F1F74A /* AddTaskLogDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26DC2B05224700F1F74A /* AddTaskLogDayView.swift */; };
 		370D26DF2B05229900F1F74A /* TaskLogDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D26DE2B05229900F1F74A /* TaskLogDayView.swift */; };
@@ -33,7 +27,7 @@
 		3714964F2B0343B100D845A8 /* DailyIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714964E2B0343B100D845A8 /* DailyIntakeView.swift */; };
 		371496512B034DF500D845A8 /* AddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371496502B034DF500D845A8 /* AddMealView.swift */; };
 		37175CF22B03EC1900067261 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175CF12B03EC1900067261 /* MealView.swift */; };
-		373AB0FF2B009AE50006114B /* AddBoulderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB0FE2B009AE50006114B /* AddBoulderView.swift */; };
+		373AB0FF2B009AE50006114B /* AddClimbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB0FE2B009AE50006114B /* AddClimbView.swift */; };
 		373AB1012B009B0A0006114B /* ClimbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1002B009B0A0006114B /* ClimbView.swift */; };
 		373AB1032B00A5600006114B /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1022B00A5600006114B /* SessionsView.swift */; };
 		373AB1062B00C1560006114B /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1042B00C1560006114B /* Session+CoreDataClass.swift */; };
@@ -55,6 +49,10 @@
 		373AB12F2B0131770006114B /* Exercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB12B2B0131770006114B /* Exercise+CoreDataProperties.swift */; };
 		373AB1322B013C1F0006114B /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1312B013C1F0006114B /* SessionView.swift */; };
 		373AB1342B013C4A0006114B /* WorkoutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1332B013C4A0006114B /* WorkoutSessionView.swift */; };
+		373CFE7F2B0C1946000BFE2B /* TaskDay+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CFE7D2B0C1946000BFE2B /* TaskDay+CoreDataClass.swift */; };
+		373CFE802B0C1946000BFE2B /* TaskDay+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CFE7E2B0C1946000BFE2B /* TaskDay+CoreDataProperties.swift */; };
+		373CFE832B0C1988000BFE2B /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CFE812B0C1988000BFE2B /* Task+CoreDataClass.swift */; };
+		373CFE842B0C1988000BFE2B /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CFE822B0C1988000BFE2B /* Task+CoreDataProperties.swift */; };
 		3746881C2AFCC4E000E06029 /* LifeRhythmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */; };
 		3746881E2AFCC4E000E06029 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746881D2AFCC4E000E06029 /* ContentView.swift */; };
 		374688202AFCC4E200E06029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3746881F2AFCC4E200E06029 /* Assets.xcassets */; };
@@ -100,15 +98,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		370D26C72B0519EB00F1F74A /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
-		370D26C82B0519EB00F1F74A /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		370D26C92B0519EB00F1F74A /* DailyTasks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyTasks+CoreDataClass.swift"; sourceTree = "<group>"; };
-		370D26CA2B0519EB00F1F74A /* DailyTasks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyTasks+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		370D26D02B051C0B00F1F74A /* SetupTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTasksView.swift; sourceTree = "<group>"; };
 		370D26D22B051C2800F1F74A /* LogTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTasksView.swift; sourceTree = "<group>"; };
 		370D26D42B051CFD00F1F74A /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
-		370D26D62B05215600F1F74A /* TaskLogDay+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskLogDay+CoreDataClass.swift"; sourceTree = "<group>"; };
-		370D26D72B05215600F1F74A /* TaskLogDay+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskLogDay+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		370D26DA2B05223E00F1F74A /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		370D26DC2B05224700F1F74A /* AddTaskLogDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskLogDayView.swift; sourceTree = "<group>"; };
 		370D26DE2B05229900F1F74A /* TaskLogDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLogDayView.swift; sourceTree = "<group>"; };
@@ -126,7 +118,7 @@
 		3714964E2B0343B100D845A8 /* DailyIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntakeView.swift; sourceTree = "<group>"; };
 		371496502B034DF500D845A8 /* AddMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealView.swift; sourceTree = "<group>"; };
 		37175CF12B03EC1900067261 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
-		373AB0FE2B009AE50006114B /* AddBoulderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBoulderView.swift; sourceTree = "<group>"; };
+		373AB0FE2B009AE50006114B /* AddClimbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClimbView.swift; sourceTree = "<group>"; };
 		373AB1002B009B0A0006114B /* ClimbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbView.swift; sourceTree = "<group>"; };
 		373AB1022B00A5600006114B /* SessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsView.swift; sourceTree = "<group>"; };
 		373AB1042B00C1560006114B /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -148,6 +140,10 @@
 		373AB12B2B0131770006114B /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		373AB1312B013C1F0006114B /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		373AB1332B013C4A0006114B /* WorkoutSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionView.swift; sourceTree = "<group>"; };
+		373CFE7D2B0C1946000BFE2B /* TaskDay+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskDay+CoreDataClass.swift"; sourceTree = "<group>"; };
+		373CFE7E2B0C1946000BFE2B /* TaskDay+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskDay+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		373CFE812B0C1988000BFE2B /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		373CFE822B0C1988000BFE2B /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		374688182AFCC4E000E06029 /* LifeRhythm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeRhythm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeRhythmApp.swift; sourceTree = "<group>"; };
 		3746881D2AFCC4E000E06029 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -241,7 +237,7 @@
 				37F919F32B0087230031505E /* SetView.swift */,
 				37FCB5692AFF112500A286CC /* LocationView.swift */,
 				37F919F52B00894F0031505E /* AddSetView.swift */,
-				373AB0FE2B009AE50006114B /* AddBoulderView.swift */,
+				373AB0FE2B009AE50006114B /* AddClimbView.swift */,
 				373AB1002B009B0A0006114B /* ClimbView.swift */,
 				37F9A2E32AFE8723002775CE /* LocationsView.swift */,
 			);
@@ -347,12 +343,10 @@
 		37F9A2CD2AFE7A23002775CE /* CoreDataClass */ = {
 			isa = PBXGroup;
 			children = (
-				370D26D62B05215600F1F74A /* TaskLogDay+CoreDataClass.swift */,
-				370D26D72B05215600F1F74A /* TaskLogDay+CoreDataProperties.swift */,
-				370D26C72B0519EB00F1F74A /* Task+CoreDataClass.swift */,
-				370D26C82B0519EB00F1F74A /* Task+CoreDataProperties.swift */,
-				370D26C92B0519EB00F1F74A /* DailyTasks+CoreDataClass.swift */,
-				370D26CA2B0519EB00F1F74A /* DailyTasks+CoreDataProperties.swift */,
+				373CFE812B0C1988000BFE2B /* Task+CoreDataClass.swift */,
+				373CFE822B0C1988000BFE2B /* Task+CoreDataProperties.swift */,
+				373CFE7D2B0C1946000BFE2B /* TaskDay+CoreDataClass.swift */,
+				373CFE7E2B0C1946000BFE2B /* TaskDay+CoreDataProperties.swift */,
 				3714963C2B033D0100D845A8 /* Meal+CoreDataClass.swift */,
 				3714963D2B033D0100D845A8 /* Meal+CoreDataProperties.swift */,
 				3714963E2B033D0100D845A8 /* DailyIntake+CoreDataClass.swift */,
@@ -534,6 +528,7 @@
 				3746881E2AFCC4E000E06029 /* ContentView.swift in Sources */,
 				371496492B033DF300D845A8 /* AddIngredientView.swift in Sources */,
 				370D26DB2B05223E00F1F74A /* TaskView.swift in Sources */,
+				373CFE842B0C1988000BFE2B /* Task+CoreDataProperties.swift in Sources */,
 				3746881C2AFCC4E000E06029 /* LifeRhythmApp.swift in Sources */,
 				373AB1122B0121E20006114B /* RoutineView.swift in Sources */,
 				373AB1062B00C1560006114B /* Session+CoreDataClass.swift in Sources */,
@@ -542,9 +537,8 @@
 				373AB1092B00C5370006114B /* AddSessionView.swift in Sources */,
 				37F919F92B008FD40031505E /* Location+CoreDataClass.swift in Sources */,
 				37F9A2E12AFE7AE8002775CE /* Climb+CoreDataProperties.swift in Sources */,
-				373AB0FF2B009AE50006114B /* AddBoulderView.swift in Sources */,
+				373AB0FF2B009AE50006114B /* AddClimbView.swift in Sources */,
 				373AB10D2B00D6EB0006114B /* Dateutils.swift in Sources */,
-				370D26CE2B0519EB00F1F74A /* DailyTasks+CoreDataProperties.swift in Sources */,
 				373AB1142B0122220006114B /* ExercicesView.swift in Sources */,
 				37F9A2E42AFE8723002775CE /* LocationsView.swift in Sources */,
 				373AB1072B00C1560006114B /* Session+CoreDataProperties.swift in Sources */,
@@ -554,6 +548,7 @@
 				373AB12D2B0131770006114B /* ExerciseLog+CoreDataProperties.swift in Sources */,
 				370D26D32B051C2800F1F74A /* LogTasksView.swift in Sources */,
 				37F9A2DF2AFE7AE8002775CE /* Attempt+CoreDataProperties.swift in Sources */,
+				373CFE832B0C1988000BFE2B /* Task+CoreDataClass.swift in Sources */,
 				37F919FA2B008FD40031505E /* Location+CoreDataProperties.swift in Sources */,
 				373AB10B2B00C7F40006114B /* ClimbSessionView.swift in Sources */,
 				373AB11A2B0126200006114B /* CardioExercicesView.swift in Sources */,
@@ -565,7 +560,6 @@
 				37F9A2DB2AFE7AE8002775CE /* Set+CoreDataProperties.swift in Sources */,
 				373AB1182B0126160006114B /* LiftingExercicesView.swift in Sources */,
 				371496392B033C2B00D845A8 /* IngredientSetupView.swift in Sources */,
-				370D26D92B05215600F1F74A /* TaskLogDay+CoreDataProperties.swift in Sources */,
 				3714963B2B033C4600D845A8 /* IntakeLoggingView.swift in Sources */,
 				374688282AFCC4E200E06029 /* LifeRhythm.xcdatamodeld in Sources */,
 				37FCB56A2AFF112500A286CC /* LocationView.swift in Sources */,
@@ -575,20 +569,18 @@
 				373AB11C2B0127E40006114B /* AddExerciceView.swift in Sources */,
 				373AB1342B013C4A0006114B /* WorkoutSessionView.swift in Sources */,
 				3714964F2B0343B100D845A8 /* DailyIntakeView.swift in Sources */,
-				370D26D82B05215600F1F74A /* TaskLogDay+CoreDataClass.swift in Sources */,
 				371496422B033D0100D845A8 /* Meal+CoreDataClass.swift in Sources */,
-				370D26CB2B0519EB00F1F74A /* Task+CoreDataClass.swift in Sources */,
 				3714964D2B03436A00D845A8 /* AddDailyIntakeView.swift in Sources */,
-				370D26CD2B0519EB00F1F74A /* DailyTasks+CoreDataClass.swift in Sources */,
 				371496442B033D0100D845A8 /* DailyIntake+CoreDataClass.swift in Sources */,
 				370D26D12B051C0B00F1F74A /* SetupTasksView.swift in Sources */,
 				373AB12E2B0131770006114B /* Exercise+CoreDataClass.swift in Sources */,
 				373AB1032B00A5600006114B /* SessionsView.swift in Sources */,
 				370D26DD2B05224700F1F74A /* AddTaskLogDayView.swift in Sources */,
+				373CFE7F2B0C1946000BFE2B /* TaskDay+CoreDataClass.swift in Sources */,
 				373AB1322B013C1F0006114B /* SessionView.swift in Sources */,
+				373CFE802B0C1946000BFE2B /* TaskDay+CoreDataProperties.swift in Sources */,
 				3714964B2B0340B600D845A8 /* IngredientView.swift in Sources */,
 				373AB1102B0121B80006114B /* NutritionView.swift in Sources */,
-				370D26CC2B0519EB00F1F74A /* Task+CoreDataProperties.swift in Sources */,
 				373AB1162B0126040006114B /* ClimbingExercicesView.swift in Sources */,
 				371496472B033D0100D845A8 /* Ingredients+CoreDataProperties.swift in Sources */,
 				371496462B033D0100D845A8 /* Ingredients+CoreDataClass.swift in Sources */,

@@ -64,8 +64,7 @@ struct AddTaskView: View {
             let newTask = Task(context: viewContext)
             newTask.id = UUID()
             newTask.name = taskName
-            newTask.type = taskType
-            newTask.instructions = taskInstructions
+            newTask.levels = taskInstructions
             newTask.start_date = taskStartDate
             
             do {

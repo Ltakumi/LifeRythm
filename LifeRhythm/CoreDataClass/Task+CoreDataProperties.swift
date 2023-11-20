@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  LifeRhythm
 //
-//  Created by Louis Takumi on 2023/11/16.
+//  Created by Louis Takumi on 2023/11/21.
 //
 //
 
@@ -16,11 +16,13 @@ extension Task {
         return NSFetchRequest<Task>(entityName: "Task")
     }
 
-    @NSManaged public var type: String?
-    @NSManaged public var instructions: String?
-    @NSManaged public var start_date: Date?
-    @NSManaged public var name: String?
+    @NSManaged public var frequency: Int16
     @NSManaged public var id: UUID?
+    @NSManaged public var keywords: String?
+    @NSManaged public var levels: String?
+    @NSManaged public var name: String?
+    @NSManaged public var next_deadline: Date?
+    @NSManaged public var start_date: Date?
     @NSManaged public var didOnDay: NSSet?
 
 }
@@ -29,10 +31,10 @@ extension Task {
 extension Task {
 
     @objc(addDidOnDayObject:)
-    @NSManaged public func addToDidOnDay(_ value: DailyTasks)
+    @NSManaged public func addToDidOnDay(_ value: TaskDay)
 
     @objc(removeDidOnDayObject:)
-    @NSManaged public func removeFromDidOnDay(_ value: DailyTasks)
+    @NSManaged public func removeFromDidOnDay(_ value: TaskDay)
 
     @objc(addDidOnDay:)
     @NSManaged public func addToDidOnDay(_ values: NSSet)

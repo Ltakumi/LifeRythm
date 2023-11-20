@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct TaskLogDayView: View {
-    var taskLogDay: TaskLogDay
+struct TaskDayView: View {
+    var taskDay: TaskDay
     
     var body: some View {
         VStack {
-            Text("Date: \(taskLogDay.date ?? Date(), formatter: dateFormatter)")
-            Text("Additional: \(taskLogDay.additional ?? "")")
-            Text("Task Additional: \(taskLogDay.taskAdditional ?? "")")
+            Text("Date: \(taskDay.date ?? Date(), formatter: dateFormatter)")
+            Text("Additional: \(taskDay.additional ?? "")")
+            Text("Task Additional: \(taskDay.tasksAdditional ?? "")")
         }
         .navigationBarTitle("Task Log Day")
     }

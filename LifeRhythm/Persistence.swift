@@ -154,22 +154,26 @@ struct PersistenceController {
             }
         }
         
-        // Generate Tasks
         for i in 1...5 {
             let task = Task(context: viewContext)
             task.id = UUID()
             task.name = "Task \(i)"
-            task.type = "Daily"
-            task.instructions = "Instructions for Task \(i)"
-            task.start_date = Calendar.current.date(byAdding: .day, value: i, to: Date())
+            task.levels = ["level1", "level2"].joined(separator: ",")
+            task.keywords = ["lvl1", "lvl2"].joined(separator: ",")
+            task.frequency = Int16(i)
+            task.start_date = Date()
+            
+            // Calculate next_deadline based on frequency and start_date
+            // Example: For daily tasks, the next deadline is the next day
+            task.next_deadline = Calendar.current.date(byAdding: .day, value: Int(task.frequency), to: task.start_date!)
         }
         
-        // Generate TaskLogDay objects
+        // Generate TaskDay objects
         for i in 1...3 {
-            let taskLogDay = TaskLogDay(context: viewContext)
-            taskLogDay.date = Calendar.current.date(byAdding: .day, value: -i, to: Date())
-            taskLogDay.additional = "Additional Info for Day \(i)"
-            taskLogDay.taskAdditional = "Task Additional Info for Day \(i)"
+            let taskDay = TaskDay(context: viewContext)
+            taskDay.date = Calendar.current.date(byAdding: .day, value: -i, to: Date())
+            taskDay.additional = "Additional Info for Day \(i)"
+            taskDay.tasksAdditional = "Task Additional Info for Day \(i)"
         }
         
         // Save context

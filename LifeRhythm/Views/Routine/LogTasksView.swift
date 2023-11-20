@@ -5,19 +5,19 @@ struct LogTasksView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
-        entity: TaskLogDay.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \TaskLogDay.date, ascending: true)])
-    private var taskLogDays: FetchedResults<TaskLogDay>
+        entity: TaskDay.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \TaskDay.date, ascending: true)])
+    private var taskDays: FetchedResults<TaskDay>
     
     @State private var showingAddDay = false
 
     var body: some View {
-        List(taskLogDays, id: \.self) { taskLogDay in
-            NavigationLink(destination: TaskLogDayView(taskLogDay: taskLogDay)) {
-                Text("\(DateUtils.formatDate(taskLogDay.date))")
+        List(taskDays, id: \.self) { taskDay in
+            NavigationLink(destination: TaskDayView(taskDay: taskDay)) {
+                Text("\(DateUtils.formatDate(taskDay.date))")
             }
         }
-        .navigationBarTitle("Task Log Days")
+        .navigationBarTitle("Task Days")
         .navigationBarItems(trailing:
             Button(action: {
                 showingAddDay = true

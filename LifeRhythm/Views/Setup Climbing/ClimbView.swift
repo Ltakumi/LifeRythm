@@ -19,7 +19,7 @@ struct ClimbView: View {
                     Text(climb.grade ?? "Unknown")
                 }
                 HStack {
-                    Text("ID:")
+                    Text("Name:")
                     Spacer()
                     Text(climb.name ?? "Unknown")
                 }

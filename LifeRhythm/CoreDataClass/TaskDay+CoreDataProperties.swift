@@ -1,8 +1,8 @@
 //
-//  TaskLogDay+CoreDataProperties.swift
+//  TaskDay+CoreDataProperties.swift
 //  LifeRhythm
 //
-//  Created by Louis Takumi on 2023/11/16.
+//  Created by Louis Takumi on 2023/11/21.
 //
 //
 
@@ -10,21 +10,22 @@ import Foundation
 import CoreData
 
 
-extension TaskLogDay {
+extension TaskDay {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<TaskLogDay> {
-        return NSFetchRequest<TaskLogDay>(entityName: "TaskLogDay")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<TaskDay> {
+        return NSFetchRequest<TaskDay>(entityName: "TaskDay")
     }
 
-    @NSManaged public var date: Date?
     @NSManaged public var additional: String?
-    @NSManaged public var taskAdditional: String?
+    @NSManaged public var date: Date?
+    @NSManaged public var tasksAdditional: String?
+    @NSManaged public var tasksLevels: String?
     @NSManaged public var didTasks: NSSet?
 
 }
 
 // MARK: Generated accessors for didTasks
-extension TaskLogDay {
+extension TaskDay {
 
     @objc(addDidTasksObject:)
     @NSManaged public func addToDidTasks(_ value: Task)
@@ -40,6 +41,6 @@ extension TaskLogDay {
 
 }
 
-extension TaskLogDay : Identifiable {
+extension TaskDay : Identifiable {
 
 }

@@ -80,9 +80,9 @@ struct AddTaskLogDayView: View {
 
     private func saveTaskLogDay() {
         withAnimation {
-            let newTaskLogDay = TaskLogDay(context: viewContext)
-            newTaskLogDay.date = date
-            newTaskLogDay.additional = additional
+            let newTaskDay = TaskDay(context: viewContext)
+            newTaskDay.date = date
+            newTaskDay.additional = additional
 
             // Initialize a dictionary to store taskname : taskadditional
             var taskAdditionalDict: [String: String] = [:]
@@ -91,7 +91,7 @@ struct AddTaskLogDayView: View {
             for task in tasks {
                 if let additionalInfo = taskAdditionalInfo[task] {
                     // Add task to didTasks
-                    newTaskLogDay.addToDidTasks(task)
+                    newTaskDay.addToDidTasks(task)
 
                     // Add taskname : taskadditional to the dictionary
                     taskAdditionalDict[task.name ?? "Unnamed Task"] = additionalInfo
@@ -102,12 +102,12 @@ struct AddTaskLogDayView: View {
             if let jsonData = try? JSONSerialization.data(withJSONObject: taskAdditionalDict, options: []) {
                 if let jsonString = String(data: jsonData, encoding: .utf8) {
                     print(jsonString)
-                    newTaskLogDay.taskAdditional = jsonString
+                    newTaskDay.tasksAdditional = jsonString
                 }
                 
             }
             
-            print((newTaskLogDay.didTasks ?? []).count)
+            print((newTaskDay.didTasks ?? []).count)
 
             do {
                 try viewContext.save()
