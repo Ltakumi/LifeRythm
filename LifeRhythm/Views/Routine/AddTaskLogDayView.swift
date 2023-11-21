@@ -1,24 +1,28 @@
 import SwiftUI
 import CoreData
+import Foundation
 
 struct TaskWithAdditionalInfo {
     var task: Task
     var additionalInfo: String
 }
 
-struct AddTaskLogDayView: View {
+struct AddTaskDayView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) private var presentationMode
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Task.start_date, ascending: true)])
+        sortDescriptors: [NSSortDescriptor(keyPath: \Task.next_deadline, ascending: true)])
     private var tasks: FetchedResults<Task>
 
     @State private var date = Date()
     @State private var additional = ""
     
-    @State private var completedTasks : [Task] = [] // To track completed tasks
-    @State private var taskAdditional : [String] = []
+    @State private var completedTasks : [Task] = []
+    @State private var tasksAdditional : [String] = []
+    @State private var tasksLevel : [String] = []
+    
+    @State private var taskStatus: [Task: String] = [:]
     @State private var taskAdditionalInfo: [Task: String] = [:]
 
     var body: some View {
@@ -31,37 +35,43 @@ struct AddTaskLogDayView: View {
                 
                 Section(header: Text("Tasks")) {
                     ForEach(tasks, id: \.id) { task in
-                        HStack {
-                            Text(task.name ?? "Unnamed Task")
-                            Spacer()
-                            Toggle("", isOn: Binding(
-                                get: {
-                                    taskAdditionalInfo[task] != nil
-                                },
-                                set: { newValue in
-                                    if newValue {
-                                        // Add task to the dictionary with empty additional info
-                                        taskAdditionalInfo[task] = ""
-                                    } else {
-                                        // Remove task from the dictionary
-                                        taskAdditionalInfo[task] = nil
-                                    }
-                                }
-                            ))
+                        VStack {
+                            let levelShortsArray = task.levelshorts?.components(separatedBy: ",") ?? []
+                            let pickerOptions = ["uncomplete", "not done"] + levelShortsArray
+                            let daysDiff = Calendar.current.dateComponents([.day], from: date, to: task.next_deadline ?? Date()).day ?? 0
                             
-                            // TextField for additional info
-                            if let additionalInfo = taskAdditionalInfo[task] {
+                            // Task introduction
+                            HStack{
+                                Text(task.name ?? "Unnamed Task")
+                                Spacer()
+                                Text("Days to Deadline : " + String(daysDiff))
+                            }
+                            
+                            // Picker for style
+                            Picker("Status", selection: Binding(
+                                get: {taskStatus[task] ?? "uncomplete" },
+                                set: {newValue in taskStatus[task] = newValue}
+                            )) {
+                                ForEach(pickerOptions, id: \.self) { option in
+                                    Text(option).tag(option)
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            
+                            // Text field for additional
+                            if taskStatus[task] != "uncomplete" {
                                 TextField("Additional Info", text: Binding(
-                                    get: {
-                                        additionalInfo
-                                    },
-                                    set: { newValue in
-                                        taskAdditionalInfo[task] = newValue
-                                    }
+                                    get: { taskAdditionalInfo[task] ?? "" },
+                                    set: { newValue in taskAdditionalInfo[task] = newValue }
                                 ))
-                                .textFieldStyle(RoundedBorderTextFieldStyle()) // Optional styling
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
                             }
                         }
+                    }
+                }
+                .onAppear {
+                    tasks.forEach { task in
+                        taskStatus[task] = "uncomplete"
                     }
                 }
                 
@@ -84,27 +94,37 @@ struct AddTaskLogDayView: View {
             newTaskDay.date = date
             newTaskDay.additional = additional
 
-            // Initialize a dictionary to store taskname : taskadditional
-            var taskAdditionalDict: [String: String] = [:]
+            // Initialize dictionaries to store additional and levels
+            var tasksAdditionalDict: [String: String] = [:]
+            var tasksLevelDict: [String: String] = [:]
 
-            // Iterate through tasks and check if they were completed
             for task in tasks {
-                if let additionalInfo = taskAdditionalInfo[task] {
-                    // Add task to didTasks
+                
+                // save info and if completed add to relationship
+                tasksLevelDict[task.name ?? "Unnamed Task"] = taskStatus[task]
+                if let status = taskStatus[task], !["uncomplete", "not done"].contains(status) {
                     newTaskDay.addToDidTasks(task)
-
-                    // Add taskname : taskadditional to the dictionary
-                    taskAdditionalDict[task.name ?? "Unnamed Task"] = additionalInfo
+                }
+                
+                // Check additional info
+                if let additionalInfo = taskAdditionalInfo[task] {
+                    tasksAdditionalDict[task.name ?? "Unnamed Task"] = additionalInfo
                 }
             }
 
             // Convert the dictionary to a JSON string
-            if let jsonData = try? JSONSerialization.data(withJSONObject: taskAdditionalDict, options: []) {
+            if let jsonData = try? JSONSerialization.data(withJSONObject: tasksAdditionalDict, options: []) {
                 if let jsonString = String(data: jsonData, encoding: .utf8) {
                     print(jsonString)
                     newTaskDay.tasksAdditional = jsonString
                 }
-                
+            }
+            // Convert the dictionary to a JSON string
+            if let jsonData = try? JSONSerialization.data(withJSONObject: tasksLevelDict, options: []) {
+                if let jsonString = String(data: jsonData, encoding: .utf8) {
+                    print(jsonString)
+                    newTaskDay.tasksLevels = jsonString
+                }
             }
             
             print((newTaskDay.didTasks ?? []).count)
@@ -123,7 +143,7 @@ struct AddTaskLogDayView: View {
 struct AddTaskLogDayView_Previews: PreviewProvider {
     static var previews: some View {
         let context = PersistenceController.preview.container.viewContext
-        return AddTaskLogDayView()
+        return AddTaskDayView()
             .environment(\.managedObjectContext, context)
     }
 }

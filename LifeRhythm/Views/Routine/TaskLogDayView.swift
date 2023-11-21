@@ -14,6 +14,7 @@ struct TaskDayView: View {
         VStack {
             Text("Date: \(taskDay.date ?? Date(), formatter: dateFormatter)")
             Text("Additional: \(taskDay.additional ?? "")")
+            Text("Task Levels: \(taskDay.tasksLevels ?? "")")
             Text("Task Additional: \(taskDay.tasksAdditional ?? "")")
         }
         .navigationBarTitle("Task Log Day")
