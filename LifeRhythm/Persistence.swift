@@ -159,7 +159,7 @@ struct PersistenceController {
             task.id = UUID()
             task.name = "Task \(i)"
             task.levels = ["level1", "level2"].joined(separator: ",")
-            task.keywords = ["lvl1", "lvl2"].joined(separator: ",")
+            task.levelshorts = ["lvl1", "lvl2"].joined(separator: ",")
             task.frequency = Int16(i)
             task.start_date = Date()
             
