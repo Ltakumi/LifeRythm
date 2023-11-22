@@ -15,13 +15,12 @@ extension Location {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Location> {
         return NSFetchRequest<Location>(entityName: "Location")
     }
-
-    @NSManaged public var address: String?
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
+    @NSManaged public var address: String?
     @NSManaged public var locationType: String?
-    @NSManaged public var additional: String?
     @NSManaged public var climbType: String?
+    @NSManaged public var additional: String?
     @NSManaged public var containsSet: NSSet?
 
 }

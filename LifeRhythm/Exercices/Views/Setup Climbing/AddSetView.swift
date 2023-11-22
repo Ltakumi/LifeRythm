@@ -8,6 +8,7 @@ struct AddSetView: View {
     @State private var periodStart: Date = Date()
     @State private var periodEnd: Date = Date()
     @State private var additional: String = ""
+    @State private var name: String = ""
     @State private var showingAlert = false
 
     var body: some View {
@@ -18,6 +19,7 @@ struct AddSetView: View {
                         DatePicker("Period Start", selection: $periodStart, displayedComponents: .date)
                         DatePicker("Period End", selection: $periodEnd, displayedComponents: .date)
                     }
+                    TextField("Name", text: $name)
                     TextField("Additional", text: $additional)
                 }
 
@@ -47,13 +49,13 @@ struct AddSetView: View {
     private func addSet() {
         let newSet = Set(context: viewContext)
         newSet.id = UUID()
+        newSet.name = name
         newSet.additional = additional
         if location.locationType == "Gym" {
             newSet.period_start = periodStart
             newSet.period_end = periodEnd
         }
         newSet.inLocation = location
-        location.addToContainsSet(newSet)
 
         do {
             try viewContext.save()

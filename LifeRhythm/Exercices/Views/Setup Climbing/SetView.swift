@@ -24,6 +24,7 @@ struct SetView: View {
     }
     
     @State private var showingAddBoulderView = false
+    @State private var showingEditView = false
     
     var body: some View {
         List{
@@ -33,7 +34,7 @@ struct SetView: View {
                     Text(DateUtils.formatDate(set.period_start))
                     Text(DateUtils.formatDate(set.period_end))
                 }
-                
+                Text(set.name ?? "Unnamed")
                 Text(set.additional ?? "No additional info")
             }
             
@@ -47,15 +48,27 @@ struct SetView: View {
         }
         .navigationTitle("Set Details")
         .navigationBarItems(
-            trailing: Button(action: {
-                showingAddBoulderView = true
-            }) {
-                Image(systemName: "plus")
-            }
+            trailing: HStack {
+                Button(action: {
+                    showingAddBoulderView = true
+                }) {
+                    Image(systemName: "plus")
+                }
                 .sheet(isPresented: $showingAddBoulderView) {
                     AddClimbView(set: set)
                         .environment(\.managedObjectContext, self.viewContext)
                 }
+
+                Button(action: {
+                    showingEditView = true // Open the edit view or modal
+                }) {
+                    Image(systemName: "pencil")
+                }
+                .sheet(isPresented: $showingEditView) {
+                            EditSetView(set: set) // This is your custom view for editing
+                                .environment(\.managedObjectContext, self.viewContext)
+                        }
+            }
         )
     }
 }

@@ -13,7 +13,6 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="tags" optional="YES" attributeType="String"/>
-        <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="attempts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attempt" inverseName="idClimb" inverseEntity="Attempt"/>
         <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="containsClimb" inverseEntity="Set"/>
     </entity>

@@ -27,7 +27,7 @@ struct AddLocationView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
 
-                    TextField("address", text: $address)
+                    TextField("Address", text: $address)
                     TextField("Name", text: $locationName)
                     TextField("Additional", text:$additional)
                 }

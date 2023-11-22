@@ -3,16 +3,6 @@ import SwiftUI
 struct LocationsView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-        
-//    @State private var searchText = ""
-//    func buildPredicate() -> NSPredicate {
-//        // If empty, return all
-//        if searchText.isEmpty {
-//            return NSPredicate(value: true)
-//        } else {
-//            return NSPredicate(format: "name CONTAINS[cd] %@", searchText)
-//        }
-//    }
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Location.name, ascending: true)],

@@ -32,7 +32,6 @@ struct PersistenceController {
                     climb.name = "Climb \(k)"
                     climb.grade = "Grade \(k)"
                     climb.tags = "Tags \(k)"
-                    climb.type = "Boulder"
                     climb.id = UUID()
                     set.addToContainsClimb(climb)
                 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ClimbView: View {
     let climb: Climb
+    @State private var showingEditClimbView = false
 
     var body: some View {
         List {
@@ -31,9 +32,16 @@ struct ClimbView: View {
             }
         }
         .navigationTitle("Boulder Details")
+        .navigationBarItems(trailing: Button(action: {
+            showingEditClimbView = true
+        }) {
+            Image(systemName: "pencil")
+        })
+        .sheet(isPresented: $showingEditClimbView) {
+            EditClimbView(climb: climb)
+        }
     }
 }
-
 
 struct ClimbView_Previews: PreviewProvider {
     static var previews: some View {

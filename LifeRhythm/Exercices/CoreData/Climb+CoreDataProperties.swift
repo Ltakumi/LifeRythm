@@ -15,12 +15,12 @@ extension Climb {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Climb> {
         return NSFetchRequest<Climb>(entityName: "Climb")
     }
-
-    @NSManaged public var grade: String?
+    
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
+    @NSManaged public var grade: String?
     @NSManaged public var tags: String?
-    @NSManaged public var type: String?
+    
     @NSManaged public var attempts: NSSet?
     @NSManaged public var inSet: Set?
 

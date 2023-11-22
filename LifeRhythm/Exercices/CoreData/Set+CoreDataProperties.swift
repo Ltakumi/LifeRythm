@@ -15,12 +15,13 @@ extension Set {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Set> {
         return NSFetchRequest<Set>(entityName: "Set")
     }
-
-    @NSManaged public var additional: String?
+    
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var period_end: Date?
     @NSManaged public var period_start: Date?
+    @NSManaged public var additional: String?
+    
     @NSManaged public var inLocation: Location?
     @NSManaged public var containsClimb: NSSet?
     @NSManaged public var containsSession: NSSet?

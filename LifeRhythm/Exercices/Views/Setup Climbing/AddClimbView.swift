@@ -28,7 +28,7 @@ struct AddClimbView: View {
                         }
                     }
 
-                    TextField("ID", text: $name)
+                    TextField("Name", text: $name)
                     TextField("Tags (separated by commas)", text: $tags)
                 }
 
