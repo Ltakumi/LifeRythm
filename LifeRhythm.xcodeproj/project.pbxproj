@@ -202,34 +202,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		370D26CF2B051BE500F1F74A /* Routine */ = {
-			isa = PBXGroup;
-			children = (
-				370D26D02B051C0B00F1F74A /* SetupTasksView.swift */,
-				370D26D42B051CFD00F1F74A /* AddTaskView.swift */,
-				370D26DA2B05223E00F1F74A /* TaskView.swift */,
-				370D26D22B051C2800F1F74A /* LogTasksView.swift */,
-				370D26DC2B05224700F1F74A /* AddTaskLogDayView.swift */,
-				370D26DE2B05229900F1F74A /* TaskLogDayView.swift */,
-			);
-			path = Routine;
-			sourceTree = "<group>";
-		};
-		371496372B033C0D00D845A8 /* Nutrition */ = {
-			isa = PBXGroup;
-			children = (
-				371496382B033C2A00D845A8 /* IngredientSetupView.swift */,
-				371496482B033DF300D845A8 /* AddIngredientView.swift */,
-				3714964A2B0340B600D845A8 /* IngredientView.swift */,
-				3714963A2B033C4600D845A8 /* IntakeLoggingView.swift */,
-				3714964C2B03436A00D845A8 /* AddDailyIntakeView.swift */,
-				3714964E2B0343B100D845A8 /* DailyIntakeView.swift */,
-				371496502B034DF500D845A8 /* AddMealView.swift */,
-				37175CF12B03EC1900067261 /* MealView.swift */,
-			);
-			path = Nutrition;
-			sourceTree = "<group>";
-		};
 		373AB10E2B0120F50006114B /* Setup Climbing */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,17 +228,6 @@
 			path = "Setup Exercise";
 			sourceTree = "<group>";
 		};
-		373AB1302B0137920006114B /* Sessions */ = {
-			isa = PBXGroup;
-			children = (
-				373AB10A2B00C7F40006114B /* ClimbSessionView.swift */,
-				373AB1082B00C5370006114B /* AddSessionView.swift */,
-				373AB1312B013C1F0006114B /* SessionView.swift */,
-				373AB1332B013C4A0006114B /* WorkoutSessionView.swift */,
-			);
-			path = Sessions;
-			sourceTree = "<group>";
-		};
 		3746880F2AFCC4E000E06029 = {
 			isa = PBXGroup;
 			children = (
@@ -290,12 +251,15 @@
 		3746881A2AFCC4E000E06029 /* LifeRhythm */ = {
 			isa = PBXGroup;
 			children = (
+				375D431D2B0DCD23008D747B /* Exercices */,
+				375D431A2B0DCCD1008D747B /* Sessions */,
+				375D43172B0DCC9E008D747B /* Routine */,
+				375D43142B0DCC5D008D747B /* Nutrition */,
 				3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */,
 				3746881D2AFCC4E000E06029 /* ContentView.swift */,
 				374688242AFCC4E200E06029 /* Persistence.swift */,
 				374688262AFCC4E200E06029 /* LifeRhythm.xcdatamodeld */,
-				37F9A2E22AFE86E1002775CE /* Views */,
-				37F9A2CD2AFE7A23002775CE /* CoreDataClass */,
+				37F9A2E22AFE86E1002775CE /* MainViews */,
 				37E043F42B02129D003D59C6 /* utils */,
 				3746881F2AFCC4E200E06029 /* Assets.xcassets */,
 				374688292AFCC4E200E06029 /* LifeRhythm.entitlements */,
@@ -330,6 +294,142 @@
 			path = LifeRhythmUITests;
 			sourceTree = "<group>";
 		};
+		375D43142B0DCC5D008D747B /* Nutrition */ = {
+			isa = PBXGroup;
+			children = (
+				375D43162B0DCC85008D747B /* CoreData */,
+				375D43152B0DCC77008D747B /* Views */,
+			);
+			path = Nutrition;
+			sourceTree = "<group>";
+		};
+		375D43152B0DCC77008D747B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				371496382B033C2A00D845A8 /* IngredientSetupView.swift */,
+				371496482B033DF300D845A8 /* AddIngredientView.swift */,
+				3714964A2B0340B600D845A8 /* IngredientView.swift */,
+				3714963A2B033C4600D845A8 /* IntakeLoggingView.swift */,
+				3714964C2B03436A00D845A8 /* AddDailyIntakeView.swift */,
+				3714964E2B0343B100D845A8 /* DailyIntakeView.swift */,
+				371496502B034DF500D845A8 /* AddMealView.swift */,
+				37175CF12B03EC1900067261 /* MealView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		375D43162B0DCC85008D747B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3714963C2B033D0100D845A8 /* Meal+CoreDataClass.swift */,
+				3714963D2B033D0100D845A8 /* Meal+CoreDataProperties.swift */,
+				3714963E2B033D0100D845A8 /* DailyIntake+CoreDataClass.swift */,
+				3714963F2B033D0100D845A8 /* DailyIntake+CoreDataProperties.swift */,
+				371496402B033D0100D845A8 /* Ingredients+CoreDataClass.swift */,
+				371496412B033D0100D845A8 /* Ingredients+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		375D43172B0DCC9E008D747B /* Routine */ = {
+			isa = PBXGroup;
+			children = (
+				375D43192B0DCCBA008D747B /* CoreData */,
+				375D43182B0DCCAD008D747B /* Views */,
+			);
+			path = Routine;
+			sourceTree = "<group>";
+		};
+		375D43182B0DCCAD008D747B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				370D26D02B051C0B00F1F74A /* SetupTasksView.swift */,
+				370D26D42B051CFD00F1F74A /* AddTaskView.swift */,
+				370D26DA2B05223E00F1F74A /* TaskView.swift */,
+				370D26D22B051C2800F1F74A /* LogTasksView.swift */,
+				370D26DC2B05224700F1F74A /* AddTaskLogDayView.swift */,
+				370D26DE2B05229900F1F74A /* TaskLogDayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		375D43192B0DCCBA008D747B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				373CFE852B0C301D000BFE2B /* Task+CoreDataClass.swift */,
+				373CFE862B0C301D000BFE2B /* Task+CoreDataProperties.swift */,
+				373CFE7D2B0C1946000BFE2B /* TaskDay+CoreDataClass.swift */,
+				373CFE7E2B0C1946000BFE2B /* TaskDay+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		375D431A2B0DCCD1008D747B /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				375D431C2B0DCCEE008D747B /* CoreData */,
+				375D431B2B0DCCE1008D747B /* Views */,
+			);
+			path = Sessions;
+			sourceTree = "<group>";
+		};
+		375D431B2B0DCCE1008D747B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				373AB10A2B00C7F40006114B /* ClimbSessionView.swift */,
+				373AB1082B00C5370006114B /* AddSessionView.swift */,
+				373AB1312B013C1F0006114B /* SessionView.swift */,
+				373AB1332B013C4A0006114B /* WorkoutSessionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		375D431C2B0DCCEE008D747B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				373AB1282B0131770006114B /* ExerciseLog+CoreDataClass.swift */,
+				373AB1292B0131770006114B /* ExerciseLog+CoreDataProperties.swift */,
+				373AB1042B00C1560006114B /* Session+CoreDataClass.swift */,
+				373AB1052B00C1560006114B /* Session+CoreDataProperties.swift */,
+				37F9A2D42AFE7AE8002775CE /* Attempt+CoreDataClass.swift */,
+				37F9A2D52AFE7AE8002775CE /* Attempt+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		375D431D2B0DCD23008D747B /* Exercices */ = {
+			isa = PBXGroup;
+			children = (
+				375D431F2B0DCD66008D747B /* CoreData */,
+				375D431E2B0DCD64008D747B /* Views */,
+			);
+			path = Exercices;
+			sourceTree = "<group>";
+		};
+		375D431E2B0DCD64008D747B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				373AB1252B012F720006114B /* Setup Exercise */,
+				373AB10E2B0120F50006114B /* Setup Climbing */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		375D431F2B0DCD66008D747B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				373AB12A2B0131770006114B /* Exercise+CoreDataClass.swift */,
+				373AB12B2B0131770006114B /* Exercise+CoreDataProperties.swift */,
+				37F919F72B008FD40031505E /* Location+CoreDataClass.swift */,
+				37F919F82B008FD40031505E /* Location+CoreDataProperties.swift */,
+				37F9A2D02AFE7AE8002775CE /* Set+CoreDataClass.swift */,
+				37F9A2D12AFE7AE8002775CE /* Set+CoreDataProperties.swift */,
+				37F9A2D62AFE7AE8002775CE /* Climb+CoreDataClass.swift */,
+				37F9A2D72AFE7AE8002775CE /* Climb+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		37E043F42B02129D003D59C6 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,52 +440,16 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
-		37F9A2CD2AFE7A23002775CE /* CoreDataClass */ = {
+		37F9A2E22AFE86E1002775CE /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
-				373CFE852B0C301D000BFE2B /* Task+CoreDataClass.swift */,
-				373CFE862B0C301D000BFE2B /* Task+CoreDataProperties.swift */,
-				373CFE7D2B0C1946000BFE2B /* TaskDay+CoreDataClass.swift */,
-				373CFE7E2B0C1946000BFE2B /* TaskDay+CoreDataProperties.swift */,
-				3714963C2B033D0100D845A8 /* Meal+CoreDataClass.swift */,
-				3714963D2B033D0100D845A8 /* Meal+CoreDataProperties.swift */,
-				3714963E2B033D0100D845A8 /* DailyIntake+CoreDataClass.swift */,
-				3714963F2B033D0100D845A8 /* DailyIntake+CoreDataProperties.swift */,
-				371496402B033D0100D845A8 /* Ingredients+CoreDataClass.swift */,
-				371496412B033D0100D845A8 /* Ingredients+CoreDataProperties.swift */,
-				373AB1282B0131770006114B /* ExerciseLog+CoreDataClass.swift */,
-				373AB1292B0131770006114B /* ExerciseLog+CoreDataProperties.swift */,
-				373AB12A2B0131770006114B /* Exercise+CoreDataClass.swift */,
-				373AB12B2B0131770006114B /* Exercise+CoreDataProperties.swift */,
-				373AB1042B00C1560006114B /* Session+CoreDataClass.swift */,
-				373AB1052B00C1560006114B /* Session+CoreDataProperties.swift */,
-				37F919F72B008FD40031505E /* Location+CoreDataClass.swift */,
-				37F919F82B008FD40031505E /* Location+CoreDataProperties.swift */,
-				37F9A2D02AFE7AE8002775CE /* Set+CoreDataClass.swift */,
-				37F9A2D12AFE7AE8002775CE /* Set+CoreDataProperties.swift */,
-				37F9A2D42AFE7AE8002775CE /* Attempt+CoreDataClass.swift */,
-				37F9A2D52AFE7AE8002775CE /* Attempt+CoreDataProperties.swift */,
-				37F9A2D62AFE7AE8002775CE /* Climb+CoreDataClass.swift */,
-				37F9A2D72AFE7AE8002775CE /* Climb+CoreDataProperties.swift */,
-			);
-			path = CoreDataClass;
-			sourceTree = "<group>";
-		};
-		37F9A2E22AFE86E1002775CE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				370D26CF2B051BE500F1F74A /* Routine */,
-				371496372B033C0D00D845A8 /* Nutrition */,
-				373AB1302B0137920006114B /* Sessions */,
-				373AB1252B012F720006114B /* Setup Exercise */,
-				373AB10E2B0120F50006114B /* Setup Climbing */,
 				373AB1022B00A5600006114B /* SessionsView.swift */,
 				373AB10F2B0121B80006114B /* NutritionView.swift */,
 				37E043F72B02783B003D59C6 /* ExportView.swift */,
 				373AB1112B0121E20006114B /* RoutineView.swift */,
 				373AB1132B0122220006114B /* ExercicesView.swift */,
 			);
-			path = Views;
+			path = MainViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

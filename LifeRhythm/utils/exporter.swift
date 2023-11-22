@@ -8,8 +8,6 @@
 import Foundation
 import CoreData
 
-
-
 struct LocationExport: Codable {
     var id: UUID?
     var name: String?
