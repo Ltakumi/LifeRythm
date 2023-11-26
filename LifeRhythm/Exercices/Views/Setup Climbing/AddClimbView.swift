@@ -4,7 +4,7 @@ struct AddClimbView: View {
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.presentationMode) var presentationMode
 
-    let set: Set
+    let set: ClimbSet
 
     @State private var grade: String = ""
     @State private var name: String = ""
@@ -98,7 +98,7 @@ struct AddClimbView_Previews: PreviewProvider {
         location.climbType = "Boulder"
         location.additional = "Additional description"
         
-        let set = Set(context: context)
+        let set = ClimbSet(context: context)
         set.period_start = Date()
         set.period_end = Calendar.current.date(byAdding: .month, value: 1, to: set.period_start!)
         set.additional = "Additional Info for Location"

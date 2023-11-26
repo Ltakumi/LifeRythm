@@ -15,6 +15,9 @@ struct ClimbSessionView: View {
     @State private var selectedClimbID: String = ""
     @State private var climbs: [Climb] = []
     
+    @State private var selectedLevel: String = "All Levels"
+    @State private var levels: [String] = []
+    
     // Add FetchRequest for Attempts
     @FetchRequest var attempts: FetchedResults<Attempt>
     init(session: Session) {
@@ -58,10 +61,18 @@ struct ClimbSessionView: View {
 
             // Middle Section
             Section(header: Text("Record Attempt")) {
-                Picker("Select Climb", selection: $selectedClimbID) {
-                    Text("None").tag(UUID?.none)
-                    ForEach(climbs, id: \.id) { climb in
-                        Text(climb.name ?? "Unknown ID").tag(climb.name ?? "")
+                HStack {
+                    Picker("Level", selection: $selectedLevel) {
+                        Text("All Levels").tag("All Levels")
+                        ForEach(levels, id: \.self) { level in
+                            Text(level).tag(level)
+                        }
+                    }
+
+                    Picker("Climb", selection: $selectedClimbID) {
+                        ForEach(filteredClimbs(), id: \.id) { climb in
+                            Text(climb.name ?? "Unknown Climb").tag(climb.name ?? "")
+                        }
                     }
                 }
                 
@@ -114,7 +125,18 @@ struct ClimbSessionView: View {
         .onAppear {
             self.additional = session.additional ?? ""
             self.climbs = self.fetchClimbs()
+            self.levels = extractLevels(from: climbs)
         }
+    }
+    
+    private func filteredClimbs() -> [Climb] {
+            selectedLevel == "All Levels" ? climbs : climbs.filter { $0.grade == selectedLevel }
+    }
+    
+    private func extractLevels(from climbs: [Climb]) -> [String] {
+            var uniqueLevels = Set(climbs.compactMap { $0.grade })
+            uniqueLevels.insert("All Levels")
+            return Array(uniqueLevels).sorted()
     }
 
     private func recordAttempt(outcome: String) {

@@ -15,8 +15,8 @@ struct AddSessionView: View {
     @State private var selectedLocationIndex: Int = 0
     @State private var selectedSetIndex: Int = 0
 
-    var sets: [Set] {
-        let setsArray = locations[selectedLocationIndex].containsSet?.allObjects as? [Set] ?? []
+    var sets: [ClimbSet] {
+        let setsArray = locations[selectedLocationIndex].containsSet?.allObjects as? [ClimbSet] ?? []
         return setsArray.sorted { $0.displayName() < $1.displayName() }
     }
 

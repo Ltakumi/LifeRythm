@@ -22,7 +22,7 @@ extension Climb {
     @NSManaged public var tags: String?
     
     @NSManaged public var attempts: NSSet?
-    @NSManaged public var inSet: Set?
+    @NSManaged public var inSet: ClimbSet?
 
 }
 

@@ -10,23 +10,28 @@ import SwiftUI
 struct EditSetView: View {
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var set: Set
+    @ObservedObject var set: ClimbSet
 
     // Temporary state for editing
     @State private var periodStart: Date
     @State private var periodEnd: Date
     @State private var additional: String
+    @State private var name: String
 
-    init(set: Set) {
+    init(set: ClimbSet) {
         self.set = set
         _periodStart = State(initialValue: set.period_start ?? Date())
         _periodEnd = State(initialValue: set.period_end ?? Date())
         _additional = State(initialValue: set.additional ?? "")
+        _name = State(initialValue: set.name ?? "")
     }
 
     var body: some View {
         NavigationView {
             Form {
+                Section(header : Text("Name")) {
+                    TextField("Name", text: $name)
+                }
                 Section(header: Text("Dates")) {
                     DatePicker("Start Date", selection: $periodStart, displayedComponents: .date)
                     DatePicker("End Date", selection: $periodEnd, displayedComponents: .date)
@@ -44,10 +49,14 @@ struct EditSetView: View {
                 }
             }
             .navigationTitle("Edit Set")
+            .navigationBarItems(trailing: Button("Cancel") {
+                presentationMode.wrappedValue.dismiss()
+            })
         }
     }
 
     private func saveChanges() {
+        set.name = name
         set.period_start = periodStart
         set.period_end = periodEnd
         set.additional = additional

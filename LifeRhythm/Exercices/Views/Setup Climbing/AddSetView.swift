@@ -47,7 +47,7 @@ struct AddSetView: View {
     }
     
     private func addSet() {
-        let newSet = Set(context: viewContext)
+        let newSet = ClimbSet(context: viewContext)
         newSet.id = UUID()
         newSet.name = name
         newSet.additional = additional

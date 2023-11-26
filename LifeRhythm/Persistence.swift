@@ -18,7 +18,7 @@ struct PersistenceController {
             
             // Generate Sets for each Location
             for j in 1...2 {
-                let set = Set(context: viewContext)
+                let set = ClimbSet(context: viewContext)
                 set.id = UUID()
                 set.name = "Set name \(j) for Location \(i)"
                 set.period_start = Date()

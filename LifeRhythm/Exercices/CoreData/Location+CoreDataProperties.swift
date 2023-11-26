@@ -29,10 +29,10 @@ extension Location {
 extension Location {
 
     @objc(addContainsSetObject:)
-    @NSManaged public func addToContainsSet(_ value: Set)
+    @NSManaged public func addToContainsSet(_ value: ClimbSet)
 
     @objc(removeContainsSetObject:)
-    @NSManaged public func removeFromContainsSet(_ value: Set)
+    @NSManaged public func removeFromContainsSet(_ value: ClimbSet)
 
     @objc(addContainsSet:)
     @NSManaged public func addToContainsSet(_ values: NSSet)

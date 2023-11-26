@@ -10,11 +10,11 @@ import SwiftUI
 struct SetView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    let set: Set
+    let set: ClimbSet
     
     @FetchRequest var climbs: FetchedResults<Climb>
     
-    init(set: Set) {
+    init(set: ClimbSet) {
         self.set = set
         self._climbs = FetchRequest<Climb>(
             entity: Climb.entity(),
@@ -84,7 +84,7 @@ struct SetView_Previews: PreviewProvider {
         location.locationType = "Gym"
         location.additional = "Additional description"
         
-        let set = Set(context: context)
+        let set = ClimbSet(context: context)
         set.period_start = Date()
         set.period_end = Calendar.current.date(byAdding: .month, value: 1, to: set.period_start!)
         set.additional = "Additional Info for Location"

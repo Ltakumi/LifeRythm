@@ -15,12 +15,12 @@ struct LocationView: View {
     @State private var showingAddSetView = false
     
     // Dynamic FetchRequest for sets
-    @FetchRequest var sets: FetchedResults<Set>
+    @FetchRequest var sets: FetchedResults<ClimbSet>
     
     init(location: Location) {
         self.location = location
-        self._sets = FetchRequest<Set>(
-            entity: Set.entity(),
+        self._sets = FetchRequest<ClimbSet>(
+            entity: ClimbSet.entity(),
             sortDescriptors: [],
             predicate: NSPredicate(format: "inLocation == %@", location)
         )
@@ -89,7 +89,7 @@ struct LocationView_Previews: PreviewProvider {
         location.climbType = "Boulder"
         location.additional = "Additional description"
         
-        let set = Set(context: context)
+        let set = ClimbSet(context: context)
         set.name = "Winter"
         set.period_start = Date()
         set.period_end = Calendar.current.date(byAdding: .month, value: 1, to: set.period_start!)

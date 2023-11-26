@@ -1,8 +1,8 @@
 //
-//  Set+CoreDataProperties.swift
+//  ClimbSet+CoreDataProperties.swift
 //  LifeRhythm
 //
-//  Created by Louis Takumi on 2023/11/10.
+//  Created by Louis Takumi on 2023/11/22.
 //
 //
 
@@ -10,12 +10,12 @@ import Foundation
 import CoreData
 
 
-extension Set {
+extension ClimbSet {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Set> {
-        return NSFetchRequest<Set>(entityName: "Set")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<ClimbSet> {
+        return NSFetchRequest<ClimbSet>(entityName: "ClimbSet")
     }
-    
+
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var period_end: Date?
@@ -29,11 +29,10 @@ extension Set {
     func displayName() -> String {
         return self.name ?? "Unnamed set"
     }
-
 }
 
 // MARK: Generated accessors for containsClimb
-extension Set {
+extension ClimbSet {
 
     @objc(addContainsClimbObject:)
     @NSManaged public func addToContainsClimb(_ value: Climb)
@@ -50,7 +49,7 @@ extension Set {
 }
 
 // MARK: Generated accessors for containsSession
-extension Set {
+extension ClimbSet {
 
     @objc(addContainsSessionObject:)
     @NSManaged public func addToContainsSession(_ value: Session)
@@ -66,6 +65,6 @@ extension Set {
 
 }
 
-extension Set : Identifiable {
+extension ClimbSet : Identifiable {
 
 }

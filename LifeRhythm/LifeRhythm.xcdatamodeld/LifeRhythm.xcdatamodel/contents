@@ -14,7 +14,17 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="tags" optional="YES" attributeType="String"/>
         <relationship name="attempts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attempt" inverseName="idClimb" inverseEntity="Attempt"/>
-        <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="containsClimb" inverseEntity="Set"/>
+        <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClimbSet" inverseName="containsClimb" inverseEntity="ClimbSet"/>
+    </entity>
+    <entity name="ClimbSet" representedClassName="ClimbSet" syncable="YES">
+        <attribute name="additional" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="period_end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="period_start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="containsClimb" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Climb" inverseName="inSet" inverseEntity="Climb"/>
+        <relationship name="containsSession" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="inSet" inverseEntity="Session"/>
+        <relationship name="inLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="containsSet" inverseEntity="Location"/>
     </entity>
     <entity name="DailyIntake" representedClassName="DailyIntake" syncable="YES">
         <attribute name="additional" optional="YES" attributeType="String"/>
@@ -61,7 +71,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="locationType" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="containsSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Set" inverseName="inLocation" inverseEntity="Set"/>
+        <relationship name="containsSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ClimbSet" inverseName="inLocation" inverseEntity="ClimbSet"/>
     </entity>
     <entity name="Meal" representedClassName="Meal" syncable="YES">
         <attribute name="additional" optional="YES" attributeType="String"/>
@@ -85,17 +95,7 @@
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="containsAttempt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attempt" inverseName="inSession" inverseEntity="Attempt"/>
         <relationship name="containsExerciceLog" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseLog" inverseName="inSession" inverseEntity="ExerciseLog"/>
-        <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="containsSession" inverseEntity="Set"/>
-    </entity>
-    <entity name="Set" representedClassName="Set" syncable="YES">
-        <attribute name="additional" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="period_end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="period_start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="containsClimb" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Climb" inverseName="inSet" inverseEntity="Climb"/>
-        <relationship name="containsSession" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="inSet" inverseEntity="Session"/>
-        <relationship name="inLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="containsSet" inverseEntity="Location"/>
+        <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClimbSet" inverseName="containsSession" inverseEntity="ClimbSet"/>
     </entity>
     <entity name="Task" representedClassName="Task" syncable="YES">
         <attribute name="frequency" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

@@ -21,7 +21,7 @@ extension Session {
     @NSManaged public var id: UUID?
     @NSManaged public var start: Date?
     @NSManaged public var containsAttempt: NSSet?
-    @NSManaged public var inSet: Set?
+    @NSManaged public var inSet: ClimbSet?
     @NSManaged public var type: String?
     
     func sessionInfo() -> String {
