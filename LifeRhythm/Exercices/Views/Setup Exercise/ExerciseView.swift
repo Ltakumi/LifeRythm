@@ -4,15 +4,33 @@ import CoreData
 
 struct ExerciseView: View {
     var exercise: Exercise
+    
+    @Environment(\.managedObjectContext) var viewContext
+    @State private var showingEditView = false
 
     var body: some View {
-        VStack(alignment: .leading) {
+        Section(header: Text("Information")){
             Text("Name: \(exercise.name ?? "Unknown")")
             Text("Type: \(exercise.type ?? "Unknown")")
-            Text("Detail: \(exercise.detail ?? "No details")")
+        }
+        
+        Section(header : Text("Details")) {
+            Text(exercise.detail ?? "No details")
         }
         .navigationBarTitle("Exercise Details")
-    }
+        .navigationBarItems(
+            trailing:
+                Button(action: {
+                    showingEditView = true // Open the edit view or modal
+                }) {
+                    Image(systemName: "pencil")
+                }
+                .sheet(isPresented: $showingEditView) {
+                            EditExerciseView(exercise: exercise)
+                                .environment(\.managedObjectContext, self.viewContext)
+                        }
+            )
+        }
 }
 
 //struct ExerciseView_Previews: PreviewProvider {

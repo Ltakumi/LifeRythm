@@ -42,7 +42,7 @@
 		373AB1182B0126160006114B /* LiftingExercicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1172B0126160006114B /* LiftingExercicesView.swift */; };
 		373AB11A2B0126200006114B /* CardioExercicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1192B0126200006114B /* CardioExercicesView.swift */; };
 		373AB11C2B0127E40006114B /* AddExerciceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB11B2B0127E40006114B /* AddExerciceView.swift */; };
-		373AB1272B01305F0006114B /* ExerciceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1262B01305F0006114B /* ExerciceView.swift */; };
+		373AB1272B01305F0006114B /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1262B01305F0006114B /* ExerciseView.swift */; };
 		373AB12C2B0131770006114B /* ExerciseLog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1282B0131770006114B /* ExerciseLog+CoreDataClass.swift */; };
 		373AB12D2B0131770006114B /* ExerciseLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB1292B0131770006114B /* ExerciseLog+CoreDataProperties.swift */; };
 		373AB12E2B0131770006114B /* Exercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373AB12A2B0131770006114B /* Exercise+CoreDataClass.swift */; };
@@ -66,6 +66,7 @@
 		375D43232B0DDF75008D747B /* EditClimbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D43222B0DDF75008D747B /* EditClimbView.swift */; };
 		375D43262B0DE463008D747B /* ClimbSet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D43242B0DE463008D747B /* ClimbSet+CoreDataClass.swift */; };
 		375D43272B0DE463008D747B /* ClimbSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D43252B0DE463008D747B /* ClimbSet+CoreDataProperties.swift */; };
+		37BB70292B134EC400D9E88C /* EditExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB70282B134EC400D9E88C /* EditExerciseView.swift */; };
 		37E043F82B02783B003D59C6 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E043F72B02783B003D59C6 /* ExportView.swift */; };
 		37E043FA2B027BA3003D59C6 /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E043F92B027BA3003D59C6 /* JsonUtils.swift */; };
 		37E043FD2B028B6E003D59C6 /* exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E043FC2B028B6E003D59C6 /* exporter.swift */; };
@@ -135,7 +136,7 @@
 		373AB1172B0126160006114B /* LiftingExercicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftingExercicesView.swift; sourceTree = "<group>"; };
 		373AB1192B0126200006114B /* CardioExercicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardioExercicesView.swift; sourceTree = "<group>"; };
 		373AB11B2B0127E40006114B /* AddExerciceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciceView.swift; sourceTree = "<group>"; };
-		373AB1262B01305F0006114B /* ExerciceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciceView.swift; sourceTree = "<group>"; };
+		373AB1262B01305F0006114B /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		373AB1282B0131770006114B /* ExerciseLog+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseLog+CoreDataClass.swift"; sourceTree = "<group>"; };
 		373AB1292B0131770006114B /* ExerciseLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		373AB12A2B0131770006114B /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 		375D43222B0DDF75008D747B /* EditClimbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClimbView.swift; sourceTree = "<group>"; };
 		375D43242B0DE463008D747B /* ClimbSet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClimbSet+CoreDataClass.swift"; sourceTree = "<group>"; };
 		375D43252B0DE463008D747B /* ClimbSet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClimbSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		37BB70282B134EC400D9E88C /* EditExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseView.swift; sourceTree = "<group>"; };
 		37E043F72B02783B003D59C6 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		37E043F92B027BA3003D59C6 /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
 		37E043FB2B028506003D59C6 /* LifeRhythm2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeRhythm2.xcdatamodel; sourceTree = "<group>"; };
@@ -227,9 +229,10 @@
 			children = (
 				373AB1172B0126160006114B /* LiftingExercicesView.swift */,
 				373AB1192B0126200006114B /* CardioExercicesView.swift */,
-				373AB11B2B0127E40006114B /* AddExerciceView.swift */,
 				373AB1152B0126040006114B /* ClimbingExercicesView.swift */,
-				373AB1262B01305F0006114B /* ExerciceView.swift */,
+				373AB11B2B0127E40006114B /* AddExerciceView.swift */,
+				373AB1262B01305F0006114B /* ExerciseView.swift */,
+				37BB70282B134EC400D9E88C /* EditExerciseView.swift */,
 			);
 			path = "Setup Exercise";
 			sourceTree = "<group>";
@@ -602,7 +605,7 @@
 				3746881C2AFCC4E000E06029 /* LifeRhythmApp.swift in Sources */,
 				373AB1122B0121E20006114B /* RoutineView.swift in Sources */,
 				373AB1062B00C1560006114B /* Session+CoreDataClass.swift in Sources */,
-				373AB1272B01305F0006114B /* ExerciceView.swift in Sources */,
+				373AB1272B01305F0006114B /* ExerciseView.swift in Sources */,
 				371496452B033D0100D845A8 /* DailyIntake+CoreDataProperties.swift in Sources */,
 				373AB1092B00C5370006114B /* AddSessionView.swift in Sources */,
 				37F919F92B008FD40031505E /* Location+CoreDataClass.swift in Sources */,
@@ -617,6 +620,7 @@
 				373AB12D2B0131770006114B /* ExerciseLog+CoreDataProperties.swift in Sources */,
 				370D26D32B051C2800F1F74A /* LogTasksView.swift in Sources */,
 				37F9A2DF2AFE7AE8002775CE /* Attempt+CoreDataProperties.swift in Sources */,
+				37BB70292B134EC400D9E88C /* EditExerciseView.swift in Sources */,
 				37F919FA2B008FD40031505E /* Location+CoreDataProperties.swift in Sources */,
 				373AB10B2B00C7F40006114B /* ClimbSessionView.swift in Sources */,
 				373AB11A2B0126200006114B /* CardioExercicesView.swift in Sources */,
