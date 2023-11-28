@@ -12,6 +12,8 @@ struct AddTaskView: View {
     @State private var taskLevelShorts : [String] = [""]
     @State private var taskFrequency : String = ""
     @State private var taskStartDate = Date()
+    @State private var isEndDateSet = false
+    @State private var taskEndDate = Date()
     @State private var showAlert = false
     @State private var alertMessage = ""
     
@@ -25,6 +27,12 @@ struct AddTaskView: View {
                     TextField("Task Name", text: $taskName)
                                         
                     DatePicker("Start Date", selection: $taskStartDate)
+                    
+                    Toggle("Set End Date", isOn: $isEndDateSet)
+                    // Conditionally display the DatePicker based on the toggle
+                    if isEndDateSet {
+                        DatePicker("End Date", selection: $taskEndDate)
+                    }
                     
                     TextField("Frequency", text: $taskFrequency)
                                             .keyboardType(.numberPad)
@@ -128,6 +136,7 @@ struct AddTaskView: View {
             newTask.levels = taskLevels.joined(separator: ",")
             newTask.levelshorts = taskLevelShorts.joined(separator: ",")
             newTask.start_date = taskStartDate
+            newTask.end_date = isEndDateSet ? taskEndDate : nil
             newTask.frequency = Int16(taskFrequency) ?? 1
             
             // Calculate the next date by adding taskFrequency days

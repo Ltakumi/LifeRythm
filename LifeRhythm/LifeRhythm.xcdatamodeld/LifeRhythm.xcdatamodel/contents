@@ -98,6 +98,7 @@
         <relationship name="inSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClimbSet" inverseName="containsSession" inverseEntity="ClimbSet"/>
     </entity>
     <entity name="Task" representedClassName="Task" syncable="YES">
+        <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="frequency" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="levels" optional="YES" attributeType="String"/>

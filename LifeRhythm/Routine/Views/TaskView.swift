@@ -10,6 +10,7 @@ struct TaskView: View {
             Text("Frequency: \(task.frequency)")
             Text("Start Date:" + DateUtils.formatDate(task.start_date))
             Text("Next Deadline:" + DateUtils.formatDate(task.next_deadline))
+            Text("End Date:" + DateUtils.formatDate(task.end_date))
             
             if let levelsString = task.levels, !levelsString.isEmpty {
                 let levelsArray = levelsString.split(separator: ",")

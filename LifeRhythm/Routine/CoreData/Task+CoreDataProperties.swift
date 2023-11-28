@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  LifeRhythm
 //
-//  Created by Louis Takumi on 2023/11/21.
+//  Created by Louis Takumi on 2023/11/26.
 //
 //
 
@@ -16,14 +16,14 @@ extension Task {
         return NSFetchRequest<Task>(entityName: "Task")
     }
 
-    
-    @NSManaged public var id: UUID?
-    @NSManaged public var name: String?
     @NSManaged public var frequency: Int16
+    @NSManaged public var id: UUID?
     @NSManaged public var levels: String?
     @NSManaged public var levelshorts: String?
-    @NSManaged public var start_date: Date?
+    @NSManaged public var name: String?
     @NSManaged public var next_deadline: Date?
+    @NSManaged public var start_date: Date?
+    @NSManaged public var end_date: Date?
     @NSManaged public var didOnDay: NSSet?
 
 }
