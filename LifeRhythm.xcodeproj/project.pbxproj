@@ -266,11 +266,11 @@
 				375D431A2B0DCCD1008D747B /* Sessions */,
 				375D43172B0DCC9E008D747B /* Routine */,
 				375D43142B0DCC5D008D747B /* Nutrition */,
+				376619C42B162FD1005D18B6 /* Data export */,
 				3746881B2AFCC4E000E06029 /* LifeRhythmApp.swift */,
 				3746881D2AFCC4E000E06029 /* ContentView.swift */,
 				374688242AFCC4E200E06029 /* Persistence.swift */,
 				374688262AFCC4E200E06029 /* LifeRhythm.xcdatamodeld */,
-				37F9A2E22AFE86E1002775CE /* MainViews */,
 				37E043F42B02129D003D59C6 /* utils */,
 				3746881F2AFCC4E200E06029 /* Assets.xcassets */,
 				374688292AFCC4E200E06029 /* LifeRhythm.entitlements */,
@@ -308,6 +308,7 @@
 		375D43142B0DCC5D008D747B /* Nutrition */ = {
 			isa = PBXGroup;
 			children = (
+				373AB10F2B0121B80006114B /* NutritionView.swift */,
 				375D43162B0DCC85008D747B /* CoreData */,
 				375D43152B0DCC77008D747B /* Views */,
 			);
@@ -345,6 +346,7 @@
 		375D43172B0DCC9E008D747B /* Routine */ = {
 			isa = PBXGroup;
 			children = (
+				373AB1112B0121E20006114B /* RoutineView.swift */,
 				375D43192B0DCCBA008D747B /* CoreData */,
 				375D43182B0DCCAD008D747B /* Views */,
 			);
@@ -379,6 +381,7 @@
 		375D431A2B0DCCD1008D747B /* Sessions */ = {
 			isa = PBXGroup;
 			children = (
+				373AB1022B00A5600006114B /* SessionsView.swift */,
 				375D431C2B0DCCEE008D747B /* CoreData */,
 				375D431B2B0DCCE1008D747B /* Views */,
 			);
@@ -388,10 +391,10 @@
 		375D431B2B0DCCE1008D747B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				373AB10A2B00C7F40006114B /* ClimbSessionView.swift */,
 				373AB1082B00C5370006114B /* AddSessionView.swift */,
 				373AB1312B013C1F0006114B /* SessionView.swift */,
 				373AB1332B013C4A0006114B /* WorkoutSessionView.swift */,
+				373AB10A2B00C7F40006114B /* ClimbSessionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 		375D431D2B0DCD23008D747B /* Exercices */ = {
 			isa = PBXGroup;
 			children = (
+				373AB1132B0122220006114B /* ExercicesView.swift */,
 				375D431F2B0DCD66008D747B /* CoreData */,
 				375D431E2B0DCD64008D747B /* Views */,
 			);
@@ -442,6 +446,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		376619C42B162FD1005D18B6 /* Data export */ = {
+			isa = PBXGroup;
+			children = (
+				37E043F72B02783B003D59C6 /* ExportView.swift */,
+			);
+			path = "Data export";
+			sourceTree = "<group>";
+		};
 		37E043F42B02129D003D59C6 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,18 +462,6 @@
 				37E043FC2B028B6E003D59C6 /* exporter.swift */,
 			);
 			path = utils;
-			sourceTree = "<group>";
-		};
-		37F9A2E22AFE86E1002775CE /* MainViews */ = {
-			isa = PBXGroup;
-			children = (
-				373AB1022B00A5600006114B /* SessionsView.swift */,
-				373AB10F2B0121B80006114B /* NutritionView.swift */,
-				37E043F72B02783B003D59C6 /* ExportView.swift */,
-				373AB1112B0121E20006114B /* RoutineView.swift */,
-				373AB1132B0122220006114B /* ExercicesView.swift */,
-			);
-			path = MainViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
