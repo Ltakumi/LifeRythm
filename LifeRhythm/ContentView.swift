@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  LifeRhythm
-//
-//  Created by Louis Takumi on 2023/11/09.
-//
-
 import SwiftUI
 import CoreData
 
