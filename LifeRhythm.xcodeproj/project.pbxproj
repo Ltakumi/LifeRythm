@@ -64,6 +64,7 @@
 		375D43232B0DDF75008D747B /* EditClimbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D43222B0DDF75008D747B /* EditClimbView.swift */; };
 		375D43262B0DE463008D747B /* ClimbSet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D43242B0DE463008D747B /* ClimbSet+CoreDataClass.swift */; };
 		375D43272B0DE463008D747B /* ClimbSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D43252B0DE463008D747B /* ClimbSet+CoreDataProperties.swift */; };
+		376619C32B15F55E005D18B6 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376619C22B15F55E005D18B6 /* EditTaskView.swift */; };
 		37BB70292B134EC400D9E88C /* EditExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB70282B134EC400D9E88C /* EditExerciseView.swift */; };
 		37BB702C2B1351C300D9E88C /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB702A2B1351C300D9E88C /* Task+CoreDataClass.swift */; };
 		37BB702D2B1351C300D9E88C /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB702B2B1351C300D9E88C /* Task+CoreDataProperties.swift */; };
@@ -163,6 +164,7 @@
 		375D43222B0DDF75008D747B /* EditClimbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClimbView.swift; sourceTree = "<group>"; };
 		375D43242B0DE463008D747B /* ClimbSet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClimbSet+CoreDataClass.swift"; sourceTree = "<group>"; };
 		375D43252B0DE463008D747B /* ClimbSet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClimbSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		376619C22B15F55E005D18B6 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
 		37BB70282B134EC400D9E88C /* EditExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseView.swift; sourceTree = "<group>"; };
 		37BB702A2B1351C300D9E88C /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		37BB702B2B1351C300D9E88C /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				370D26D02B051C0B00F1F74A /* SetupTasksView.swift */,
 				370D26D42B051CFD00F1F74A /* AddTaskView.swift */,
 				370D26DA2B05223E00F1F74A /* TaskView.swift */,
+				376619C22B15F55E005D18B6 /* EditTaskView.swift */,
 				370D26D22B051C2800F1F74A /* LogTasksView.swift */,
 				370D26DC2B05224700F1F74A /* AddTaskLogDayView.swift */,
 				370D26DE2B05229900F1F74A /* TaskLogDayView.swift */,
@@ -650,6 +653,7 @@
 				373AB1032B00A5600006114B /* SessionsView.swift in Sources */,
 				370D26DD2B05224700F1F74A /* AddTaskLogDayView.swift in Sources */,
 				375D43232B0DDF75008D747B /* EditClimbView.swift in Sources */,
+				376619C32B15F55E005D18B6 /* EditTaskView.swift in Sources */,
 				373CFE7F2B0C1946000BFE2B /* TaskDay+CoreDataClass.swift in Sources */,
 				375D43212B0DDD19008D747B /* EditSetView.swift in Sources */,
 				373AB1322B013C1F0006114B /* SessionView.swift in Sources */,

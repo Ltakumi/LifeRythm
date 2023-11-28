@@ -26,9 +26,9 @@ struct ExerciseView: View {
                     Image(systemName: "pencil")
                 }
                 .sheet(isPresented: $showingEditView) {
-                            EditExerciseView(exercise: exercise)
-                                .environment(\.managedObjectContext, self.viewContext)
-                        }
+                    EditExerciseView(exercise: exercise)
+                        .environment(\.managedObjectContext, self.viewContext)
+                }
             )
         }
 }
