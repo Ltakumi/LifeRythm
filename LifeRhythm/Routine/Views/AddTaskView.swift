@@ -34,7 +34,7 @@ struct AddTaskView: View {
                         DatePicker("End Date", selection: $taskEndDate)
                     }
                     
-                    TextField("Frequency", text: $taskFrequency)
+                    TextField("Frequency (in days)", text: $taskFrequency)
                                             .keyboardType(.numberPad)
                 }
                 
