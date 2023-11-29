@@ -7,8 +7,8 @@ struct ClimbSessionView: View {
     @ObservedObject var session: Session
 
     @State private var additional: String = ""
-    @State private var start_time: Date?
-    @State private var end_time: Date?
+    @State private var start_time: Date
+    @State private var end_time: Date
     @State private var showAlert = false
     @State private var alertMessage = ""
     
@@ -26,25 +26,22 @@ struct ClimbSessionView: View {
             sortDescriptors: [NSSortDescriptor(keyPath: \Attempt.timestamp, ascending: false)],  // Sort by timestamp, latest first
             predicate: NSPredicate(format: "inSession == %@", session)  // Filter by the current session
         )
+        self._start_time = State(initialValue: session.start ?? Date())
+        self._end_time = State(initialValue: session.end ?? Date())
     }
     
     var body: some View {
         Form {
             // Top Section
             Section(header: Text("Session Info")) {
-                HStack{
-                    Button(action: {start_time = Date()}) {
-                        Text("Start")
-                    }
-                    Spacer()
-                    Text(DateUtils.formatTimestamp(start_time))
+                HStack {
+                    DatePicker("Start", selection: $start_time, displayedComponents: [.date, .hourAndMinute])
+                        .labelsHidden()
                 }
-                HStack{
-                    Button(action: {end_time = Date()}) {
-                        Text("End")
-                    }
-                    Spacer()
-                    Text(DateUtils.formatTimestamp(end_time))
+
+                HStack {
+                    DatePicker("End", selection: $end_time, displayedComponents: [.date, .hourAndMinute])
+                        .labelsHidden()
                 }
                 TextField("Additional Info", text: $additional)
                 Button("Record Session") {
