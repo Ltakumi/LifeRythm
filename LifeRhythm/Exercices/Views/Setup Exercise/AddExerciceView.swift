@@ -42,6 +42,7 @@ struct AddExerciseView: View {
         }
 
         let newExercise = Exercise(context: viewContext)
+        newExercise.id = UUID()
         newExercise.name = name
         newExercise.type = type
         newExercise.detail = detail
