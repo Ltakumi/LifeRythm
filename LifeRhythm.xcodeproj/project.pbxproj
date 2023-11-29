@@ -65,12 +65,14 @@
 		375D43262B0DE463008D747B /* ClimbSet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D43242B0DE463008D747B /* ClimbSet+CoreDataClass.swift */; };
 		375D43272B0DE463008D747B /* ClimbSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D43252B0DE463008D747B /* ClimbSet+CoreDataProperties.swift */; };
 		376619C32B15F55E005D18B6 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376619C22B15F55E005D18B6 /* EditTaskView.swift */; };
+		376619C82B16D85C005D18B6 /* ExportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376619C72B16D85C005D18B6 /* ExportUtils.swift */; };
+		376619CA2B16D970005D18B6 /* exporterRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376619C92B16D970005D18B6 /* exporterRoutine.swift */; };
 		37BB70292B134EC400D9E88C /* EditExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB70282B134EC400D9E88C /* EditExerciseView.swift */; };
 		37BB702C2B1351C300D9E88C /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB702A2B1351C300D9E88C /* Task+CoreDataClass.swift */; };
 		37BB702D2B1351C300D9E88C /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB702B2B1351C300D9E88C /* Task+CoreDataProperties.swift */; };
 		37E043F82B02783B003D59C6 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E043F72B02783B003D59C6 /* ExportView.swift */; };
 		37E043FA2B027BA3003D59C6 /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E043F92B027BA3003D59C6 /* JsonUtils.swift */; };
-		37E043FD2B028B6E003D59C6 /* exporter_sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E043FC2B028B6E003D59C6 /* exporter_sport.swift */; };
+		37E043FD2B028B6E003D59C6 /* exporterSport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E043FC2B028B6E003D59C6 /* exporterSport.swift */; };
 		37F919EC2AFF15F50031505E /* AddLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F919EB2AFF15F50031505E /* AddLocationView.swift */; };
 		37F919F42B0087230031505E /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F919F32B0087230031505E /* SetView.swift */; };
 		37F919F62B00894F0031505E /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F919F52B00894F0031505E /* AddSetView.swift */; };
@@ -165,13 +167,15 @@
 		375D43242B0DE463008D747B /* ClimbSet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClimbSet+CoreDataClass.swift"; sourceTree = "<group>"; };
 		375D43252B0DE463008D747B /* ClimbSet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClimbSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		376619C22B15F55E005D18B6 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		376619C72B16D85C005D18B6 /* ExportUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportUtils.swift; sourceTree = "<group>"; };
+		376619C92B16D970005D18B6 /* exporterRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exporterRoutine.swift; sourceTree = "<group>"; };
 		37BB70282B134EC400D9E88C /* EditExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseView.swift; sourceTree = "<group>"; };
 		37BB702A2B1351C300D9E88C /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		37BB702B2B1351C300D9E88C /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		37E043F72B02783B003D59C6 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		37E043F92B027BA3003D59C6 /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
 		37E043FB2B028506003D59C6 /* LifeRhythm2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeRhythm2.xcdatamodel; sourceTree = "<group>"; };
-		37E043FC2B028B6E003D59C6 /* exporter_sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exporter_sport.swift; sourceTree = "<group>"; };
+		37E043FC2B028B6E003D59C6 /* exporterSport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exporterSport.swift; sourceTree = "<group>"; };
 		37F919EB2AFF15F50031505E /* AddLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationView.swift; sourceTree = "<group>"; };
 		37F919F32B0087230031505E /* SetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView.swift; sourceTree = "<group>"; };
 		37F919F52B00894F0031505E /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
@@ -450,7 +454,9 @@
 			isa = PBXGroup;
 			children = (
 				37E043F72B02783B003D59C6 /* ExportView.swift */,
-				37E043FC2B028B6E003D59C6 /* exporter_sport.swift */,
+				37E043FC2B028B6E003D59C6 /* exporterSport.swift */,
+				376619C92B16D970005D18B6 /* exporterRoutine.swift */,
+				376619C72B16D85C005D18B6 /* ExportUtils.swift */,
 			);
 			path = "Data export";
 			sourceTree = "<group>";
@@ -594,7 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37E043FD2B028B6E003D59C6 /* exporter_sport.swift in Sources */,
+				37E043FD2B028B6E003D59C6 /* exporterSport.swift in Sources */,
 				37F919F62B00894F0031505E /* AddSetView.swift in Sources */,
 				37F9A2E02AFE7AE8002775CE /* Climb+CoreDataClass.swift in Sources */,
 				370D26D52B051CFD00F1F74A /* AddTaskView.swift in Sources */,
@@ -641,6 +647,7 @@
 				37E043FA2B027BA3003D59C6 /* JsonUtils.swift in Sources */,
 				371496432B033D0100D845A8 /* Meal+CoreDataProperties.swift in Sources */,
 				373AB12F2B0131770006114B /* Exercise+CoreDataProperties.swift in Sources */,
+				376619CA2B16D970005D18B6 /* exporterRoutine.swift in Sources */,
 				373AB11C2B0127E40006114B /* AddExerciceView.swift in Sources */,
 				373AB1342B013C4A0006114B /* WorkoutSessionView.swift in Sources */,
 				3714964F2B0343B100D845A8 /* DailyIntakeView.swift in Sources */,
@@ -648,6 +655,7 @@
 				375D43262B0DE463008D747B /* ClimbSet+CoreDataClass.swift in Sources */,
 				3714964D2B03436A00D845A8 /* AddDailyIntakeView.swift in Sources */,
 				371496442B033D0100D845A8 /* DailyIntake+CoreDataClass.swift in Sources */,
+				376619C82B16D85C005D18B6 /* ExportUtils.swift in Sources */,
 				370D26D12B051C0B00F1F74A /* SetupTasksView.swift in Sources */,
 				373AB12E2B0131770006114B /* Exercise+CoreDataClass.swift in Sources */,
 				373AB1032B00A5600006114B /* SessionsView.swift in Sources */,

@@ -18,11 +18,16 @@ struct ExportView: View {
             }
 
             Button("Export Sports") {
-                let locationData = exportSportDataToJsonData()
-                currentFilename = "locations.json"
-                exportJsonData(jsonData: locationData, filename: currentFilename)
+                let sportData = exportSportDataToJsonData()
+                currentFilename = "sports.json"
+                exportJsonData(jsonData: sportData, filename: currentFilename)
             }
             
+            Button("Export Tasks") {
+                let taskData = exportTaskDataToJsonData()
+                currentFilename = "tasks.json"
+                exportJsonData(jsonData: taskData, filename: currentFilename)
+            }
             
         }
         .alert(isPresented: $showingAlert) {
@@ -48,51 +53,6 @@ struct ExportView: View {
             self.showingAlert = true
         }
     }
-    
-//    private func fetchLocations() -> [Location] {
-//        let fetchRequest: NSFetchRequest<Location> = Location.fetchRequest()
-//        do {
-//            let locations = try viewContext.fetch(fetchRequest)
-//            return locations
-//        } catch {
-//            print("Error fetching locations: \(error)")
-//            return []
-//        }
-//    }
-//    
-//    private func fetchClimbSets() -> [ClimbSet] {
-//        let fetchRequest: NSFetchRequest<ClimbSet> = ClimbSet.fetchRequest()
-//        do {
-//            let climbsets = try viewContext.fetch(fetchRequest)
-//            return climbsets
-//        } catch {
-//            print("Error fetching locations: \(error)")
-//            return []
-//        }
-//    }
-//    
-//    private func fetchExercises() -> [Exercise] {
-//        let fetchRequest: NSFetchRequest<Exercise> = Exercise.fetchRequest()
-//        do {
-//            let exercises = try viewContext.fetch(fetchRequest)
-//            return exercises
-//        } catch {
-//            print("Error fetching locations: \(error)")
-//            return []
-//        }
-//    }
-    
-    private func fetchAllData() -> ([Location], [ClimbSet], [Exercise], [Climb], [Session], [ExerciseLog], [Attempt]) {
-        let locations = fetchEntities(Location.fetchRequest())
-        let climbSets = fetchEntities(ClimbSet.fetchRequest())
-        let exercises = fetchEntities(Exercise.fetchRequest())
-        let climbs = fetchEntities(Climb.fetchRequest())
-        let sessions = fetchEntities(Session.fetchRequest())
-        let exerciseLogs = fetchEntities(ExerciseLog.fetchRequest())
-        let attempts = fetchEntities(Attempt.fetchRequest())
-
-        return (locations, climbSets, exercises, climbs, sessions, exerciseLogs, attempts)
-    }
 
     private func fetchEntities<T: NSManagedObject>(_ fetchRequest: NSFetchRequest<T>) -> [T] {
         do {
@@ -105,11 +65,28 @@ struct ExportView: View {
     }
     
     func exportSportDataToJsonData() -> Data {
-        let (locations, climbSets, exercises, climbs, sessions, exerciseLogs, attempts) = fetchAllData()
+        
+        let locations = fetchEntities(Location.fetchRequest())
+        let climbSets = fetchEntities(ClimbSet.fetchRequest())
+        let exercises = fetchEntities(Exercise.fetchRequest())
+        let climbs = fetchEntities(Climb.fetchRequest())
+        let sessions = fetchEntities(Session.fetchRequest())
+        let exerciseLogs = fetchEntities(ExerciseLog.fetchRequest())
+        let attempts = fetchEntities(Attempt.fetchRequest())
+        
+        let sportData = createCombinedSportData(locations: locations, climbSets: climbSets, exercises: exercises, climbs: climbs, sessions: sessions, exerciseLogs: exerciseLogs, attempts:attempts)
 
-        let sportData = createExportJson(locations: locations, climbSets: climbSets, exercises: exercises, climbs: climbs, sessions: sessions, exerciseLogs: exerciseLogs, attempts:attempts)
+        return sportData
+    }
+    
+    func exportTaskDataToJsonData() -> Data {
+        
+        let tasks = fetchEntities(Task.fetchRequest())
+        let taskdays = fetchEntities(TaskDay.fetchRequest())
+        
+        let taskData = createCombinedTaskData(tasks: tasks, taskDays: taskdays)
 
-        return encodeToJson(combinedData: sportData) ?? Data()
+        return taskData
     }
 
     private func handlePickedDocument(url: URL) {
