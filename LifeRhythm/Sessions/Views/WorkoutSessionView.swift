@@ -119,12 +119,6 @@ struct WorkoutSessionView: View {
         newLog.inSession = session
         newLog.idExercise = exercises.first {$0.name == selectedExerciseID}
         
-        print("selected")
-        print(selectedExerciseID)
-        
-        print("assigned")
-        print(newLog.idExercise?.name)
-        
         do {
             try viewContext.save()
         } catch {

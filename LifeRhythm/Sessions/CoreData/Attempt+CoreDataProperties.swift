@@ -32,17 +32,26 @@ extension Attempt {
     
     var outcomeColor: Color {
         switch outcome {
-        case "Send":
-            return .green
         case "Progress":
             return .orange
         case "No Progress":
             return .red
+        case "No start":
+            return Color.customPink
+        case "Practice":
+            return Color.lightPink
+        case "Few moves":
+            return Color.palePink
+        case "Most moves":
+            return Color.lightTeal
+        case "Very close": // Corrected case
+            return Color.mediumTeal
+        case "Send":
+            return Color.darkTeal
         default:
-            return .black
+            return .black // Default color for unknown outcomes
         }
     }
-
 }
 
 

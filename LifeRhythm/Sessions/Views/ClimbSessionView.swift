@@ -73,39 +73,50 @@ struct ClimbSessionView: View {
                     }
                 }
                 
-                HStack {
-                    Button(action: { recordAttempt(outcome: "Send") }) {
-                        Text("Send")
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .background(Color.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                VStack {
+                    HStack {
+                        Button(action: { recordAttempt(outcome: "No start") }) {
+                            Text("No Start")
+                                .buttonStyle(backgroundColor: Color.customPink)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                        Spacer()
+                        Button(action: { recordAttempt(outcome: "Practice") }) {
+                            Text("Practice")
+                                .buttonStyle(backgroundColor: Color.lightPink)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                        Spacer()
+                        Button(action: { recordAttempt(outcome: "Few moves") }) {
+                            Text("Few moves")
+                                .buttonStyle(backgroundColor: Color.palePink)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
                     }
-                    .buttonStyle(BorderlessButtonStyle())
-                    
-                    Spacer()
+                    .frame(maxWidth: .infinity)
 
-                    Button(action: { recordAttempt(outcome: "Progress") }) {
-                        Text("Progress")
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .background(Color.orange)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                    HStack {
+                        Button(action: { recordAttempt(outcome: "Most moves") }) {
+                            Text("Most moves")
+                                .buttonStyle(backgroundColor: Color.lightTeal)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                        Spacer()
+                        Button(action: { recordAttempt(outcome: "Very close") }) {
+                            Text("Very close")
+                                .buttonStyle(backgroundColor: Color.mediumTeal)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                        Spacer()
+                        Button(action: { recordAttempt(outcome: "Send") }) {
+                            Text("Send")
+                                .buttonStyle(backgroundColor: Color.darkTeal)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
                     }
-                    .buttonStyle(BorderlessButtonStyle())
-
-                    Spacer()
-
-                    Button(action: { recordAttempt(outcome: "No Progress") }) {
-                        Text("No Progress")
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .background(Color.red)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
-                    .buttonStyle(BorderlessButtonStyle())
-                .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity)
                 }
+                .padding()
             }
 
             // Bottom Section
@@ -201,6 +212,22 @@ struct ClimbSessionView: View {
             print("No climbs found in this set")
             return []
         }
+    }
+}
+
+extension Text {
+    func buttonStyle(backgroundColor: Color) -> some View {
+        self
+            .font(.headline.weight(.bold))
+            .foregroundColor(.white)
+            .frame(minWidth: 100, idealWidth: 150, maxWidth: .infinity, minHeight: 40)
+            .padding(.vertical, 10)
+            .background(backgroundColor)
+            .overlay(
+                LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.1), Color.clear]), startPoint: .top, endPoint: .bottom)
+            )
+            .cornerRadius(10)
+            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
     }
 }
 

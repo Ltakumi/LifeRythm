@@ -67,6 +67,7 @@
 		376619C32B15F55E005D18B6 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376619C22B15F55E005D18B6 /* EditTaskView.swift */; };
 		376619C82B16D85C005D18B6 /* ExportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376619C72B16D85C005D18B6 /* ExportUtils.swift */; };
 		376619CA2B16D970005D18B6 /* exporterRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376619C92B16D970005D18B6 /* exporterRoutine.swift */; };
+		378023BB2B1C23B700BBE362 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378023BA2B1C23B700BBE362 /* ColorUtils.swift */; };
 		37BB70292B134EC400D9E88C /* EditExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB70282B134EC400D9E88C /* EditExerciseView.swift */; };
 		37BB702C2B1351C300D9E88C /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB702A2B1351C300D9E88C /* Task+CoreDataClass.swift */; };
 		37BB702D2B1351C300D9E88C /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB702B2B1351C300D9E88C /* Task+CoreDataProperties.swift */; };
@@ -169,6 +170,7 @@
 		376619C22B15F55E005D18B6 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
 		376619C72B16D85C005D18B6 /* ExportUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportUtils.swift; sourceTree = "<group>"; };
 		376619C92B16D970005D18B6 /* exporterRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exporterRoutine.swift; sourceTree = "<group>"; };
+		378023BA2B1C23B700BBE362 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		37BB70282B134EC400D9E88C /* EditExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseView.swift; sourceTree = "<group>"; };
 		37BB702A2B1351C300D9E88C /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		37BB702B2B1351C300D9E88C /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 			children = (
 				373AB10C2B00D6EB0006114B /* Dateutils.swift */,
 				37E043F92B027BA3003D59C6 /* JsonUtils.swift */,
+				378023BA2B1C23B700BBE362 /* ColorUtils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -668,6 +671,7 @@
 				373CFE802B0C1946000BFE2B /* TaskDay+CoreDataProperties.swift in Sources */,
 				3714964B2B0340B600D845A8 /* IngredientView.swift in Sources */,
 				373AB1102B0121B80006114B /* NutritionView.swift in Sources */,
+				378023BB2B1C23B700BBE362 /* ColorUtils.swift in Sources */,
 				375D43272B0DE463008D747B /* ClimbSet+CoreDataProperties.swift in Sources */,
 				373AB1162B0126040006114B /* ClimbingExercicesView.swift in Sources */,
 				371496472B033D0100D845A8 /* Ingredients+CoreDataProperties.swift in Sources */,
